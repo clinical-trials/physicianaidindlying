@@ -842,6 +842,28 @@
          '<p class="real"><span class="lab">The patient pays</span>'+esc(b.patientPays)+'</p></div>';
     });
 
+    var H=C.hospiceComparison;
+    if(H){
+      h+='<h3 class="csec">Hospice, and the payment asymmetry</h3>'+
+         '<div class="notice" style="border-left-color:var(--alert)"><b>'+esc(H.guardrail)+'</b></div>'+
+         '<div class="scroller"><table class="ctable"><thead><tr><th>Level of care</th>'+
+         '<th>FY2026 Medicare rate</th><th>Notes</th></tr></thead><tbody>';
+      H.hospiceRates2026.forEach(function(x){
+        h+='<tr><td>'+esc(x[0])+'</td><td class="amt">'+esc(x[1])+'</td><td>'+esc(x[2])+'</td></tr>';});
+      h+='</tbody></table></div>';
+      h+='<p class="sub" style="margin-top:14px">'+esc(H.lengthOfStay)+'</p>';
+      h+='<div class="scroller"><table class="ctable"><thead><tr><th>What Medicare spends</th>'+
+         '<th>Amount</th><th>Basis</th></tr></thead><tbody>';
+      H.whatMedicareSpends.forEach(function(x){
+        h+='<tr><td>'+esc(x[0])+'</td><td class="amt">'+esc(x[1])+'</td><td>'+esc(x[2])+'</td></tr>';});
+      h+='</tbody></table></div>';
+      h+='<div class="scroller" style="margin-top:16px"><table class="ctable"><tbody>';
+      H.theAsymmetry.forEach(function(x){
+        h+='<tr><td><strong>'+esc(x[0])+'</strong></td><td>'+esc(x[1])+'</td></tr>';});
+      h+='</tbody></table></div>';
+      h+='<div class="bigfind"><p>'+esc(H.theFinding)+'</p></div>';
+    }
+
     var U=C.unitedStatesModel;
     h+='<h3 class="csec">The United States, modelled</h3>'+
        '<div class="notice"><b>'+esc(U.status)+'</b></div>'+

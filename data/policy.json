@@ -1,11 +1,15 @@
 {
   "meta": {
-    "version": "0.7.0",
+    "version": "0.8.0",
     "lastUpdated": "2026-08-22",
     "nextReviewDue": "2026-09-15",
     "maintainer": "clinical-trials",
     "disclaimer": "Reference only. Not legal advice. Every jurisdictional claim requires verification against primary statute by licensed counsel in that jurisdiction before it is relied on. Where a field could not be verified from a primary source it reads 'not verified' rather than being guessed.",
     "changelog": [
+      {
+        "date": "2026-08-22",
+        "note": "Added the hospice cost comparison using exact FY2026 CMS per-diem rates and MedPAC length-of-stay data. Carries an explicit guardrail: the finding is about payment asymmetry, not relative value, and must not be used to argue that aid in dying saves money."
+      },
       {
         "date": "2026-08-22",
         "note": "Added three service tiers with modelled pricing, published disposition costs (NFDA-derived 2026 figures, aquamation, human composting), other end-of-life expenses, and a total-cost picture. Finding: a full-freight US assisted death with burial costs a family more than the all-in price of Dignitas in Switzerland, which includes cremation and all formalities."
@@ -1039,6 +1043,11 @@
       "context": "Roughly 2-3x what the Western Australian government pays for the same clinical work (approx. USD 948 for the self-administered pathway). Add direct cremation and it is USD 5,000-7,000; add a conventional burial and it reaches USD 12,000-22,000 - more than the all-in price of travelling to Switzerland. This is a model, not a measurement, because no US jurisdiction collects cost data."
     },
     {
+      "stat": "13 days",
+      "label": "Of Medicare-funded hospice costs about what an entire assisted death costs a patient in cash",
+      "context": "Medicare pays USD 230.83 a day for routine home hospice in FY2026 and up to USD 35,361.44 per beneficiary - but is barred by the 1997 federal funding restriction from paying anything toward aid in dying, for the same patient in the same week. NOT an argument that aid in dying is better value; hospice delivers months of multidisciplinary care and the two are overwhelmingly used together. It is an argument about who bears the cost."
+    },
+    {
       "stat": "89",
       "label": "Canadian practitioners who delivered 64% of all MAID cases in 2023",
       "context": "4% of the participating workforce. Most practitioners handle one or two cases a year. The same shape appears in NSW, where 45.7% of authorised practitioners supported zero patients."
@@ -1262,7 +1271,89 @@
       "totalUSSpend": "At roughly USD 3,000 per completed death and an estimated 5,000-8,000 US assisted deaths a year, total national spend is on the order of USD 15-25M annually. At full maturity of the current 14 jurisdictions (approx. 15,600 prescriptions a year) it is roughly USD 47M. That is the entire industry.",
       "whoBears": "The patient and family, in almost every case. The Assisted Suicide Funding Restriction Act of 1997 bars Medicare, the VA, TRICARE, FEHB, IHS and the federal Medicaid match, in a population that is overwhelmingly Medicare-primary. New Jersey's 2024 report lists the payment method on EVERY submitted form as 'credit card'."
     },
-    "theFinding": "The same death costs EUR 0 to a patient in Belgium or the Netherlands, nothing in Western Australia, roughly USD 4,400 in Germany, and USD 9,300-13,600 in Switzerland. In the United States it costs the patient roughly USD 3,000 and NOBODY MEASURES IT. The US is the only developed jurisdiction where the person dying pays for the clinical labour of their own death, and the only one whose government has chosen not to find out what that costs."
+    "theFinding": "The same death costs EUR 0 to a patient in Belgium or the Netherlands, nothing in Western Australia, roughly USD 4,400 in Germany, and USD 9,300-13,600 in Switzerland. In the United States it costs the patient roughly USD 3,000 and NOBODY MEASURES IT. The US is the only developed jurisdiction where the person dying pays for the clinical labour of their own death, and the only one whose government has chosen not to find out what that costs.",
+    "hospiceComparison": {
+      "note": "The most consequential cost comparison in US end-of-life policy, and it is an asymmetry rather than a ranking. FY2026 Medicare hospice per-diem rates from the CMS FY2026 Hospice Wage Index and Payment Rate Update final rule; length-of-stay figures from MedPAC.",
+      "guardrail": "READ THIS FIRST. This comparison is about WHO PAYS, not about which option is better value, and it must never be used to argue that aid in dying saves money. That argument is the core of the disability-rights critique - that cost pressure will push people toward death - and it is not supported here and not endorsed. Hospice delivers months of multidisciplinary care; an assisted death is a discrete event. They are not substitutes, they are overwhelmingly used together, and 92.4% of New Mexico's aid-in-dying patients were enrolled in hospice at the time of ingestion.",
+      "hospiceRates2026": [
+        [
+          "Routine Home Care, days 1-60",
+          "USD 230.83 per day",
+          "~98% of all hospice days"
+        ],
+        [
+          "Routine Home Care, days 61+",
+          "USD 181.94 per day",
+          "Two-tier since 2016"
+        ],
+        [
+          "Continuous Home Care, full 24 hours",
+          "USD 1,674.29 per day",
+          "USD 69.76 per hour"
+        ],
+        [
+          "Inpatient Respite Care",
+          "USD 532.48 per day",
+          ""
+        ],
+        [
+          "General Inpatient Care",
+          "USD 1,199.86 per day",
+          ""
+        ],
+        [
+          "Service Intensity Add-on",
+          "USD 69.76 per hour, up to 4 hours",
+          "Paid in the last 7 days of life"
+        ],
+        [
+          "Aggregate annual cap per beneficiary",
+          "USD 35,361.44",
+          "Raised 2.6% for FY2026"
+        ]
+      ],
+      "lengthOfStay": "Median 18 days (stable 2022-2023, MedPAC). Average lifetime length of stay among decedents 95.3 days in 2022, up from 92.1 in 2021. The gap between median and mean is the story: a long tail of early enrollees against a large mass of people referred in the final days.",
+      "whatMedicareSpends": [
+        [
+          "At the MEDIAN stay of 18 days",
+          "approx. USD 4,155",
+          "18 x USD 230.83"
+        ],
+        [
+          "At the MEAN stay of ~95 days",
+          "approx. USD 20,200",
+          "60 days at 230.83 plus 35 at 181.94, before the service intensity add-on"
+        ],
+        [
+          "Statutory ceiling per beneficiary",
+          "USD 35,361.44",
+          ""
+        ]
+      ],
+      "theAsymmetry": [
+        [
+          "Hospice - who pays",
+          "Medicare, in full"
+        ],
+        [
+          "Hospice - patient out of pocket",
+          "Effectively nothing. Up to USD 5 per prescription for symptom-management drugs, and 5% of the Medicare-approved amount for inpatient respite."
+        ],
+        [
+          "Aid in dying - who pays",
+          "The patient, in cash"
+        ],
+        [
+          "Aid in dying - patient out of pocket",
+          "approx. USD 3,000 (modelled)"
+        ],
+        [
+          "Aid in dying - what Medicare pays",
+          "USD 0, barred by the Assisted Suicide Funding Restriction Act of 1997"
+        ]
+      ],
+      "theFinding": "For the same person, with the same terminal diagnosis, in the same week: Medicare pays USD 230.83 a day for hospice - roughly USD 4,155 at the median stay and USD 20,200 at the mean, up to a statutory ceiling of USD 35,361.44 - and pays NOTHING AT ALL toward aid in dying, by federal statute. The entire modelled cost of an assisted death, about USD 3,000, is less than what Medicare already spends on THIRTEEN DAYS of hospice for that same patient. And 92.4% of them are on hospice anyway. The federal government is simultaneously funding this person's care in full and prohibited from funding one specific thing they may ask for within it."
+    }
   },
   "serviceTiers": {
     "note": "Three tiers of aid-in-dying service, plus the disposition and end-of-life costs that follow. Service-tier prices are a MODEL with stated assumptions - no US practice publishes a fee schedule. Disposition figures are published industry data and are marked as such.",
