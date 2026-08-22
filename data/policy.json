@@ -1,11 +1,19 @@
 {
   "meta": {
-    "version": "0.5.0",
+    "version": "0.7.0",
     "lastUpdated": "2026-08-22",
     "nextReviewDue": "2026-09-15",
     "maintainer": "clinical-trials",
     "disclaimer": "Reference only. Not legal advice. Every jurisdictional claim requires verification against primary statute by licensed counsel in that jurisdiction before it is relied on. Where a field could not be verified from a primary source it reads 'not verified' rather than being guessed.",
     "changelog": [
+      {
+        "date": "2026-08-22",
+        "note": "Added three service tiers with modelled pricing, published disposition costs (NFDA-derived 2026 figures, aquamation, human composting), other end-of-life expenses, and a total-cost picture. Finding: a full-freight US assisted death with burial costs a family more than the all-in price of Dignitas in Switzerland, which includes cremation and all formalities."
+      },
+      {
+        "date": "2026-08-22",
+        "note": "Added a cost model establishing a price per assisted death. Anchored on the Western Australian government fee schedule - the only itemised per-step public price anywhere in the world - converted and cross-checked against Dutch, Belgian, Swiss and German figures. The US line is explicitly a model with every assumption labelled, because no US jurisdiction collects cost data."
+      },
       {
         "date": "2026-08-22",
         "note": "Added a payment dimension: a per-jurisdiction 'cost' field, a 'Who pays' policy lever, and a headline statistic. The finding is partly an absence — no US jurisdiction collects cost data, and Oregon states so expressly, so a functionally cash-pay system has no price transparency after 28 years."
@@ -1026,6 +1034,11 @@
       "context": "Federal law has barred Medicare, the VA and the federal Medicaid match from paying since 1997 — in a population that is overwhelmingly Medicare-primary. No US jurisdiction collects cost data; Oregon states outright that it does not. A functionally cash-pay system across fourteen jurisdictions, with no price transparency anywhere."
     },
     {
+      "stat": "~$3,000",
+      "label": "Modelled cost of a cash-pay US assisted death, before any funeral costs",
+      "context": "Roughly 2-3x what the Western Australian government pays for the same clinical work (approx. USD 948 for the self-administered pathway). Add direct cremation and it is USD 5,000-7,000; add a conventional burial and it reaches USD 12,000-22,000 - more than the all-in price of travelling to Switzerland. This is a model, not a measurement, because no US jurisdiction collects cost data."
+    },
+    {
       "stat": "89",
       "label": "Canadian practitioners who delivered 64% of all MAID cases in 2023",
       "context": "4% of the participating workforce. Most practitioners handle one or two cases a year. The same shape appears in NSW, where 45.7% of authorised practitioners supported zero patients."
@@ -1050,5 +1063,326 @@
       "label": "Americans who do not know whether medical aid in dying is legal in their own state",
       "context": "From a survey of 3,227 US adults, in which 44% said they would consider it if terminally ill."
     }
-  ]
+  ],
+  "costModel": {
+    "note": "What one assisted death costs, and who bears it. Built from published figures where they exist and from stated assumptions where they do not — every assumption is labelled. NO US JURISDICTION COLLECTS COST DATA; Oregon states so expressly. The US line below is therefore a MODEL, not a measurement, and should be presented as one.",
+    "fx": "Conversions at approximate August 2026 rates: CHF 1 = USD 1.24, EUR 1 = USD 1.09, AUD 1 = USD 0.66. Rounded. Recompute before publishing.",
+    "benchmarkPublished": [
+      {
+        "jurisdiction": "Western Australia",
+        "whatItIs": "THE ONLY ITEMISED, GOVERNMENT-PUBLISHED, PER-STEP PRICE FOR AN ASSISTED DEATH ANYWHERE IN THE WORLD. Rates effective 1 July 2024, ex-GST, paid from the public purse to the practitioner.",
+        "items": [
+          [
+            "First assessment (s.29)",
+            "AUD 478.50"
+          ],
+          [
+            "Consulting assessment (s.40)",
+            "AUD 287.10"
+          ],
+          [
+            "Final review (s.51)",
+            "AUD 191.40"
+          ],
+          [
+            "Administration decision and prescription (s.60)",
+            "AUD 287.10"
+          ],
+          [
+            "Practitioner administration of the substance (s.61)",
+            "AUD 765.60"
+          ],
+          [
+            "Miscellaneous one-off, paid with the final review",
+            "AUD 191.40"
+          ]
+        ],
+        "total": "AUD 2,201.10 for the full practitioner-administered pathway; AUD 1,435.50 without practitioner administration",
+        "usd": "approx. USD 1,453 full pathway; approx. USD 948 self-administered pathway",
+        "patientPays": "Nothing. Payment is triggered by submitting the corresponding form in VAD-IMS — the compliance system is the billing rail."
+      },
+      {
+        "jurisdiction": "Netherlands",
+        "whatItIs": "Statutory insurance. GP performance code 13038 is a negotiated, insurer-specific tariff, not a fixed national rate.",
+        "items": [
+          [
+            "GP euthanasia performance (code 13038), 2026",
+            "EUR 318.32 (Zilveren Kruis) to EUR 389.17 (Zorg en Zekerheid)"
+          ],
+          [
+            "SCEN independent consultation (code 12815), 2026",
+            "EUR 689.72"
+          ],
+          [
+            "New 2026 pre-consultation advice in complex cases (12822)",
+            "EUR 50.70 per 15 minutes"
+          ]
+        ],
+        "total": "approx. EUR 1,008-1,079 in clinician fees",
+        "usd": "approx. USD 1,099-1,176",
+        "patientPays": "EUR 0. Exempt from the eigen risico; no referral needed."
+      },
+      {
+        "jurisdiction": "Belgium",
+        "whatItIs": "No fee code existed for 23 years. Code 107251-107262 created 1 November 2025.",
+        "items": [
+          [
+            "Realisation of a euthanasia (key K117)",
+            "EUR 180.24"
+          ],
+          [
+            "Medicines",
+            "EXCLUDED - doctors are publicly complaining about this"
+          ]
+        ],
+        "total": "EUR 180.24 plus uncosted medicines",
+        "usd": "approx. USD 196",
+        "patientPays": "EUR 0. Mandatory third-party payment; the mutualite pays the doctor directly."
+      },
+      {
+        "jurisdiction": "Switzerland - Dignitas",
+        "whatItIs": "Non-profit association, open to non-residents. The world's only established cross-border price.",
+        "items": [
+          [
+            "Joining fee, one-off",
+            "CHF 220"
+          ],
+          [
+            "Minimum annual membership",
+            "CHF 80"
+          ],
+          [
+            "Preparation of the accompanied suicide",
+            "CHF 4,000"
+          ],
+          [
+            "Two medical consultations and the prescription",
+            "CHF 1,000"
+          ],
+          [
+            "Personnel cost of the accompaniment",
+            "CHF 2,500"
+          ],
+          [
+            "Optional funeral and cremation",
+            "CHF 2,500"
+          ],
+          [
+            "Optional official formalities",
+            "CHF 1,000"
+          ]
+        ],
+        "total": "CHF 7,500 basic; CHF 10,000 with funeral; CHF 11,000 all-in",
+        "usd": "approx. USD 9,300 to USD 13,640",
+        "patientPays": "All of it, plus travel and several nights' accommodation. Hardship reductions available on application. Figures are from a secondary compilation of Dignitas' own schedule; dignitas.ch blocks automated retrieval."
+      },
+      {
+        "jurisdiction": "Germany - DGHS",
+        "whatItIs": "Non-profit association in a jurisdiction with a constitutional right and no regulatory framework at all.",
+        "items": [
+          [
+            "Annual membership",
+            "EUR 60"
+          ],
+          [
+            "Accompaniment, single person",
+            "EUR 4,000"
+          ],
+          [
+            "Accompaniment, couple",
+            "EUR 6,000"
+          ]
+        ],
+        "total": "EUR 4,000 single",
+        "usd": "approx. USD 4,360",
+        "patientPays": "All of it. Minimum six months' membership before applying; a solidarity fund covers demonstrated financial need. Secondary sources; the organisations' own fee pages could not be retrieved."
+      }
+    ],
+    "unitedStatesModel": {
+      "status": "MODEL, NOT MEASUREMENT. No US jurisdiction publishes cost data. Every line below is either a published figure (marked) or a stated assumption (marked). Do not present as data.",
+      "published": [
+        [
+          "Medication (DDMAPh or similar compounded protocol)",
+          "USD 600-800 out of pocket, 'regardless of provider type' - Academy of Aid-in-Dying Medicine, its own published figure"
+        ],
+        [
+          "Historical medication comparison",
+          "Secobarbital was under USD 200 in 2009, drifted to ~1,500, then doubled to 3,000+ after Valeant's 2015 repricing. The compounded protocols exist because of that."
+        ],
+        [
+          "One private practice, 2016",
+          "USD 200 initial consultation plus USD 1,800 on qualifying and proceeding. Bay Area End of Life Options, contemporaneous reporting. THE ONLY US PRACTICE FEE EVER PUBLICLY REPORTED, ten years stale, and the practice's site now blocks retrieval."
+        ]
+      ],
+      "assumptions": [
+        [
+          "Attending clinician, 2-4 encounters",
+          "USD 500-1,600 - ASSUMPTION at typical cash-pay specialist consult rates"
+        ],
+        [
+          "Consulting clinician, 1 independent assessment",
+          "USD 250-400 - ASSUMPTION"
+        ],
+        [
+          "Mental health evaluation",
+          "USD 300-600 - ASSUMPTION. MANDATORY FOR EVERY PATIENT in Hawaii and New York; discretionary elsewhere."
+        ],
+        [
+          "Pharmacy dispensing and courier",
+          "USD 0-150 - ASSUMPTION; often folded into the medication price"
+        ],
+        [
+          "Navigation and coordination",
+          "USD 0 today - performed free by volunteer non-profits. 12-20 hours of work that nobody prices."
+        ]
+      ],
+      "scenarios": [
+        [
+          "Floor - private insurance covers the consults, patient buys only the drug",
+          "approx. USD 700"
+        ],
+        [
+          "Typical cash-pay independent practice - flat fee plus drug",
+          "approx. USD 2,000-3,500"
+        ],
+        [
+          "The 2016 Bay Area figure carried forward for inflation, plus drug",
+          "approx. USD 3,600"
+        ],
+        [
+          "Full private pathway including a mandatory mental health evaluation",
+          "approx. USD 4,000-6,000"
+        ],
+        [
+          "CENTRAL ESTIMATE for a cash-pay US assisted death",
+          "approx. USD 3,000"
+        ]
+      ],
+      "crossCheck": "The Western Australian government prices the clinical labour of a self-administered pathway at approx. USD 948 and the full practitioner-administered pathway at approx. USD 1,453. A US central estimate of roughly USD 3,000 is therefore about 2-3x what a public payer pays for the same clinical work - the difference being cash-pay pricing, the unreimbursed coordination burden, and the absence of any negotiated rate.",
+      "totalUSSpend": "At roughly USD 3,000 per completed death and an estimated 5,000-8,000 US assisted deaths a year, total national spend is on the order of USD 15-25M annually. At full maturity of the current 14 jurisdictions (approx. 15,600 prescriptions a year) it is roughly USD 47M. That is the entire industry.",
+      "whoBears": "The patient and family, in almost every case. The Assisted Suicide Funding Restriction Act of 1997 bars Medicare, the VA, TRICARE, FEHB, IHS and the federal Medicaid match, in a population that is overwhelmingly Medicare-primary. New Jersey's 2024 report lists the payment method on EVERY submitted form as 'credit card'."
+    },
+    "theFinding": "The same death costs EUR 0 to a patient in Belgium or the Netherlands, nothing in Western Australia, roughly USD 4,400 in Germany, and USD 9,300-13,600 in Switzerland. In the United States it costs the patient roughly USD 3,000 and NOBODY MEASURES IT. The US is the only developed jurisdiction where the person dying pays for the clinical labour of their own death, and the only one whose government has chosen not to find out what that costs."
+  },
+  "serviceTiers": {
+    "note": "Three tiers of aid-in-dying service, plus the disposition and end-of-life costs that follow. Service-tier prices are a MODEL with stated assumptions - no US practice publishes a fee schedule. Disposition figures are published industry data and are marked as such.",
+    "tiers": [
+      {
+        "tier": "Tier 1 - Self-navigated",
+        "whatYouGet": "The statutory minimum and nothing else. The patient or family finds their own attending clinician, finds an independent consulting clinician, tracks the waiting-period clock, completes the witnessed paperwork, and locates a pharmacy willing to compound and dispense.",
+        "serviceFee": "USD 0",
+        "outOfPocket": "USD 700 (insured, drug only) to USD 2,800 (cash-pay consults plus drug)",
+        "reality": "THIS IS WHAT ALMOST EVERYONE DOES TODAY, and it is why roughly a third to a half of people who start never finish. Free volunteer warm lines can inform but cannot name a clinician or manage a clock. Oregon: 155 physicians wrote 637 prescriptions and 71% wrote only one or two - most patients are working with someone doing this for the first time.",
+        "assumption": "Consult pricing assumed at cash-pay specialist rates; insurance coverage varies and Medicare is barred."
+      },
+      {
+        "tier": "Tier 2 - Navigated",
+        "whatYouGet": "Eligibility screening before anyone's time is wasted; matching to a willing attending and consulting clinician; paperwork and witness coordination; statutory clock management with escalation before the patient ages out; pharmacy secured in advance; a briefing for the family.",
+        "serviceFee": "USD 2,500 - ASSUMPTION, sliding scale essential",
+        "outOfPocket": "approx. USD 3,200-5,300 all in",
+        "reality": "Attacks the actual failure mode. Half of all attrition is people dying before the assessments finish; this is the tier that changes that number.",
+        "assumption": "12-20 navigator hours per case. The single largest uncertainty in the whole model - the margin lives or dies on whether it is 12 hours or 40."
+      },
+      {
+        "tier": "Tier 3 - Accompanied",
+        "whatYouGet": "Everything in Tier 2, plus the day itself planned in advance - location, who is present, music, what is said, what happens in the six hours after; a trained attendant present; family support before as well as after (83% of relatives seek support BEFORE the death, once a date is set); structured bereavement follow-up; disposition arranged; optional legacy recording.",
+        "serviceFee": "USD 5,000-8,000 - ASSUMPTION",
+        "outOfPocket": "approx. USD 6,000-11,000 before disposition",
+        "reality": "Maps almost exactly onto Dignitas' published tiers - CHF 7,500 basic, CHF 10,000 with funeral, CHF 11,000 with all formalities. Two organisations on different continents, working from first principles, arrived at the same three-tier shape and roughly the same numbers.",
+        "assumption": "No US practice publishes anything comparable. The only US practice fee ever reported publicly is USD 200 plus USD 1,800, from 2016."
+      }
+    ],
+    "disposition": {
+      "note": "PUBLISHED INDUSTRY DATA, not assumptions. 2026 figures derive from the NFDA 2023 General Price List Study adjusted for funeral CPI, which rose 10.46% from 2023 to 2026.",
+      "options": [
+        [
+          "Direct cremation",
+          "USD 1,000-2,500",
+          "The cheapest conventional option. No viewing, no service."
+        ],
+        [
+          "Aquamation / alkaline hydrolysis",
+          "USD 2,500 national average",
+          "Range USD 1,295 in the cheapest markets to USD 4,600+ where providers are scarce. Roughly USD 500-900 above flame cremation."
+        ],
+        [
+          "Human composting / natural organic reduction",
+          "USD 2,500-5,000 typical",
+          "Herland Forest quotes USD 3,000; Recompose USD 7,000. Legal in a growing but limited number of states."
+        ],
+        [
+          "Funeral with viewing and cremation",
+          "approx. USD 6,940",
+          "NFDA-derived 2026 estimate."
+        ],
+        [
+          "Funeral with viewing and burial",
+          "approx. USD 9,170",
+          "NFDA-derived 2026 estimate."
+        ],
+        [
+          "Funeral with viewing, burial and vault",
+          "approx. USD 11,040",
+          "NFDA-derived 2026 estimate."
+        ]
+      ],
+      "warning": "NONE OF THE ABOVE INCLUDES CEMETERY COSTS. A plot, opening and closing, and a headstone are billed separately and routinely add thousands. Families are frequently surprised by this at the worst possible moment."
+    },
+    "otherEndOfLifeCosts": [
+      [
+        "Hospice care",
+        "USD 0 for most",
+        "Covered by the Medicare hospice benefit. The one major end-of-life cost the federal government DOES pay - and 92.4% of New Mexico's aid-in-dying patients were enrolled in it. Worth saying plainly to families who assume everything is out of pocket."
+      ],
+      [
+        "Palliative care consultation",
+        "Usually covered",
+        "Billed as ordinary medical care."
+      ],
+      [
+        "Certified death certificates",
+        "USD 20-30 each",
+        "Families typically need 8-12 copies for banks, insurers, pensions and title transfers. Budget USD 200-350."
+      ],
+      [
+        "Advance directive, health care proxy, POLST/MOLST",
+        "USD 0-500",
+        "Free through most hospices and state health departments; attorney-drafted costs more."
+      ],
+      [
+        "Will or trust review",
+        "USD 300-2,500",
+        "Highly variable."
+      ],
+      [
+        "Probate",
+        "2-7% of estate value",
+        "Avoidable in part with a trust; varies enormously by state."
+      ],
+      [
+        "Caregiving and home health outside the hospice benefit",
+        "Highly variable",
+        "Often the largest uncounted cost of a terminal illness, and borne by family labour rather than cash."
+      ]
+    ],
+    "totalPicture": [
+      [
+        "Leanest realistic path - self-navigated, insured, direct cremation",
+        "approx. USD 1,700-3,200"
+      ],
+      [
+        "CENTRAL CASE - navigated service, direct cremation",
+        "approx. USD 5,000-7,000"
+      ],
+      [
+        "Navigated service with a conventional funeral and burial",
+        "approx. USD 12,000-14,500"
+      ],
+      [
+        "Accompanied service with funeral and burial",
+        "approx. USD 15,000-22,000"
+      ]
+    ],
+    "theComparison": "A full-freight American assisted death with a conventional burial - roughly USD 12,000 to USD 22,000 - costs the family MORE THAN FLYING TO SWITZERLAND. Dignitas' all-in tier is CHF 11,000, approximately USD 13,640, and that price INCLUDES the accompaniment, the cremation and every official formality. The difference is that Switzerland publishes its prices and the United States does not."
+  }
 }

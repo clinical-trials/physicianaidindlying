@@ -194,6 +194,31 @@
     border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);
     width:22px;height:22px;border-radius:50%;display:grid;place-items:center}
 
+  /* cost */
+  .tierbox2{background:var(--panel);border:1px solid var(--rule);padding:22px 24px;
+    margin-bottom:1px}
+  .tierbox2 h3{margin:0 0 3px;font-size:17px;font-weight:650}
+  .tierbox2 .price{font-family:var(--mono);font-size:20px;font-weight:600;color:var(--accent);
+    margin:0 0 12px;font-variant-numeric:tabular-nums}
+  .tierbox2 p{margin:0 0 11px;color:var(--ink-2);font-size:14.5px;max-width:78ch}
+  .tierbox2 p:last-child{margin-bottom:0}
+  .tierbox2 .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--ink-4);display:block;margin-bottom:3px}
+  .tierbox2 .real{border-left:2px solid var(--accent);padding-left:14px}
+  .assum{font-size:12.5px;color:var(--ink-4);font-style:italic;margin-top:10px}
+  .ctable{width:100%;border-collapse:collapse;font-size:13.5px;background:var(--panel)}
+  .ctable th,.ctable td{padding:10px 12px;border-bottom:1px solid var(--rule);
+    text-align:left;vertical-align:top}
+  .ctable td.amt{font-family:var(--mono);white-space:nowrap;color:var(--ink);
+    font-weight:600;font-variant-numeric:tabular-nums}
+  .ctable thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;
+    text-transform:uppercase;color:var(--ink-3)}
+  .bigfind{background:var(--panel);border:1px solid var(--rule);
+    border-left:4px solid var(--accent);padding:24px 26px;margin:20px 0}
+  .bigfind p{font-family:var(--serif);font-size:19px;line-height:1.4;color:var(--ink);
+    margin:0;text-wrap:balance}
+  h3.csec{font-size:15px;font-weight:650;margin:32px 0 12px}
+
   /* compare */
   #cmp-picker{gap:6px;align-items:flex-start}
   .pickgroup{width:100%;margin-bottom:6px}
@@ -265,6 +290,7 @@
   <button role="tab" aria-selected="false" data-tab="pipeline">Legislative pipeline</button>
   <button role="tab" aria-selected="false" data-tab="prohibited">Non-authorizing states</button>
   <button role="tab" aria-selected="false" data-tab="intl">International</button>
+  <button role="tab" aria-selected="false" data-tab="cost">What it costs</button>
   <button role="tab" aria-selected="false" data-tab="compare">Compare</button>
   <button role="tab" aria-selected="false" data-tab="levers">Policy levers</button>
   <button role="tab" aria-selected="false" data-tab="infra">Reporting systems</button>
@@ -344,6 +370,15 @@
     <span class="count" id="intl-count"></span>
   </div>
   <div class="cards" id="intl-cards"></div>
+</section>
+
+<section id="tab-cost" hidden>
+  <h2>What it costs, and who pays</h2>
+  <p class="sub">The United States is the only developed jurisdiction where the person
+    dying pays for the clinical labour of their own death — and the only one whose
+    governments have chosen not to find out what that costs. Oregon states outright that
+    it does not collect cost data. Everything below marked as a model is a model.</p>
+  <div id="cost-out"></div>
 </section>
 
 <section id="tab-compare" hidden>
@@ -754,8 +789,82 @@
     out.innerHTML=h;
   }
 
+
+  /* ---------- cost ---------- */
+  function renderCost(){
+    var C=D.costModel, T=D.serviceTiers, o=document.getElementById("cost-out");
+    if(!C||!T){o.innerHTML='<div class="cmp-empty">No cost data in this build.</div>';return;}
+    var h='<div class="bigfind"><p>'+esc(C.theFinding)+'</p></div>';
+
+    h+='<h3 class="csec">Three tiers of service</h3>';
+    T.tiers.forEach(function(t){
+      h+='<div class="tierbox2"><h3>'+esc(t.tier)+'</h3>'+
+         '<p class="price">'+esc(t.outOfPocket)+'</p>'+
+         '<p><span class="lab">What you get</span>'+esc(t.whatYouGet)+'</p>'+
+         '<p class="real"><span class="lab">Reality</span>'+esc(t.reality)+'</p>'+
+         '<p class="assum">Service fee: '+esc(t.serviceFee)+'. '+esc(t.assumption)+'</p></div>';
+    });
+
+    h+='<h3 class="csec">What happens to the body</h3>'+
+       '<p class="sub">'+esc(T.disposition.note)+'</p><div class="scroller"><table class="ctable">'+
+       '<thead><tr><th>Option</th><th>Cost</th><th>Notes</th></tr></thead><tbody>';
+    T.disposition.options.forEach(function(x){
+      h+='<tr><td><strong>'+esc(x[0])+'</strong></td><td class="amt">'+esc(x[1])+'</td><td>'+esc(x[2])+'</td></tr>';
+    });
+    h+='</tbody></table></div><div class="notice" style="border-left-color:var(--alert)"><b>'+
+       esc(T.disposition.warning)+'</b></div>';
+
+    h+='<h3 class="csec">Other end-of-life costs</h3><div class="scroller"><table class="ctable">'+
+       '<thead><tr><th>Item</th><th>Cost</th><th>Notes</th></tr></thead><tbody>';
+    T.otherEndOfLifeCosts.forEach(function(x){
+      h+='<tr><td><strong>'+esc(x[0])+'</strong></td><td class="amt">'+esc(x[1])+'</td><td>'+esc(x[2])+'</td></tr>';
+    });
+    h+='</tbody></table></div>';
+
+    h+='<h3 class="csec">Total picture</h3><div class="scroller"><table class="ctable">'+
+       '<thead><tr><th>Path</th><th>Total</th></tr></thead><tbody>';
+    T.totalPicture.forEach(function(x){
+      h+='<tr><td>'+esc(x[0])+'</td><td class="amt">'+esc(x[1])+'</td></tr>';
+    });
+    h+='</tbody></table></div><div class="bigfind"><p>'+esc(T.theComparison)+'</p></div>';
+
+    h+='<h3 class="csec">What other countries actually pay</h3>'+
+       '<p class="sub">'+esc(C.fx)+'</p>';
+    C.benchmarkPublished.forEach(function(b){
+      h+='<div class="tierbox2"><h3>'+esc(b.jurisdiction)+'</h3>'+
+         '<p class="price">'+esc(b.usd)+'</p>'+
+         '<p><span class="lab">What it is</span>'+esc(b.whatItIs)+'</p>'+
+         '<div class="scroller"><table class="ctable"><tbody>';
+      b.items.forEach(function(i){
+        h+='<tr><td>'+esc(i[0])+'</td><td class="amt">'+esc(i[1])+'</td></tr>';
+      });
+      h+='</tbody></table></div><p style="margin-top:12px"><span class="lab">Total</span>'+esc(b.total)+'</p>'+
+         '<p class="real"><span class="lab">The patient pays</span>'+esc(b.patientPays)+'</p></div>';
+    });
+
+    var U=C.unitedStatesModel;
+    h+='<h3 class="csec">The United States, modelled</h3>'+
+       '<div class="notice"><b>'+esc(U.status)+'</b></div>'+
+       '<div class="scroller"><table class="ctable"><thead><tr><th>Component</th><th>Figure</th></tr></thead><tbody>';
+    U.published.forEach(function(x){
+      h+='<tr><td><strong>PUBLISHED</strong> &middot; '+esc(x[0])+'</td><td>'+esc(x[1])+'</td></tr>';});
+    U.assumptions.forEach(function(x){
+      h+='<tr><td><em>Assumption</em> &middot; '+esc(x[0])+'</td><td>'+esc(x[1])+'</td></tr>';});
+    h+='</tbody></table></div>';
+    h+='<div class="scroller" style="margin-top:16px"><table class="ctable">'+
+       '<thead><tr><th>Scenario</th><th>Estimate</th></tr></thead><tbody>';
+    U.scenarios.forEach(function(x){
+      h+='<tr><td>'+esc(x[0])+'</td><td class="amt">'+esc(x[1])+'</td></tr>';});
+    h+='</tbody></table></div>';
+    h+='<div class="tierbox2" style="margin-top:16px">'+
+       '<p><span class="lab">Cross-check against a public payer</span>'+esc(U.crossCheck)+'</p>'+
+       '<p><span class="lab">Total US spend</span>'+esc(U.totalUSSpend)+'</p>'+
+       '<p class="real"><span class="lab">Who bears it</span>'+esc(U.whoBears)+'</p></div>';
+    o.innerHTML=h;
+  }
+
   /* ---------- hash routing ---------- */
-  var TABS=["start","us","pipeline","prohibited","intl","compare","levers","infra"];
+  var TABS=["start","us","pipeline","prohibited","intl","cost","compare","levers","infra"];
   function showTab(t,scroll){
     if(TABS.indexOf(t)<0) t="start";
     [].forEach.call(document.querySelectorAll("nav button"),function(o){
@@ -763,6 +872,7 @@
     [].forEach.call(document.querySelectorAll("section[id^='tab-']"),function(s){
       s.hidden = s.id!=="tab-"+t;});
     if(t==="compare"){ renderPicker(); renderCompare(); }
+    if(t==="cost"){ renderCost(); }
     if(scroll){
       var n=document.querySelector("nav");
       window.scrollTo({top:n.offsetTop-1,behavior:"instant"});
