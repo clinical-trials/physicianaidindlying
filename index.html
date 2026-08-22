@@ -414,11 +414,23 @@
   /* ---------- US ---------- */
   function usTags(j){
     var t=[];
-    if(/APRN|Advanced Practice|PA\b|APPs/i.test(j.prescribers||"") &&
-       !/Physicians only/i.test(j.prescribers||"")) t.push(["APPs may prescribe","key"]);
+    if(/physician assistant|advanced practice|advanced registered nurse|APRN/i.test(j.prescribers||"") &&
+       !/^Physicians only/i.test(j.prescribers||"")) t.push(["APPs may prescribe","key"]);
     if(/not required/i.test(j.residency||"")) t.push(["No residency requirement","good"]);
-    if(/MANDATORY/i.test(j.mentalHealth||"")) t.push(["Mental health eval for every patient","warn"]);
-    if(/^NO\./i.test(j.civilImmunity||"")) t.push(["No civil immunity","warn"]);
+    // Match only the affirmative form — "Not mandatory" must not trip this.
+    if(/mandatory for every patient/i.test(j.mentalHealth||""))
+      t.push(["Mental health eval for every patient","warn"]);
+    if(/BROADER THAN CAPACITY/i.test(j.mentalHealth||""))
+      t.push(["Referral trigger broader than capacity","warn"]);
+    if(/^NO\b/i.test(j.civilImmunity||"")){
+      t.push([/NEITHER CRIMINAL NOR LICENSURE/i.test(j.civilImmunity)
+        ? "No immunity provision at all" : "No civil immunity","warn"]);
+    }
+    if(/never both|always be a physician/i.test(j.prescribers||""))
+      t.push(["One of the two must be a physician",""]);
+    if(/NO WAIVER|no waiver/i.test(j.waitingPeriod||"")) t.push(["Waiting period cannot be waived","warn"]);
+    if(/EXPRESSLY PERMITTED/i.test(j.telehealth||"")) t.push(["Telemedicine permitted","good"]);
+    if(/ALL must be disinterested|ALL witnesses/i.test(j.notes||"")) t.push(["All witnesses must be disinterested",""]);
     if(j.mechanism==="court") t.push(["Court ruling only — no framework","warn"]);
     if(j.effective>"2026-01-01") t.push(["Newly effective","key"]);
     return t;

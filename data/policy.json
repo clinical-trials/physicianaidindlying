@@ -1,15 +1,25 @@
 {
   "meta": {
-    "version": "0.1.0",
+    "version": "0.4.0",
     "lastUpdated": "2026-08-22",
     "nextReviewDue": "2026-09-15",
     "maintainer": "clinical-trials",
     "disclaimer": "Reference only. Not legal advice. Every jurisdictional claim requires verification against primary statute by licensed counsel in that jurisdiction before it is relied on. Where a field could not be verified from a primary source it reads 'not verified' rather than being guessed.",
     "changelog": [
-      { "date": "2026-08-22", "note": "Initial release. 14 US authorizing jurisdictions from primary or near-primary sources; 37 non-authorizing states tiered; 22 international regimes; 2026 US legislative pipeline." }
+      {
+        "date": "2026-08-22",
+        "note": "Clause-level verification of New Jersey, DC and Colorado from enrolled text. Corrections: Colorado's SB 24-068 authorized APRNs ONLY, not physician assistants, and requires no physician sign-off in any case — two APRNs may handle a case end to end; Colorado's residency requirement survives in s. 25-48-103(1) though it was struck from the definitions; Colorado's '48 hours' is a prognosis threshold, not a waiting period. DC's registration burden is administrative, not statutory, and DC uniquely bars an attending physician whose practice is primarily composed of aid-in-dying patients, foreclosing the dedicated-practice model — 2 prescribers in 2018, 2022 and 2024 alike. New Jersey's telehealth position changed 8 July 2026 via A4852 amending the telemedicine statute, not Title 26. All three grant civil immunity expressly, with materially different carve-outs."
+      },
+      {
+        "date": "2026-08-22",
+        "note": "Clause-level verification of Washington, Vermont and Maine from enrolled statutory text. Corrections: Maine is 22 M.R.S. ch. 418, not ch. 418-A, and contains NO immunity provision of any kind; Washington's PA/ARNP expansion is limited by RCW 70.245.230 so one of the two providers must always be a physician, and its 7-day waiting period has no waiver; Washington has discontinued its annual statistical report; Vermont requires ALL witnesses to be disinterested, expressly permits telemedicine, never defines 'self-administer', and reports biennially."
+      },
+      {
+        "date": "2026-08-22",
+        "note": "Initial release. 14 US authorizing jurisdictions from primary or near-primary sources; 37 non-authorizing states tiered; 22 international regimes; 2026 US legislative pipeline."
+      }
     ]
   },
-
   "designLevers": [
     {
       "lever": "Administration modality",
@@ -60,11 +70,14 @@
       "implication": "The clearest quantified expansion trajectory in the world, and the empirical core of the eligibility-drift argument. Note also what the data does not show: the categories that dominate political debate are statistically tiny. Belgium has had 7 minors in 11 years; Luxembourg has 6,107 registered advance directives and 11 ever used."
     }
   ],
-
   "usAuthorizing": [
     {
-      "jurisdiction": "Oregon", "abbr": "OR", "authorized": 1997, "effective": "1997-10-27",
-      "statute": "Death with Dignity Act", "citation": "ORS 127.800-127.995",
+      "jurisdiction": "Oregon",
+      "abbr": "OR",
+      "authorized": 1997,
+      "effective": "1997-10-27",
+      "statute": "Death with Dignity Act",
+      "citation": "ORS 127.800-127.995",
       "mechanism": "statute",
       "prescribers": "Physicians (MD/DO) only",
       "prognosis": "6 months",
@@ -76,27 +89,40 @@
       "civilImmunity": "Yes (ORS 127.885)",
       "utilization": "637 prescriptions and 400 DWDA deaths in 2025; approximately 1.0% of all Oregon deaths. Cumulative 1997-2025: 5,520 prescriptions, 3,691 deaths from ingestion (67% of recipients). 155 physicians wrote the 637 prescriptions; 71% wrote only one or two; one wrote 101. 193 patients (30%) granted waiting-period exemptions. Prescribing physician present at 54 of 400 deaths (14%); volunteers present at 111 (36%).",
       "notes": "Longest data series in existence, 28 annual reports. Reporting is by PDF form returned by email or fax within 10 days of dispensing. OHA states it does not collect cost data.",
-      "sources": ["https://www.oregon.gov/oha/PH/PROVIDERPARTNERRESOURCES/EVALUATIONRESEARCH/DEATHWITHDIGNITYACT/Documents/year28.pdf"]
+      "sources": [
+        "https://www.oregon.gov/oha/PH/PROVIDERPARTNERRESOURCES/EVALUATIONRESEARCH/DEATHWITHDIGNITYACT/Documents/year28.pdf"
+      ]
     },
     {
-      "jurisdiction": "Washington", "abbr": "WA", "authorized": 2008, "effective": "2009-03-05",
-      "statute": "Death with Dignity Act (Initiative 1000)", "citation": "RCW 70.245",
+      "jurisdiction": "Washington",
+      "abbr": "WA",
+      "authorized": 2008,
+      "effective": "2009-03-05",
+      "statute": "Death with Dignity Act (Initiative 1000)",
+      "citation": "RCW ch. 70.245",
       "mechanism": "statute",
-      "prescribers": "Expanded beyond physicians by 2023 amendments - verify current scope",
+      "prescribers": "Physicians (MD/DO), physician assistants, and advanced registered nurse practitioners. BUT RCW 70.245.230 constrains the expansion: a non-physician may serve as attending OR consulting, never both — at least one of the two must always be a physician, and the two may not have a direct supervisory relationship. Most summaries of SB 5179 (2023) omit this limiting rule.",
       "prognosis": "6 months",
-      "waitingPeriod": "Shortened by 2023 amendments - not verified",
-      "residency": "Required",
-      "telehealth": "not verified",
-      "mentalHealth": "Referral only if capacity is in question",
+      "waitingPeriod": "7 days from the initial oral request to the second oral request (RCW 70.245.090), and 7 days from the initial oral request to the writing of the prescription (RCW 70.245.110). SB 5179 (2023) cut both from 15 days and removed the former 48-hour written-request interval. THERE IS NO WAIVER — Washington's waiting period is absolute, and RCW 70.245.090(3) provides that a transfer of care or records does not restart it.",
+      "residency": "Required. RCW 70.245.130, unamended since 2009 — SB 5179 did not touch it. Factors include a Washington driver's licence, voter registration, or property ownership or lease. No physical-presence requirement for evaluation or ingestion.",
+      "telehealth": "Silent. The chapter contains no occurrence of telemedicine, telehealth, or remote.",
+      "mentalHealth": "Referral only if, in the opinion of either the attending or consulting provider, the patient may be suffering from a psychiatric or psychological disorder or depression causing impaired judgment (RCW 70.245.060).",
       "selfAdminOnly": true,
-      "civilImmunity": "not verified",
-      "utilization": "Included in pooled OR/WA analyses; state-specific 2025 figures not verified",
-      "notes": "2023 amendments shortened the waiting period and expanded eligible provider types. Clause-level verification outstanding.",
-      "sources": []
+      "civilImmunity": "YES, expressly. RCW 70.245.190(1)(a): no person is subject to civil or criminal liability or professional disciplinary action for participating in good faith compliance. RCW 70.245.190(4) provides that good faith does not permit a lower standard of care.",
+      "utilization": "2024 data year (WA DOH, DOH 422-109, July 2025): 655 participants; 264 prescribing medical providers; 64 dispensing pharmacists; 641 known deaths, of which 491 died after ingesting and 57 died without ingesting. Of the 491: 90% enrolled in hospice, 90% insured, 86.7% died at home. Mean age 76; 94% white; 89% resided west of the Cascades. THIS IS THE FINAL REPORT — DOH paused the annual statistical series after the 2025 legislative session, citing budget reductions, notwithstanding RCW 70.245.150(3) directing an annual report.",
+      "notes": "Two oral requests plus one written request, two witnesses, only ONE of whom must be disinterested — an estate beneficiary is disqualified as that witness but may serve as the second. Death certificate lists the underlying terminal disease (RCW 70.245.040(2)); the act is expressly not suicide and state reports may not call it that (RCW 70.245.180(1)). Non-participating providers must transfer records on request but owe no duty to refer. CRITICALLY, RCW 70.245.190(2)(a) bars a health care provider from prohibiting another, by contract or agreement, from participating while off its premises and outside the scope of employment — the same protection New Mexico grants. Reporting within 30 days of writing/dispensing, and within 30 days of death. A 2025 technical amendment renaming ARNP to APRN does not take effect until 30 June 2027; single-section lookups on the Legislature's site return that future text by default.",
+      "sources": [
+        "https://app.leg.wa.gov/RCW/default.aspx?cite=70.245&full=true",
+        "https://doh.wa.gov/data-and-statistical-reports/health-statistics/death-dignity-act"
+      ]
     },
     {
-      "jurisdiction": "Montana", "abbr": "MT", "authorized": 2009, "effective": "2009-12-31",
-      "statute": "Baxter v. Montana (court decision only)", "citation": "2009 MT 449",
+      "jurisdiction": "Montana",
+      "abbr": "MT",
+      "authorized": 2009,
+      "effective": "2009-12-31",
+      "statute": "Baxter v. Montana (court decision only)",
+      "citation": "2009 MT 449",
       "mechanism": "court",
       "prescribers": "Undefined - no statutory framework",
       "prognosis": "Undefined",
@@ -111,24 +137,35 @@
       "sources": []
     },
     {
-      "jurisdiction": "Vermont", "abbr": "VT", "authorized": 2013, "effective": "2013-05-20",
-      "statute": "Patient Choice and Control at End of Life Act", "citation": "18 V.S.A. ch. 113",
+      "jurisdiction": "Vermont",
+      "abbr": "VT",
+      "authorized": 2013,
+      "effective": "2013-05-20",
+      "statute": "Patient Choice at End of Life (Act 39)",
+      "citation": "18 V.S.A. ch. 113, ss. 5281-5293",
       "mechanism": "statute",
-      "prescribers": "Physicians only - verify",
+      "prescribers": "Physicians only (MD/DO). 18 V.S.A. s. 5281(9) defines physician by reference to 26 V.S.A. ch. 23 or 33. Physician assistants and APRNs may NOT prescribe.",
       "prognosis": "6 months",
-      "waitingPeriod": "not verified",
-      "residency": "Not required - first state to remove it (May 2023, after Bluestein v. Scott)",
-      "telehealth": "not verified",
-      "mentalHealth": "Referral only if capacity is in question",
+      "waitingPeriod": "15 days between the first and second oral request (s. 5283(a)(2)). NO WAIVER. There is no separate written-request interval — the 48-hour dispensing restriction from Act 39 was removed by Act 97 of 2021 (Adj. Sess.), effective 27 April 2022. The only remaining rule on the prescription is ordinal, not durational: it must be written after the last of the written request, the second oral request, and the offer to rescind.",
+      "residency": "NOT REQUIRED. Repealed by 2023, No. 10 (H.190), effective 2 May 2023 — Vermont was the first state to do so. No in-state ingestion requirement. BUT a physician's physical examination is still required (s. 5283(a)(5)(A)), so some in-person contact is necessary despite the telemedicine allowance.",
+      "telehealth": "EXPRESSLY PERMITTED at the physician's clinical discretion for the oral requests and the informed-consent disclosures (ss. 5283(a)(1), (6)), with telemedicine defined at s. 5281(12) as live interactive audio and video over a HIPAA-compliant connection. It does NOT substitute for the required physical examination.",
+      "mentalHealth": "Not mandatory. The physician either verifies directly that the patient does not have impaired judgment, or refers for evaluation by a psychiatrist, psychologist, or clinical social worker licensed in Vermont (s. 5283(a)(8)).",
       "selfAdminOnly": true,
-      "civilImmunity": "not verified",
-      "utilization": "not verified",
-      "notes": "First US jurisdiction to open access to non-residents. With Oregon, one of only two.",
-      "sources": []
+      "civilImmunity": "YES, expressly and twice — for the prescribing physician (s. 5283(a)) and for all participating licensed providers acting in good faith (s. 5285(c)). Carved out for gross negligence, recklessness, or intentional misconduct (s. 5283(b)).",
+      "utilization": "Reporting period 1 July 2023 - 30 June 2025 (VDH Report to the Legislature, 15 January 2026): 190 reportable events, against 204 in the entire preceding decade. 183 had a Vermont death record; of those 148 (82%) died by Patient Choice. Cancer in 125 (66%). Cumulative since Act 39: 394 events. NON-RESIDENT DATA, which Vermont publishes explicitly: 132 Vermont residents, 56 out-of-state and 2 unknown in the report period; 334 residents and 58 out-of-state cumulatively. Prescriber count not published.",
+      "notes": "Two oral requests plus one written request. UNIQUELY STRICT ON WITNESSES: two or more, and ALL must be disinterested persons aged 18+ (s. 5283(a)(4)) — Washington and Maine require only one of two. 'Interested person' at s. 5281(6) excludes the physician, relatives, anyone entitled to any portion of the estate, and facility owners/operators/employees. NOTE: 'self-administer' is used throughout s. 5283 but is NEVER DEFINED in s. 5281. NO duty to inform, refer, or transfer records — Vermont imposes none (s. 5285(a)). Institutional opt-out is unusually narrow (s. 5286): it reaches only a facility resident who intends to use the medication on the premises. Vermont does NOT bar an employer from prohibiting off-site participation; the statute is silent. The death certificate is not addressed in statute; departmental practice lists the underlying disease and a natural manner of death. Reporting is BIENNIAL (s. 5293(b)), so Vermont data is never as current as Washington's or Maine's.",
+      "sources": [
+        "https://legislature.vermont.gov/statutes/fullchapter/18/113",
+        "https://www.healthvermont.gov"
+      ]
     },
     {
-      "jurisdiction": "California", "abbr": "CA", "authorized": 2015, "effective": "2016-06-09",
-      "statute": "End of Life Option Act", "citation": "Cal. Health & Safety Code 443",
+      "jurisdiction": "California",
+      "abbr": "CA",
+      "authorized": 2015,
+      "effective": "2016-06-09",
+      "statute": "End of Life Option Act",
+      "citation": "Cal. Health & Safety Code 443",
       "mechanism": "statute",
       "prescribers": "Physicians only",
       "prognosis": "6 months",
@@ -140,43 +177,63 @@
       "civilImmunity": "not verified",
       "utilization": "Largest population jurisdiction. CDPH publishes annual data reports.",
       "notes": "SB 380 (2021) also barred health care providers and entities from engaging in false, misleading or deceptive practices about their willingness to participate - the strongest duty-to-inform provision in the US. Medi-Cal covers the medication with state-only funds. In a 2019 study of 270 California hospitals, 87% had EOLOA policies but only 39% permitted physicians to prescribe.",
-      "sources": ["https://www.cdph.ca.gov/Programs/CHSI/CDPH%20Document%20Library/CDPH_End_of_Life_Option_Act_Report_2024.pdf"]
+      "sources": [
+        "https://www.cdph.ca.gov/Programs/CHSI/CDPH%20Document%20Library/CDPH_End_of_Life_Option_Act_Report_2024.pdf"
+      ]
     },
     {
-      "jurisdiction": "Colorado", "abbr": "CO", "authorized": 2016, "effective": "2016-12-16",
-      "statute": "End of Life Options Act (Proposition 106)", "citation": "C.R.S. 25-48",
+      "jurisdiction": "Colorado",
+      "abbr": "CO",
+      "authorized": 2016,
+      "effective": "2016-12-16",
+      "statute": "End-of-Life Options Act (Proposition 106)",
+      "citation": "C.R.S. ss. 25-48-101 to -124",
       "mechanism": "ballot initiative",
-      "prescribers": "Physicians, APRNs and PAs (expanded by SB 24-068, 2024)",
+      "prescribers": "Physicians AND ADVANCED PRACTICE REGISTERED NURSES. CORRECTION TO A WIDESPREAD ERROR: SB 24-068 (signed 5 June 2024, effective 7 August 2024) did NOT authorize physician assistants — the phrase does not appear anywhere in the signed act. It replaced 'physician' with 'provider' throughout and defined provider to mean a physician or APRN. AND UNLIKE NEW MEXICO, COLORADO REQUIRES NO PHYSICIAN SIGN-OFF IN ANY CASE: diagnosis, capacity determination, prescribing, informed-decision verification, death-certificate signature and final attestation are all assigned to 'provider'. A qualifying case may be handled start to finish by two APRNs with no physician involvement. CDPHE does not disaggregate prescribers by type, so the APRN share is not published.",
       "prognosis": "6 months",
-      "waitingPeriod": "Reduced by SB 24-068 (2024) - verify current duration",
-      "residency": "Required",
-      "telehealth": "not verified",
-      "mentalHealth": "Referral only if capacity is in question",
+      "waitingPeriod": "7 days between the two oral requests, reduced from 15 by SB 24-068 (s. 25-48-104(1)(a)). There is no written-request interval and no dispensing interval. The '48 hours' in this statute is a PROGNOSIS THRESHOLD, NOT A WAITING PERIOD: where the attending provider determines the individual will die within 48 hours of the initial oral request, the patient may satisfy the requirement by reiterating the oral request 'at any time after' the first (s. 25-48-104(1)(b)) — an alternative compliance route rather than a waiver. Do not confuse it with DC's 48-hour dispensing gate or New Jersey's 48-hour written-request interval.",
+      "residency": "Required — BUT NOT WHERE YOU WOULD LOOK FOR IT. SB 24-068 struck 'is a resident of the state' from the definition of 'qualified individual' at s. 25-48-102(13)(a), while leaving 'An adult resident of Colorado' intact in the operative right-to-request section, s. 25-48-103(1). Reading the definitions alone produces a false negative. No documentary standard and no physical-presence rule.",
+      "telehealth": "Silent as verified. The only transmission language concerns delivery of the prescription itself to a pharmacist (s. 25-48-106(1)(l)(II)).",
+      "mentalHealth": "Not universal, and rewritten in 2024. The attending provider must refer where they 'OBSERVE SIGNS' that the individual may not be capable — moved from a subjective belief standard to an observational one (s. 25-48-106(1)(f)) — and either provider must refer where they have doubts as to mental capability, with prescribing barred until a licensed mental health provider confirms capability in writing (s. 25-48-108, repealed and reenacted in 2024). In practice it almost never fires: 2 mental-health confirmations against 510 prescriptions in 2024, and 10 across 2017-2024.",
       "selfAdminOnly": true,
-      "civilImmunity": "not verified",
-      "utilization": "not verified",
-      "notes": "26% of 300 surveyed Colorado physicians reported large ethical or religious barriers to participation. Those with conscience-based barriers were no less likely to discuss or refer, but far less likely to participate directly (consultant role 5% vs 31%; attendance 0% vs 22%).",
-      "sources": []
+      "civilImmunity": "YES, expressly — civil, criminal and licensure for good-faith action, including presence at self-administration (s. 25-48-116(1)). A request or provision in good faith does not constitute neglect or elder abuse and provides no basis for appointing a guardian or conservator (s. 25-48-116(3)) — a protection New Mexico dropped before enactment. NOTE the carve-out reaches ORDINARY negligence, recklessness and intentional misconduct (s. 25-48-116(4)), broader exposure than New Jersey's, which is limited to GROSS negligence.",
+      "utilization": "2024 (CDPHE, eighth annual report, data as of 10 March 2025): 510 prescriptions written (+28% on 398 in 2023), 313 patients dispensed, 429 death certificates received, 94 UNIQUE PRESCRIBERS and 19 dispensing pharmacists. Eight-year total 1,995 prescriptions and 288 unique prescribers. Median age 74. Cancers 295 (57.8%). Decedents 93.5% White non-Hispanic; 86.7% under hospice care; 83% died at a residence. Median interval from prescription to death 15 days. DDMAPh accounted for 249 (79.6%), up sharply from DDMA. CDPHE cautions that the 429 death certificates are NOT a count of deaths from ingestion — Colorado publishes no such count, and CDPHE has no authority to follow up with providers or families.",
+      "notes": "Two oral requests plus one written. Two witnesses, at least ONE disinterested — the second may be an estate beneficiary. Colorado is the only one of these jurisdictions whose relative-disqualification expressly includes CIVIL UNION, and SB 24-068 added the CONSULTING provider and the individual's power of attorney to the absolute disqualification list (s. 25-48-104(2)(c)). 'Self-administer' was redefined in 2024 as an affirmative, conscious, VOLUNTARY act to ingest, with a new express carve-out: it 'DOES NOT INCLUDE ADMINISTRATION BY PARENTERAL INJECTION OR INFUSION' (s. 25-48-102(15)). Death certificate lists the underlying terminal illness and the death does not constitute grounds for post-mortem inquiry (s. 25-48-109) — the opposite of DC, which mandates OCME review of every case. SB 24-068 added a duty to inform the individual of unwillingness to participate, a yearly written notice duty for facilities, and a bar on facilities prohibiting a provider from giving the patient information about their own health status. A facility may prohibit prescribing only for a patient 'who intends to use the medication on the facility's premises' — keyed to the site of INGESTION rather than the site of practice, the narrowest such limit found — but Colorado has no express off-site savings clause. Reporting to CDPHE within 30 days of prescribing and 10 calendar days of dispensing (6 CCR 1009-4). No registration requirement.",
+      "sources": [
+        "https://content.leg.colorado.gov/sites/default/files/2024a_068_signed.pdf",
+        "https://cdphe.colorado.gov/center-for-health-and-environmental-data/registries-and-vital-statistics/medical-aid-in-dying"
+      ]
     },
     {
-      "jurisdiction": "District of Columbia", "abbr": "DC", "authorized": 2016, "effective": "2017-02-18",
-      "statute": "Death with Dignity Act", "citation": "D.C. Code 7-661",
+      "jurisdiction": "District of Columbia",
+      "abbr": "DC",
+      "authorized": 2016,
+      "effective": "2017-02-18",
+      "statute": "Death with Dignity Act of 2016 (D.C. Law 21-182)",
+      "citation": "D.C. Code Title 7, ch. 6B, ss. 7-661.01 to 7-661.16",
       "mechanism": "statute",
-      "prescribers": "Physicians only",
+      "prescribers": "Physicians only (MD/DO) — AND WITH A UNIQUE ANTI-SPECIALIZATION PROVISO: the attending physician's practice 'shall not be primarily or solely composed of patients requesting a covered medication' (s. 7-661.01(1)). This forecloses the dedicated-practice model that carries volume in Oregon and Colorado, and is a structural cause of DC's near-zero participation.",
       "prognosis": "6 months",
-      "waitingPeriod": "not verified",
-      "residency": "Required",
-      "telehealth": "not verified",
-      "mentalHealth": "Referral only if capacity is in question",
+      "waitingPeriod": "15 days between the two oral requests, and the written request must be submitted before the second oral request AND at least 48 hours before medication may be prescribed OR DISPENSED (s. 7-661.02(a)). DC is the only one of these jurisdictions where the 48-hour clock independently gates dispensing. NO WAIVER.",
+      "residency": "Required, built into the definition of 'patient' (s. 7-661.01(13)) and determined by the attending physician (s. 7-661.03(a)(1)(D)). NO STATUTORY DOCUMENTARY STANDARD — DC Health publishes a 16-item non-exclusive list as guidance, and states that it is ultimately the physician's determination.",
+      "telehealth": "Silent in statute. The Act permits electronic transmission of the prescription to the pharmacist (s. 7-661.05(b)(2)(B)) but says nothing about remote evaluation.",
+      "mentalHealth": "BROADER THAN CAPACITY DOUBT, and a hard gate. Referral fires where either physician believes the patient 'may be suffering from a psychiatric or psychological disorder or depression causing impaired judgment' — not merely incapacity — and no medication may be prescribed until the counselor determines otherwise (s. 7-661.04). Only a DISTRICT-LICENSED psychiatrist or psychologist qualifies (s. 7-661.01(4)); clinical social workers are excluded. A second, separate supply constraint.",
       "selfAdminOnly": true,
-      "civilImmunity": "not verified",
-      "utilization": "Historically very low, attributed to provider registration burden",
-      "notes": "Survived congressional repeal attempts. Congress retains review authority over DC legislation.",
-      "sources": []
+      "civilImmunity": "YES, expressly — civil, criminal and licensure (s. 7-661.11(a)), covering good-faith participation, refusal to participate, and presence when the patient takes the medication. Note DC has NO gross-negligence or recklessness carve-out; the limiting devices are the good-faith predicate and s. 7-661.11(b), which provides that nothing lowers the applicable standard of care.",
+      "utilization": "Reporting year 2024 (19 Feb 2023 - 18 Feb 2024; DC Health): 11 prescriptions written, 9 deaths from ingesting, and TWO prescribing physicians. All 9 decedents were White; 6 male, 3 female; ages 48 to 95. Cancer x4, ALS x4, advanced lung disease x1. THE FLATNESS IS THE STORY: 11 prescriptions and 2 prescribers in reporting year 2022; 11 prescriptions and 2 prescribers in 2024; 2 registered prescribers as far back as 2018, out of roughly 11,000 District-licensed physicians. NOTE the February-to-February reporting window — DC data is not directly comparable to calendar-year states.",
+      "notes": "Two oral requests plus one written, the written sandwiched between them. Two witnesses, at least ONE disinterested — DC Health's own FAQ confirms an estate beneficiary may serve as the other. A long-term care resident needs an additional facility-designated witness. THE REGISTRATION BURDEN IS NOT STATUTORY: Chapter 6B contains no physician or pharmacy registration provision, and the only statutory registration reference is the federal DEA certificate, required solely of physicians who dispense directly. Enrollment in DC Health's electronic Death with Dignity Portal via a Physician Attestation form is an administrative construct. Death certificate lists the underlying condition, ICD-coded, with no reference to the medication (s. 7-661.05(h)) — and UNIQUELY, the Office of the Chief Medical Examiner must review every case and may investigate (s. 7-661.05(i)). 'Self-administer' is NEVER DEFINED; the requirement is inferential from 'ingests'/'takes' plus the euthanasia prohibition. s. 7-661.10(e) EXPRESSLY protects participation outside the course and scope of employment and permits a patient to contract directly with physicians to act outside it — the clearest such savings clause in the country. Data is FOIA-exempt.",
+      "sources": [
+        "https://code.dccouncil.gov/us/dc/council/code/titles/7/chapters/6B",
+        "https://dchealth.dc.gov/service/death-dignity-act-2016"
+      ]
     },
     {
-      "jurisdiction": "Hawaii", "abbr": "HI", "authorized": 2018, "effective": "2019-01-01",
-      "statute": "Our Care, Our Choice Act", "citation": "HRS 327L",
+      "jurisdiction": "Hawaii",
+      "abbr": "HI",
+      "authorized": 2018,
+      "effective": "2019-01-01",
+      "statute": "Our Care, Our Choice Act",
+      "citation": "HRS 327L",
       "mechanism": "statute",
       "prescribers": "Physicians and APRNs (APRNs added June 2023)",
       "prognosis": "6 months",
@@ -188,43 +245,63 @@
       "civilImmunity": "not verified",
       "utilization": "not verified",
       "notes": "With New York, one of only two US jurisdictions requiring a mental health evaluation of every patient rather than only where capacity is questioned.",
-      "sources": ["https://health.hawaii.gov/opppd/health-care-provider-resources/"]
+      "sources": [
+        "https://health.hawaii.gov/opppd/health-care-provider-resources/"
+      ]
     },
     {
-      "jurisdiction": "New Jersey", "abbr": "NJ", "authorized": 2019, "effective": "2019-08-01",
-      "statute": "Medical Aid in Dying for the Terminally Ill Act", "citation": "N.J.S.A. 26:16",
+      "jurisdiction": "New Jersey",
+      "abbr": "NJ",
+      "authorized": 2019,
+      "effective": "2019-08-01",
+      "statute": "Medical Aid in Dying for the Terminally Ill Act",
+      "citation": "N.J.S.A. 26:16-1 to -20 (L. 2019, c. 59)",
       "mechanism": "statute",
-      "prescribers": "Physicians only - verify",
+      "prescribers": "Physicians only (MD/DO licensed under Title 45). No APRN or PA authority.",
       "prognosis": "6 months",
-      "waitingPeriod": "not verified",
-      "residency": "Required",
-      "telehealth": "not verified",
-      "mentalHealth": "Referral only if capacity is in question",
+      "waitingPeriod": "THE LONGEST UNWAIVABLE TIMELINE IN THE COUNTRY. 15 days between the two oral requests; 15 days from the initial oral request to the writing of the prescription; and 48 hours from the physician's RECEIPT of the written request to the writing of the prescription (C.26:16-10(a)). NO WAIVER OF ANY KIND — bills to create one (S710, A1880, S3588) were introduced but not enacted as of August 2026.",
+      "residency": "Required, with an enumerated documentary standard (C.26:16-11): a New Jersey driver's licence or non-driver ID, voter registration, a resident gross income tax return for the most recent year, or another government record the physician reasonably believes demonstrates current residency. No physical-presence rule.",
+      "telehealth": "Title 26 is silent — but the position CHANGED on 8 July 2026 and is easy to miss. A4852 amended the telemedicine statute C.45:1-62(e)(3) to exempt patients 'undergoing evaluation, consultation, or treatment related to P.L.2019, c.59' from the Schedule II in-person examination requirement. This became necessary because Executive Order 415 ended the COVID-era telemedicine waivers effective 16 February 2026. A tracker watching only Title 26 would record this wrongly.",
+      "mentalHealth": "Referral only where either physician's medical opinion is that the patient may not be capable; no prescription may issue until the mental health professional confirms capability in writing (C.26:16-8). New Jersey is the ONLY one of these jurisdictions that admits a licensed CLINICAL SOCIAL WORKER as well as a psychiatrist or psychologist.",
       "selfAdminOnly": true,
-      "civilImmunity": "not verified",
-      "utilization": "not verified",
-      "notes": "Survived immediate legal challenge after enactment.",
-      "sources": []
+      "civilImmunity": "YES, expressly — civil, criminal AND licensure (C.26:16-17(a)(1)), covering participation, presence at self-administration, and refusal to participate. Substantial good-faith compliance is deemed compliance. Carved out for gross negligence, recklessness or willful misconduct (C.26:16-17(b)), and civil damages for negligence or intentional misconduct are preserved (C.26:16-18(d)).",
+      "utilization": "2024 (Office of the Chief State Medical Examiner, NJ MAiD 2024 Data Summary): 128 cases filed, 122 fully participated, and only 11 UNIQUE ATTENDING PHYSICIANS statewide. Six died without using the medication. Mean age 72, median 75, range 19-100. White 111 (91%). Malignancy 84 (69%), neurodegenerative 24 (19%). Home death 108 (89%). Trend: 12 (2019 partial) - 33 - 50 - 91 - 101 - 122.",
+      "notes": "Two oral requests plus one written; the written request may be submitted at the time of the first oral request or any time after. Two witnesses, at least ONE of whom must be disinterested — the second may be an estate beneficiary. Only the attending physician is absolutely disqualified (C.26:16-5). NO DEATH-CERTIFICATE PROVISION AT ALL — the Act deems the act not suicide (C.26:16-17(a)(2) and N.J.S. 2C:11-6) but is silent on cause-of-death listing. Medication may NOT be dispensed by mail or courier (C.26:16-6(b)). Non-participating providers must transfer records on request. Facility policy authority is textually confined to premises owned or under the facility's direct control (C.26:2H-5.33(b)); there is no express off-site savings clause, so whether an employer may reach off-site conduct is unresolved. Note that 'participate' is defined to EXCLUDE diagnosis/prognosis disclosure, providing information on request, and referral — those cannot be suppressed. Reporting within 30 days of dispensing and 30 days of death. No registration requirement.",
+      "sources": [
+        "https://pub.njleg.state.nj.us/Bills/2018/PL19/59_.PDF",
+        "https://www.ocsme.nj.gov/pdfs/annual_reports/NJMAiD-2024AnnualReport.pdf"
+      ]
     },
     {
-      "jurisdiction": "Maine", "abbr": "ME", "authorized": 2019, "effective": "2019-09-19",
-      "statute": "Death with Dignity Act", "citation": "22 M.R.S. ch. 418-A",
+      "jurisdiction": "Maine",
+      "abbr": "ME",
+      "authorized": 2019,
+      "effective": "2019-09-19",
+      "statute": "Maine Death with Dignity Act",
+      "citation": "22 M.R.S. ch. 418, s. 2140",
       "mechanism": "statute",
-      "prescribers": "Physicians only - verify",
+      "prescribers": "Physicians only (doctor of medicine or osteopathy licensed in Maine, s. 2140(1)(J)). Physician assistants and APRNs may NOT prescribe.",
       "prognosis": "6 months",
-      "waitingPeriod": "not verified",
-      "residency": "Required",
-      "telehealth": "not verified",
-      "mentalHealth": "Referral only if capacity is in question",
+      "waitingPeriod": "Nominally 17 days: two oral requests at least 15 days apart, the written request signed no earlier than 15 days after the initial oral request, and at least 48 hours between signing the written request and the writing of the prescription (s. 2140(11)). WAIVABLE since PL 2025 c. 375 (effective 24 September 2025): the attending physician may waive a portion where it is in the patient's best interests given their condition, subject to a FLOOR of 7 days in total, documented under s. 2140(14)(H).",
+      "residency": "Required (s. 2140(15)). Residence is the fixed and principal home to which the person intends to return; eleven non-exclusive factors are listed. No physical-presence requirement for evaluation or ingestion.",
+      "telehealth": "Silent. Section 2140 contains no occurrence of telehealth, telemedicine, or remote.",
+      "mentalHealth": "Not mandatory. Referral for counseling only if either physician believes the patient may be suffering from a psychiatric or psychological disorder or depression causing impaired judgment; no prescription may issue until the counselor determines otherwise (s. 2140(8)).",
       "selfAdminOnly": true,
-      "civilImmunity": "not verified",
-      "utilization": "not verified",
-      "notes": "Clause-level verification outstanding.",
-      "sources": []
+      "civilImmunity": "NO — AND NEITHER CRIMINAL NOR LICENSURE IMMUNITY. Section 2140 contains no immunity provision at all; the word does not appear. Protection is assembled from three weaker pieces: an AFFIRMATIVE DEFENSE in the criminal code (17-A M.R.S. ss. 152-A(3), 201(6), 204(3)), which a defendant must plead and carry at trial; a narrow rule that participation may not be the SOLE basis for a licensing complaint (s. 2140(22)(F)); and the not-suicide characterization at s. 2140(20). On this field Maine is weaker than New Mexico, which omits only civil immunity.",
+      "utilization": "CY2024 (Maine DHHS/Maine CDC annual report): 66 patients met all requirements, down from 80 in CY2023 and up from 61 in CY2022. 61 patients died; 48 died by patient choice and 13 from the underlying illness; 5 were confirmed alive at the time of the report. Patients resided in 14 of 16 counties. Ages 53 to 101. Cancer in 39 of the deaths (64%), ALS in 8. Mean interval from prescription written to death: 26 days. Prescriber count not published.",
+      "notes": "Two oral requests plus one written request, at least two witnesses, only ONE of whom must be disinterested — an estate beneficiary is disqualified as that witness but may serve as the second. If the patient is in a long-term care facility, one witness must be a facility-designated individual (s. 2140(5)(E)). UNIQUE COERCION SCREEN: the attending physician must discuss coercion and undue influence with the patient OUTSIDE THE PRESENCE OF ANY OTHER PERSON except an interpreter (s. 2140(6)(E)) — no other US statute requires this. The death certificate is not addressed. Non-participating providers must transfer records on request but owe no duty to refer. Section 2140(22)(D) bars an employer from prohibiting participation off its premises or outside the scope of employment, and s. 2140(22)(B) makes advance written notice a precondition to enforcing any on-premises prohibition. Reporting within 30 days of writing/dispensing and within 30 days of death; DHHS must submit an annual report to the Legislature by 1 March.",
+      "sources": [
+        "https://legislature.maine.gov/statutes/22/title22sec2140.html",
+        "https://legislature.maine.gov/doc/10928"
+      ]
     },
     {
-      "jurisdiction": "New Mexico", "abbr": "NM", "authorized": 2021, "effective": "2021-06-18",
-      "statute": "Elizabeth Whitefield End-of-Life Options Act (HB 47)", "citation": "NMSA 1978, 24-7C-1 to 24-7C-8",
+      "jurisdiction": "New Mexico",
+      "abbr": "NM",
+      "authorized": 2021,
+      "effective": "2021-06-18",
+      "statute": "Elizabeth Whitefield End-of-Life Options Act (HB 47)",
+      "citation": "NMSA 1978, 24-7C-1 to 24-7C-8",
       "mechanism": "statute",
       "prescribers": "MD, DO, Advanced Practice Nurse, or Physician Assistant may prescribe - BUT 24-7C-3(F) requires at least one MD or DO to confirm capacity, terminal illness and ability to self-administer in every case, not waivable by hospice enrollment",
       "prognosis": "6 months",
@@ -236,11 +313,19 @@
       "civilImmunity": "NO. 24-7C-7(A) covers criminal liability, licensing sanctions and professional discipline only. The words 'civil liability' appear nowhere in Article 7C - they were in the introduced bill and were dropped before enactment.",
       "utilization": "137 (2022), 213 (2023), 203 (2024), 170 (2025); 723 cumulative. 26 prescribing providers statewide in 2025, with no provider-type breakdown published. 92.4% hospice-enrolled at ingestion. Median age 78. Recipients 83.5% White, 13.5% Hispanic, 2.4% Asian/Pacific Islander, 0.6% American Indian/Alaska Native, 0% Black - in a state roughly 50% Hispanic and 11% Native American.",
       "notes": "Most permissive US statute on prescriber type but with a mandatory physician attestation in every case. Uniquely, enrollment in a Medicare-certified hospice WAIVES the consulting-provider requirement entirely (24-7C-3(G)(1)) - with 92.4% hospice enrollment this makes the consulting step inapplicable in most cases. Single statutory request form, no two-oral-request sequence. No penalty provisions anywhere in the Act. Witness rules are caps not bans (one relative and one facility employee may each witness) and there is NO estate-beneficiary disqualification. AMENDED by SB 471 (2023), which immunised refusal to inform or refer while leaving the duty to inform in 24-7C-7(C) unrepealed - an unresolved contradiction. 24-7C-7(D)-(F) expressly bar an employer from forbidding off-premises participation and permit patients to contract directly with a clinician outside their employment.",
-      "sources": ["https://www.nmlegis.gov/Sessions/21%20Regular/final/HB0047.pdf", "https://www.nmhealth.org/data/view/report/3206/", "https://www.nmhealth.org/publication/view/form/8506/"]
+      "sources": [
+        "https://www.nmlegis.gov/Sessions/21%20Regular/final/HB0047.pdf",
+        "https://www.nmhealth.org/data/view/report/3206/",
+        "https://www.nmhealth.org/publication/view/form/8506/"
+      ]
     },
     {
-      "jurisdiction": "Delaware", "abbr": "DE", "authorized": 2025, "effective": "2026-01-01",
-      "statute": "Ron Silverio/Heather Block End of Life Options Act (HB 140)", "citation": "16 Del. C. ch. 25B",
+      "jurisdiction": "Delaware",
+      "abbr": "DE",
+      "authorized": 2025,
+      "effective": "2026-01-01",
+      "statute": "Ron Silverio/Heather Block End of Life Options Act (HB 140)",
+      "citation": "16 Del. C. ch. 25B",
       "mechanism": "statute",
       "prescribers": "Physicians and APRNs (APRNs may serve as attending or consulting)",
       "prognosis": "6 months",
@@ -252,11 +337,17 @@
       "civilImmunity": "not verified",
       "utilization": "Operational since 1 January 2026. No data published yet.",
       "notes": "Signed 20 May 2025. A federal judge denied a request to block the 1 January 2026 implementation. Forms due within 30 calendar days of prescribing.",
-      "sources": ["https://dhss.delaware.gov/dph/end-of-life-options/"]
+      "sources": [
+        "https://dhss.delaware.gov/dph/end-of-life-options/"
+      ]
     },
     {
-      "jurisdiction": "New York", "abbr": "NY", "authorized": 2026, "effective": "2026-08-05",
-      "statute": "Medical Aid in Dying Act", "citation": "N.Y. Public Health Law art. 28-F",
+      "jurisdiction": "New York",
+      "abbr": "NY",
+      "authorized": 2026,
+      "effective": "2026-08-05",
+      "statute": "Medical Aid in Dying Act",
+      "citation": "N.Y. Public Health Law art. 28-F",
       "mechanism": "statute",
       "prescribers": "Physicians only. PAs and NPs may NOT serve as attending.",
       "prognosis": "6 months",
@@ -268,11 +359,19 @@
       "civilImmunity": "Protection for acting OR refusing to act in good faith; a non-participating physician must, on request, arrange transfer of the patient and records",
       "utilization": "Effective 5 August 2026. No data yet.",
       "notes": "Among the MOST restrictive of the new laws, not the most permissive - a common misreading. The oral request must be audio/video recorded and retained permanently in the record. Written request on form DOH-5847. Death certificate must list the underlying terminal illness; recording 'suicide' or 'acute opioid intoxication' is an actionable PHL violation carrying fines and OPMC referral. Signed 6 February 2026 after a 17 December 2025 chapter-amendment agreement.",
-      "sources": ["https://www.health.ny.gov/health_care/medical_aid_in_dying/faqs.htm", "https://www.health.ny.gov/health_care/medical_aid_in_dying/docs/physician_guidance.pdf", "https://www.health.ny.gov/forms/doh-5847.pdf"]
+      "sources": [
+        "https://www.health.ny.gov/health_care/medical_aid_in_dying/faqs.htm",
+        "https://www.health.ny.gov/health_care/medical_aid_in_dying/docs/physician_guidance.pdf",
+        "https://www.health.ny.gov/forms/doh-5847.pdf"
+      ]
     },
     {
-      "jurisdiction": "Illinois", "abbr": "IL", "authorized": 2025, "effective": "2026-09-12",
-      "statute": "End-of-Life Options for Terminally Ill Patients Act (SB 1950, 'Deb's Law')", "citation": "410 ILCS 22",
+      "jurisdiction": "Illinois",
+      "abbr": "IL",
+      "authorized": 2025,
+      "effective": "2026-09-12",
+      "statute": "End-of-Life Options for Terminally Ill Patients Act (SB 1950, 'Deb's Law')",
+      "citation": "410 ILCS 22",
       "mechanism": "statute",
       "prescribers": "Physicians only - BOTH the attending and the consulting practitioner must be physicians licensed to practice medicine in all its branches",
       "prognosis": "6 months",
@@ -284,83 +383,643 @@
       "civilImmunity": "not verified",
       "utilization": "Not yet operational.",
       "notes": "Signed 12 December 2025 with a deliberately long runway to give providers and IDPH lead time. First Midwest state. IDPH must create and post an Attending Physician Checklist Form and Follow-Up Form within 45 days after the effective date - roughly late October 2026. Written request requires two witnesses, at least one unrelated with no estate interest.",
-      "sources": ["https://www.ilga.gov/ftp/legislation/104/SB/10400SB1950enr.htm"]
+      "sources": [
+        "https://www.ilga.gov/ftp/legislation/104/SB/10400SB1950enr.htm"
+      ]
     }
   ],
-
   "usPipeline2026": [
-    { "state": "Massachusetts", "abbr": "MA", "bills": "H2505 / S1486 (End of Life Options Act)", "status": "Most advanced non-authorizing state. S1486 cleared Joint Public Health and Joint Health Care Financing, reached Senate Ways & Means. Session ended 31 July 2026 - final disposition requires checking.", "tier": "advanced" },
-    { "state": "Pennsylvania", "abbr": "PA", "bills": "HB 1109 / SB 570 (Compassionate Aid in Dying Acts)", "status": "Carried over into 2026; both in Judiciary. Two-year session ends 30 November 2026.", "tier": "advanced" },
-    { "state": "Virginia", "abbr": "VA", "bills": "HB 886 / SB 359", "status": "SB 359 advanced out of the Senate Education & Health Health Subcommittee 3-2 on 4 February 2026. First meaningful Southern movement.", "tier": "advanced" },
-    { "state": "North Carolina", "abbr": "NC", "bills": "H 410", "status": "Carried over. Directs the NC Institute of Medicine to STUDY medical aid in dying - the classic two-to-four-year precursor to a substantive bill.", "tier": "study" },
-    { "state": "Missouri", "abbr": "MO", "bills": "Various", "status": "Bill introduced in the 2026 session.", "tier": "introduced" },
-    { "state": "Wisconsin", "abbr": "WI", "bills": "Various", "status": "Bill introduced in the 2026 session.", "tier": "introduced" },
-    { "state": "Georgia", "abbr": "GA", "bills": "Various", "status": "Bill introduced in the 2026 session.", "tier": "introduced" },
-    { "state": "Maryland", "abbr": "MD", "bills": "Recurring", "status": "Historically the closest of the perennial states - the 2019 bill died on a tied Senate floor vote. 2026 status not verified.", "tier": "recurring" },
-    { "state": "Minnesota", "abbr": "MN", "bills": "Recurring", "status": "2026 status not verified.", "tier": "recurring" },
-    { "state": "Nevada", "abbr": "NV", "bills": "Recurring", "status": "2026 status not verified.", "tier": "recurring" },
-    { "state": "Rhode Island", "abbr": "RI", "bills": "Recurring", "status": "2026 status not verified.", "tier": "recurring" },
-    { "state": "Connecticut", "abbr": "CT", "bills": "Recurring", "status": "2026 status not verified.", "tier": "recurring" },
-    { "state": "New Hampshire", "abbr": "NH", "bills": "Recurring", "status": "2026 status not verified.", "tier": "recurring" },
-    { "state": "Arizona", "abbr": "AZ", "bills": "Recurring", "status": "2026 status not verified.", "tier": "recurring" },
-    { "state": "Michigan", "abbr": "MI", "bills": "Recurring", "status": "2026 status not verified.", "tier": "recurring" },
-    { "state": "Indiana", "abbr": "IN", "bills": "Recurring", "status": "2026 status not verified.", "tier": "recurring" },
-    { "state": "Iowa", "abbr": "IA", "bills": "Recurring", "status": "2026 status not verified.", "tier": "recurring" },
-    { "state": "Florida", "abbr": "FL", "bills": "Recurring", "status": "2026 status not verified.", "tier": "recurring" }
+    {
+      "state": "Massachusetts",
+      "abbr": "MA",
+      "bills": "H2505 / S1486 (End of Life Options Act)",
+      "status": "Most advanced non-authorizing state. S1486 cleared Joint Public Health and Joint Health Care Financing, reached Senate Ways & Means. Session ended 31 July 2026 - final disposition requires checking.",
+      "tier": "advanced"
+    },
+    {
+      "state": "Pennsylvania",
+      "abbr": "PA",
+      "bills": "HB 1109 / SB 570 (Compassionate Aid in Dying Acts)",
+      "status": "Carried over into 2026; both in Judiciary. Two-year session ends 30 November 2026.",
+      "tier": "advanced"
+    },
+    {
+      "state": "Virginia",
+      "abbr": "VA",
+      "bills": "HB 886 / SB 359",
+      "status": "SB 359 advanced out of the Senate Education & Health Health Subcommittee 3-2 on 4 February 2026. First meaningful Southern movement.",
+      "tier": "advanced"
+    },
+    {
+      "state": "North Carolina",
+      "abbr": "NC",
+      "bills": "H 410",
+      "status": "Carried over. Directs the NC Institute of Medicine to STUDY medical aid in dying - the classic two-to-four-year precursor to a substantive bill.",
+      "tier": "study"
+    },
+    {
+      "state": "Missouri",
+      "abbr": "MO",
+      "bills": "Various",
+      "status": "Bill introduced in the 2026 session.",
+      "tier": "introduced"
+    },
+    {
+      "state": "Wisconsin",
+      "abbr": "WI",
+      "bills": "Various",
+      "status": "Bill introduced in the 2026 session.",
+      "tier": "introduced"
+    },
+    {
+      "state": "Georgia",
+      "abbr": "GA",
+      "bills": "Various",
+      "status": "Bill introduced in the 2026 session.",
+      "tier": "introduced"
+    },
+    {
+      "state": "Maryland",
+      "abbr": "MD",
+      "bills": "Recurring",
+      "status": "Historically the closest of the perennial states - the 2019 bill died on a tied Senate floor vote. 2026 status not verified.",
+      "tier": "recurring"
+    },
+    {
+      "state": "Minnesota",
+      "abbr": "MN",
+      "bills": "Recurring",
+      "status": "2026 status not verified.",
+      "tier": "recurring"
+    },
+    {
+      "state": "Nevada",
+      "abbr": "NV",
+      "bills": "Recurring",
+      "status": "2026 status not verified.",
+      "tier": "recurring"
+    },
+    {
+      "state": "Rhode Island",
+      "abbr": "RI",
+      "bills": "Recurring",
+      "status": "2026 status not verified.",
+      "tier": "recurring"
+    },
+    {
+      "state": "Connecticut",
+      "abbr": "CT",
+      "bills": "Recurring",
+      "status": "2026 status not verified.",
+      "tier": "recurring"
+    },
+    {
+      "state": "New Hampshire",
+      "abbr": "NH",
+      "bills": "Recurring",
+      "status": "2026 status not verified.",
+      "tier": "recurring"
+    },
+    {
+      "state": "Arizona",
+      "abbr": "AZ",
+      "bills": "Recurring",
+      "status": "2026 status not verified.",
+      "tier": "recurring"
+    },
+    {
+      "state": "Michigan",
+      "abbr": "MI",
+      "bills": "Recurring",
+      "status": "2026 status not verified.",
+      "tier": "recurring"
+    },
+    {
+      "state": "Indiana",
+      "abbr": "IN",
+      "bills": "Recurring",
+      "status": "2026 status not verified.",
+      "tier": "recurring"
+    },
+    {
+      "state": "Iowa",
+      "abbr": "IA",
+      "bills": "Recurring",
+      "status": "2026 status not verified.",
+      "tier": "recurring"
+    },
+    {
+      "state": "Florida",
+      "abbr": "FL",
+      "bills": "Recurring",
+      "status": "2026 status not verified.",
+      "tier": "recurring"
+    }
   ],
-
   "usProhibitionBasis": {
     "note": "Public compilations of state assisting-suicide law are frequently out of date and conflict with one another. This tiering is directionally correct for planning and is NOT a legal opinion. A state-by-state statutory verification by counsel is required before any operational or communications decision touching a non-authorizing state. Note that most AUTHORIZING states also retain an assisting-suicide statute and simply carve aid in dying out of it by declaring that a death under the act is not suicide.",
-    "statutory": ["AL", "AK", "AZ", "AR", "CT", "FL", "GA", "ID", "IN", "IA", "KS", "KY", "LA", "MN", "MS", "MO", "NE", "NH", "ND", "OK", "PA", "RI", "SD", "TN", "TX", "VA", "WI"],
-    "commonLaw": ["MD", "MA", "MI", "NV", "SC", "WV"],
-    "unresolved": ["WY", "NC", "OH", "UT"],
+    "statutory": [
+      "AL",
+      "AK",
+      "AZ",
+      "AR",
+      "CT",
+      "FL",
+      "GA",
+      "ID",
+      "IN",
+      "IA",
+      "KS",
+      "KY",
+      "LA",
+      "MN",
+      "MS",
+      "MO",
+      "NE",
+      "NH",
+      "ND",
+      "OK",
+      "PA",
+      "RI",
+      "SD",
+      "TN",
+      "TX",
+      "VA",
+      "WI"
+    ],
+    "commonLaw": [
+      "MD",
+      "MA",
+      "MI",
+      "NV",
+      "SC",
+      "WV"
+    ],
+    "unresolved": [
+      "WY",
+      "NC",
+      "OH",
+      "UT"
+    ],
     "unresolvedNote": "Wyoming recognises no common-law crimes and has no assisting-suicide statute. North Carolina and Ohio have contested or judicially narrowed prohibitions. These are legal curiosities, not opportunities - the absence of a prohibition is not the presence of a regulatory framework, and no pharmacy, insurer or health system will operate into that ambiguity."
   },
-
   "international": [
-    { "jurisdiction": "Netherlands", "since": 2002, "modality": "Euthanasia + assisted suicide", "terminal": "Not required", "prognosis": "None", "mentalIllnessAlone": "Yes", "minors": "12+ under the Wtl; separate regulation for ages 1-12 since 1 Feb 2024", "advanceRequests": "Yes - Hoge Raad 21 April 2020 confirmed a written request may replace an oral one in advanced dementia", "waiting": "None", "oversight": "Retrospective - five regional review committees, every case", "funding": "Statutory basic insurance; patient pays nothing", "utilization": "10,341 notifications in 2025 = 5.97% of all deaths. 98.15% clinician-administered, 1.70% self-administered. Dementia 499; psychiatric 174 (down 20.5%); duo-euthanasia 60 couples. Seven 'did not meet due care' findings in 2025.", "commercial": "No express statutory ban; foreclosed structurally (only a physician meeting due-care criteria escapes the homicide statute) and financially (payment runs through statutory insurance).", "note": "One prosecution ever (2019, acquitted; confirmed by the Hoge Raad 2020). GP fee is insurer-negotiated, EUR 318-389 in 2026, plus a SCEN consultation at EUR 689.72. Expertisecentrum Euthanasie handles 14.1% of all cases: 5,000 requests in 2025, 1,477 granted (~30%); psychiatric waits can exceed three years." },
-    { "jurisdiction": "Belgium", "since": 2002, "modality": "Euthanasia (statute defines only euthanasia)", "terminal": "Not required for adults; REQUIRED for minors", "prognosis": "None for adults", "mentalIllnessAlone": "Yes - treated as non-terminal", "minors": "Any age with capacity of discernment (2014) - 7 cases in 11 years", "advanceRequests": "Yes but only where the patient is irreversibly unconscious - does not cover dementia. 0.6% of cases.", "waiting": "One month, but ONLY where death is not expected in the short term", "oversight": "Retrospective - one federal commission (CFCEE)", "funding": "No fee code existed for 23 years. Code 107251-107262 created 1 November 2025 at EUR 180.24, medicines excluded. Mandatory third-party payment; patient pays nothing.", "utilization": "4,486 registrations in 2025 = 4.0% of all deaths, up from 3.6%. Non-terminal cases rose from 7% (n=24) in 2003 to 21% (n=718) in 2023. Zero referrals to prosecutors in 2022-2025.", "commercial": "No express ban located.", "note": "The CFCEE has referred exactly one file to prosecutors in its entire history (Tine Nys, 2015; three doctors acquitted 2020). ECtHR found a procedural Article 2 violation in Mortier v Belgium (4 Oct 2022) because the performing physician co-chaired the reviewing commission - producing the 27 March 2024 reform. The CFCEE states it cannot assess what proportion of actual euthanasias are declared to it." },
-    { "jurisdiction": "Luxembourg", "since": 2009, "modality": "Euthanasia + assisted suicide (both named in statute)", "terminal": "Not required", "prognosis": "None", "mentalIllnessAlone": "Legally unresolved; zero cases ever", "minors": "EXCLUDED entirely, as are adults under tutelle or curatelle", "advanceRequests": "Registered centrally, but usable only where the patient is unconscious - 6,107 registered, 11 ever used", "waiting": "None fixed - 'several conversations spaced at reasonable intervals'", "oversight": "Retrospective - National Commission (CNCE), 9 members", "funding": "NO TARIFF EXISTS. The CNCE has formally requested one across three reports and been ignored.", "utilization": "34 in 2024; 226 cumulative 2009-2024; 0.6% of deaths (2023). 2025 figure not published until 2027.", "commercial": "No provision - and no commercial provision to prohibit.", "note": "Zero referrals and zero prosecutions ever. No SCEN or LEIF equivalent; the CNCE recommends creating one. In a country this small it is hard to find a genuinely impartial consultant." },
-    { "jurisdiction": "Switzerland", "since": "~1942", "modality": "Assisted suicide only (euthanasia is a crime under Art. 114)", "terminal": "Not required", "prognosis": "None", "mentalIllnessAlone": "Yes, with a detailed psychiatric opinion required", "minors": "Not addressed", "advanceRequests": "No", "waiting": "At least two consultations separated by two weeks (SAMS guideline, not law)", "oversight": "No national body. Cantonal narcotics reporting plus unnatural-death investigation at every case. A monitoring motion was adopted 11 September 2025 but not yet implemented.", "funding": "Outside the health system entirely. Non-profit associations funded by membership fees and per-case contributions.", "utilization": "1,729 assisted suicides among RESIDENTS in 2023 (Federal Statistical Office). An organisation-based tally including non-residents gives 2,087 - different denominators, never to be merged. EXIT Deutsche Schweiz: 1,421 accompaniments in 2025, 195,836 members. Dignitas: 280 in 2024, 4,196 cumulative since 1998.", "commercial": "NOT statutorily prohibited. Art. 115 criminalises assistance only where done from 'selfish motives'; profit qualifies. All major bodies are non-profit associations by charter. This is widely acknowledged as the weakest link in Swiss oversight.", "note": "THE ONLY ESTABLISHED CROSS-BORDER REGIME. No residency or nationality requirement in law - it is a gap, not a policy. Dignitas is functionally an export service: of 4,196 cumulative cases, Germany 1,459, UK 608, France 606, USA 264, Switzerland 261 (~6%). Fees: EXIT CHF 45/yr and free after three years' membership; Dignitas ~CHF 7,500 basic to CHF 11,000 all-in; Pegasos ~CHF 10,000 with a CHF 5,000 deposit. Zurich voters rejected a ban on assisted suicide by 85% and a ban on non-resident access by 78% in a 2011 referendum. The Ständerat rejected federal framework regulation on 11 September 2025 (22-16-8)." },
-    { "jurisdiction": "Austria", "since": 2022, "modality": "Assisted suicide only", "terminal": "Not required - incurable fatal illness OR severe permanent illness with unavoidable suffering", "prognosis": "None (6 months only for the shortened waiting period)", "mentalIllnessAlone": "No", "minors": "No - 18+", "advanceRequests": "No", "waiting": "12 WEEKS from first medical briefing; 2 weeks in the terminal phase", "oversight": "Sterbeverfügungsregister (Health Ministry); no review commission", "funding": "All costs private. Documentation via a patient advocate is free; a notary charges fees (tariff not published).", "utilization": "54 (2022), 98 (2023), 112 (2024); 264 cumulative. 719-772 declarations established, 588 preparations dispensed - roughly a third of declarations never result in a death.", "commercial": "EXPRESSLY PROHIBITED. StVfG s.12 bans advertising AND any economic advantage beyond documented expenses. Fines to EUR 30,000, or EUR 60,000 on repetition. The clearest statutory bar in the world.", "note": "THE FRICTION CASE. Same population as Switzerland (~9M), roughly a tenfold lower rate, driven almost entirely by procedure: 12-week wait, two physicians with one palliative-qualified, a notary or patient-advocate step, a national register gating pharmacy dispensing, and residents-only access." },
-    { "jurisdiction": "Germany", "since": 2020, "modality": "Assisted suicide only", "terminal": "Not required - the Constitutional Court forbade substantive eligibility criteria", "prognosis": "None", "mentalIllnessAlone": "Not restricted", "minors": "Not addressed", "advanceRequests": "Not addressed", "waiting": "None", "oversight": "NONE", "funding": "Private, via association membership and per-case fees", "utilization": "1,288 in 2025 across the three organisations that publish (a floor, not a total). 62% female. Leading grounds: multimorbidity 32% and Lebensmuedigkeit (weariness of life) 26%.", "commercial": "NOT prohibited - there is no rule at all. Note the common mistranslation: the struck-down s.217 banned 'geschaeftsmaessige' (recurrent, organised) assistance, NOT commercial assistance, which is why it caught physicians who feared the label for helping more than one patient.", "note": "The broadest judicial statement of a right to assisted death in Europe and the least supervised practice. Both replacement bills failed on 6 July 2023. Verein Sterbehilfe reports that in 2024, 220 members who had already received the green light chose to go on living." },
-    { "jurisdiction": "France", "since": 2026, "modality": "Self-administration by default; a physician OR A NURSE may administer where the patient cannot", "terminal": "Not as such - 'affection grave et incurable engageant le pronostic vital, en phase avancee ou terminale'", "prognosis": "NO NUMERIC WINDOW", "mentalIllnessAlone": "No - capacity to express free and informed will required throughout", "minors": "No - 18+", "advanceRequests": "No", "waiting": "15-day assessment window; 48-hour confirmation delay; decision valid three months", "oversight": "Retrospective - national commission de controle et d'evaluation, annual report to Government and Parliament", "funding": "Public (assurance maladie); patient cost not verified", "utilization": "Not in force. No cases yet.", "commercial": "not verified", "note": "Adopted 291-241 on 15 July 2026 after three Senate rejections and a failed commission mixte paritaire. Upheld by the Conseil constitutionnel on 14 August 2026 (Decision 2026-910 DC) with three interpretive reservations: private facilities may refuse where local need is otherwise met; the conscience clause extends to PHARMACISTS; and a legal protector's observations must be weighed for protected adults. TELEHEALTH IS PROHIBITED. Not exercisable until decrees issue and the Haute Autorite de Sante determines the substance - realistically January 2027. Nurse administration has no international precedent." },
-    { "jurisdiction": "Italy", "since": 2019, "modality": "Assisted suicide only (court-carved)", "terminal": "Not as such - but the patient MUST be dependent on life-sustaining treatment", "prognosis": "None", "mentalIllnessAlone": "No", "minors": "No", "advanceRequests": "No", "waiting": "No fixed period; 8-10 months in practice", "oversight": "Local health authority plus territorial ethics committee, case by case", "funding": "Through the national health service; what the SSN must actually supply remains unresolved", "utilization": "15 medically assisted deaths in total as at April 2026, seven years after the ruling, in a country of 59 million.", "commercial": "Impossible - anything outside the four conditions remains a crime under Art. 580 c.p.", "note": "THE GATEKEEPER CASE. A declared constitutional right plus a public gatekeeper plus no implementing statute produces near-zero access. Sentenza 242/2019 set four conditions; 135/2024 declined to relax the life-sustaining-treatment requirement; 204/2025 struck parts of Tuscany's regional law for trespassing on state competence. Parliament has been in default since 2019." },
-    { "jurisdiction": "Spain", "since": 2021, "modality": "Euthanasia + assisted suicide", "terminal": "Not required", "prognosis": "None", "mentalIllnessAlone": "not verified", "minors": "not verified", "advanceRequests": "not verified", "waiting": "not verified", "oversight": "PROSPECTIVE - regional Comisiones de Garantia y Evaluacion approve before provision", "funding": "Public - in the Cartera Comun de Servicios of the national health system", "utilization": "749 requests and 363 provisions across 2021-2022; in 2022, 236 of 288 provisions were clinician-administered and 11 self-administered. 184 applicants died during processing - a third of requesters.", "commercial": "Does not arise - it is a public health service.", "note": "Runs a named national information system, the SIE, which the Ministry itself describes as 'en desarrollo'. Only 528 of 576 declared 2022 requests were actually registered in it. Spain uniquely requires clinicians to register conscientious objection - an opt-out registry rather than opt-in." },
-    { "jurisdiction": "Portugal", "since": 2023, "modality": "Both (on paper)", "terminal": "not verified", "prognosis": "not verified", "mentalIllnessAlone": "not verified", "minors": "not verified", "advanceRequests": "not verified", "waiting": "not verified", "oversight": "CVA (Comissao de Verificacao e Avaliacao), once operative", "funding": "not verified", "utilization": "NONE - the law has never entered into force.", "commercial": "not verified", "note": "Lei 22/2023 passed 25 May 2023 with a 90-day regulation deadline. Over 400 days elapsed; the Constitutional Court then declared provisions unconstitutional in April 2025. The procedure takes effect only 30 days after the regulation is published. The delay is regulatory and constitutional, NOT technological. The statutory record is the Registo Clinico Especial (RCE)." },
-    { "jurisdiction": "Canada", "since": 2016, "modality": "Euthanasia + assisted suicide (clinician-administered in the overwhelming majority)", "terminal": "Not required - Track 1 (death reasonably foreseeable) and Track 2 (not foreseeable)", "prognosis": "None", "mentalIllnessAlone": "DEFERRED - status as of August 2026 not verified", "minors": "Under debate; not permitted", "advanceRequests": "Quebec operates a separate provincial regime; status not verified", "waiting": "10-day reflection period removed for reasonably foreseeable deaths; Track 2 has a 90-day assessment period", "oversight": "Retrospective; Ontario runs an enhanced committee for complex cases", "funding": "Publicly insured; clinicians bill provincial plans as independent contractors. Ontario uses codes A320, C320, K321.", "utilization": "16,499 MAID deaths in 2024 = 5.1% of all deaths, up 6.9%. Track 2: 732 deaths in 2024, up 17% year on year. Palliative care providers were involved in 74.4% of 2,241 Ontario cases studied.", "commercial": "Public payer; no commercial provision. No express anti-profit clause located.", "note": "THE CONCENTRATION CASE. In 2023, 4% of practitioners - 89 individuals nationally - delivered 64% of all cases, and most participating practitioners handle only one or two a year. Nurse practitioners may assess and administer in some provinces. Health Canada funded an accredited national curriculum (CAMAP, ~USD 3.3M+, built by Queen's University, accredited by the RCPSC/CFPC/CNA, 2,900+ trained)." },
-    { "jurisdiction": "Queensland (Australia)", "since": 2021, "modality": "Both - practitioner administration permitted where the coordinating practitioner advises self-administration is inappropriate", "terminal": "Required", "prognosis": "12 months UNIFORM - no neurodegenerative carve-out", "mentalIllnessAlone": "No (s.13)", "minors": "No - 18+", "advanceRequests": "No", "waiting": "9 days from first request; shortenable where death or loss of capacity is likely first", "oversight": "Purely retrospective - VAD Review Board reviews every completed request", "funding": "No VAD-specific fee schedule and no Medicare item. QVAD Access funded travel stipends in 12 patients' cases in 2024-25.", "utilization": "1,072 VAD deaths in 2024-25, approximately 3% of all Queensland deaths; 73% practitioner-administered. 2,110 cumulative since 1 January 2023. 612 people (36.4%) in the process died WITHOUT administering.", "commercial": "ss.82(1)(d), 83(d) bar financial benefit from the death, expressly saving 'reasonable fees for the provision of services'.", "note": "THE WORKFORCE CASE. Queensland permits REGISTERED NURSES with at least five years' practice to administer (s.83(a)(iii)). 218 of its 470 authorised practitioners - 46% - are registered nurses. Its institutional-access regime is the strongest anywhere: an objecting hospital or hospice can be compelled to permit administration on site where the person is a permanent resident or transfer would be unreasonable. Objectors owe a referral or care-navigator duty (s.84(2))." },
-    { "jurisdiction": "New South Wales (Australia)", "since": 2022, "modality": "Both - the patient chooses, with NO statutory gateway condition", "terminal": "Required", "prognosis": "6 months; 12 months for neurodegenerative conditions", "mentalIllnessAlone": "No (s.16(2)) - expressly names dementia", "minors": "No - 18+", "advanceRequests": "No", "waiting": "5 days from first request", "oversight": "HYBRID - prospective Board authorisation of the substance plus retrospective review", "funding": "No VAD-specific fee schedule and no Medicare item.", "utilization": "1,028 VAD deaths in 2024-25; 81.6% practitioner-administered. 1,426 cumulative since 28 November 2023. Share of all NSW deaths not published. Median first request to death: 20 days.", "commercial": "ss.18(e)(ii), 55(e)(ii) save 'reasonable fees'.", "note": "Nurse practitioners may administer; REGISTERED NURSES MAY NOT. 158 of 346 authorised practitioners (45.7%) supported zero patients in 2024-25, while 73 (21.1%) supported 21 or more each. The prospective gate is not a filter: 1,599 substance-authority applications, 1,599 approved, zero refused, median two days. NSW permits ANY health care worker to raise VAD subject to a lighter condition; Queensland restricts that to doctors and nurse practitioners. NSW imposes NO referral duty on conscientious objectors. Statutory review report due to be tabled by November 2026." },
-    { "jurisdiction": "Australia (other states)", "since": "2017-2023", "modality": "Varies by state", "terminal": "Required", "prognosis": "6-12 months depending on state and condition", "mentalIllnessAlone": "No", "minors": "No", "advanceRequests": "No", "waiting": "Varies", "oversight": "State review boards", "funding": "Western Australia publishes a fee schedule: first assessment AUD 478.50, consulting assessment AUD 287.10, final review AUD 191.40, administration decision and prescription AUD 287.10, practitioner administration AUD 765.60. Payment is triggered by form submission in VAD-IMS.", "utilization": "not verified for Victoria, WA, SA, Tasmania, ACT and NT", "commercial": "WA offences include inducement and advertising a Schedule 4 or 8 poison as a VAD substance.", "note": "GAP - Victoria, Western Australia, South Australia, Tasmania, ACT and NT require jurisdiction-level verification. Victoria is the most restrictive on administration modality (requires physical incapacity to self-administer) and uniquely requires a Secretary-issued permit. A FEDERAL constraint binds all states: Commonwealth Criminal Code carriage-service offences mean VAD consultations by phone or video risk capture, foreclosing telehealth for decisive steps. A fix was blocked in the House of Representatives on 11 August 2026, a suspension motion defeated 74-12." },
-    { "jurisdiction": "New Zealand", "since": 2021, "modality": "Euthanasia + assisted suicide", "terminal": "Required", "prognosis": "6 months", "mentalIllnessAlone": "No", "minors": "No", "advanceRequests": "No", "waiting": "not verified", "oversight": "PROSPECTIVE - registrar approval; SCENZ Group maintains the list of willing practitioners and prepares the Standard of Care", "funding": "Public, via Health New Zealand", "utilization": "not verified", "commercial": "not verified", "note": "Passed by referendum. Nurse practitioners can both assess eligibility and administer. UNIQUELY, New Zealand enforces its training mandate by CONDITIONING REIMBURSEMENT ON TRAINING COMPLETION - the cleanest enforcement mechanism identified anywhere." },
-    { "jurisdiction": "Uruguay", "since": 2025, "modality": "Euthanasia", "terminal": "not verified", "prognosis": "not verified", "mentalIllnessAlone": "not verified", "minors": "not verified", "advanceRequests": "not verified", "waiting": "not verified", "oversight": "not verified", "funding": "not verified", "utilization": "not verified", "commercial": "not verified", "note": "Ley de Muerte Digna. Approved by the House 12-13 August 2025 (64 of 93) and by the Senate 20-11 on 15 October 2025. FIRST IN LATIN AMERICA BY LEGISLATION." },
-    { "jurisdiction": "Colombia", "since": 1997, "modality": "Euthanasia (court, 1997; regulated 2015); assisted suicide added 2022", "terminal": "not verified", "prognosis": "not verified", "mentalIllnessAlone": "not verified", "minors": "Permitted in defined circumstances - not verified", "advanceRequests": "not verified", "waiting": "not verified", "oversight": "not verified", "funding": "not verified", "utilization": "not verified", "commercial": "not verified", "note": "GAP - requires verification. The oldest Latin American regime, established judicially." },
-    { "jurisdiction": "Ecuador", "since": 2024, "modality": "Euthanasia", "terminal": "not verified", "prognosis": "not verified", "mentalIllnessAlone": "not verified", "minors": "not verified", "advanceRequests": "not verified", "waiting": "not verified", "oversight": "not verified", "funding": "not verified", "utilization": "not verified", "commercial": "not verified", "note": "GAP - Constitutional Court decision 67-23-IN/24. Implementation status requires verification." },
-    { "jurisdiction": "United Kingdom (England & Wales)", "since": null, "modality": "Self-administration ONLY if enacted - expressly prohibits clinician administration", "terminal": "Required", "prognosis": "6 months", "mentalIllnessAlone": "No - not terminally ill by reason only of mental disorder or disability, nor solely by voluntarily stopping eating and drinking", "minors": "No - 18+", "advanceRequests": "No", "waiting": "14-day reflection after the panel decision, reduced to 48 hours where death is imminent", "oversight": "PROSPECTIVE - a Voluntary Assisted Dying Commissioner plus Assisted Dying Review Panels (a retired judge or senior lawyer, a consultant psychiatrist, and a registered social worker) issuing certificates of eligibility. This replaced the original High Court approval requirement.", "funding": "NHS assumed; not verified", "utilization": "Not law.", "commercial": "The bill would PROHIBIT publication designed to promote a voluntary assisted dying service.", "note": "NOT LAW. Passed the Commons twice (330-275 in Nov 2024; 314-291 in June 2025) but died in the Lords after 14 days of committee and 1,200+ amendments, falling at prorogation on 29 April 2026 - for want of time, not on a vote. Reintroduced by Lauren Edwards MP on 17 June 2026; SECOND READING 11 SEPTEMBER 2026. The Parliament Acts route exists but requires a textually identical bill, turns on an unresolved Speaker's determination about Lords amendments never formally communicated, and above all needs Government time a backbench sponsor cannot command. Never once used for a private member's bill. Earliest operation 2029, with a four-year commencement backstop in England and a SEPARATE Senedd Cymru timetable for Wales." },
-    { "jurisdiction": "Scotland", "since": null, "modality": "n/a", "terminal": "n/a", "prognosis": "n/a", "mentalIllnessAlone": "n/a", "minors": "n/a", "advanceRequests": "n/a", "waiting": "n/a", "oversight": "n/a", "funding": "n/a", "utilization": "n/a", "commercial": "n/a", "note": "BILL FAILED. The Assisted Dying for Terminally Ill Adults (Scotland) Bill was defeated at Stage 3 on 17 March 2026: 57 for, 69 against, 1 abstention. Out for this parliamentary session." },
-    { "jurisdiction": "Jersey", "since": 2026, "modality": "Patient chooses - self-administration OR administration by a doctor or registered nurse", "terminal": "Required (Route 1 only; the non-terminal Route 2 was rejected)", "prognosis": "6 months; 12 months for neurodegenerative conditions", "mentalIllnessAlone": "No", "minors": "No - 18+", "advanceRequests": "not verified", "waiting": "14 days from first request, waivable only where prognosis is 14 days or less", "oversight": "DUAL - the Jersey Care Commission regulates the SERVICE with annual and unannounced inspections and power to suspend, PLUS a Review Panel conducting mandatory post-death case review", "funding": "FREE AT THE POINT OF USE, delivered by Health and Care Jersey", "utilization": "Not yet operational. Service targeted September 2027.", "commercial": "No private-provision slot - practitioners are directly engaged by the service on employment or service contracts.", "note": "THE DELIVERY-MODEL CASE, and the most instructive jurisdiction for anyone designing a service. Royal Assent 9 July 2026 - FIRST IN THE BRITISH ISLES. Establishes a STANDALONE Jersey Assisted Dying Service whose front door is a trained NON-CLINICAL CARE NAVIGATOR who logs the request, tracks the patient's progression, coordinates practitioners and plans the assisted death. A just-in-time registration pathway lets a patient's own doctor opt in and complete training in time to act for that specific patient. 18-month implementation window began March 2026: training programmes, practitioner recruitment and registration, governance committees, operational guidance, service standards, secondary legislation on advocacy and safe access zones. Jersey has already imported an Australian practitioner to brief legislators and clinicians." },
-    { "jurisdiction": "Isle of Man", "since": null, "modality": "not verified", "terminal": "Required", "prognosis": "12 months", "mentalIllnessAlone": "not verified", "minors": "No - 18+", "advanceRequests": "not verified", "waiting": "not verified", "oversight": "not verified", "funding": "not verified", "utilization": "Not operational.", "commercial": "not verified", "note": "PASSED BUT GATED. Tynwald passed the bill on 25 March 2025 with a FIVE-YEAR RESIDENCY requirement - the strongest anti-tourism provision anywhere. The UK Government refused to recommend Royal Assent in April 2026 on ECHR-compatibility grounds, forcing amendments; re-sent for assent on 17 June 2026, outcome unconfirmed. The first documented instance of a metropolitan government using Royal Assent to gate a subordinate jurisdiction's assisted dying law on human-rights grounds - legislative passage is not a live market." }
+    {
+      "jurisdiction": "Netherlands",
+      "since": 2002,
+      "modality": "Euthanasia + assisted suicide",
+      "terminal": "Not required",
+      "prognosis": "None",
+      "mentalIllnessAlone": "Yes",
+      "minors": "12+ under the Wtl; separate regulation for ages 1-12 since 1 Feb 2024",
+      "advanceRequests": "Yes - Hoge Raad 21 April 2020 confirmed a written request may replace an oral one in advanced dementia",
+      "waiting": "None",
+      "oversight": "Retrospective - five regional review committees, every case",
+      "funding": "Statutory basic insurance; patient pays nothing",
+      "utilization": "10,341 notifications in 2025 = 5.97% of all deaths. 98.15% clinician-administered, 1.70% self-administered. Dementia 499; psychiatric 174 (down 20.5%); duo-euthanasia 60 couples. Seven 'did not meet due care' findings in 2025.",
+      "commercial": "No express statutory ban; foreclosed structurally (only a physician meeting due-care criteria escapes the homicide statute) and financially (payment runs through statutory insurance).",
+      "note": "One prosecution ever (2019, acquitted; confirmed by the Hoge Raad 2020). GP fee is insurer-negotiated, EUR 318-389 in 2026, plus a SCEN consultation at EUR 689.72. Expertisecentrum Euthanasie handles 14.1% of all cases: 5,000 requests in 2025, 1,477 granted (~30%); psychiatric waits can exceed three years."
+    },
+    {
+      "jurisdiction": "Belgium",
+      "since": 2002,
+      "modality": "Euthanasia (statute defines only euthanasia)",
+      "terminal": "Not required for adults; REQUIRED for minors",
+      "prognosis": "None for adults",
+      "mentalIllnessAlone": "Yes - treated as non-terminal",
+      "minors": "Any age with capacity of discernment (2014) - 7 cases in 11 years",
+      "advanceRequests": "Yes but only where the patient is irreversibly unconscious - does not cover dementia. 0.6% of cases.",
+      "waiting": "One month, but ONLY where death is not expected in the short term",
+      "oversight": "Retrospective - one federal commission (CFCEE)",
+      "funding": "No fee code existed for 23 years. Code 107251-107262 created 1 November 2025 at EUR 180.24, medicines excluded. Mandatory third-party payment; patient pays nothing.",
+      "utilization": "4,486 registrations in 2025 = 4.0% of all deaths, up from 3.6%. Non-terminal cases rose from 7% (n=24) in 2003 to 21% (n=718) in 2023. Zero referrals to prosecutors in 2022-2025.",
+      "commercial": "No express ban located.",
+      "note": "The CFCEE has referred exactly one file to prosecutors in its entire history (Tine Nys, 2015; three doctors acquitted 2020). ECtHR found a procedural Article 2 violation in Mortier v Belgium (4 Oct 2022) because the performing physician co-chaired the reviewing commission - producing the 27 March 2024 reform. The CFCEE states it cannot assess what proportion of actual euthanasias are declared to it."
+    },
+    {
+      "jurisdiction": "Luxembourg",
+      "since": 2009,
+      "modality": "Euthanasia + assisted suicide (both named in statute)",
+      "terminal": "Not required",
+      "prognosis": "None",
+      "mentalIllnessAlone": "Legally unresolved; zero cases ever",
+      "minors": "EXCLUDED entirely, as are adults under tutelle or curatelle",
+      "advanceRequests": "Registered centrally, but usable only where the patient is unconscious - 6,107 registered, 11 ever used",
+      "waiting": "None fixed - 'several conversations spaced at reasonable intervals'",
+      "oversight": "Retrospective - National Commission (CNCE), 9 members",
+      "funding": "NO TARIFF EXISTS. The CNCE has formally requested one across three reports and been ignored.",
+      "utilization": "34 in 2024; 226 cumulative 2009-2024; 0.6% of deaths (2023). 2025 figure not published until 2027.",
+      "commercial": "No provision - and no commercial provision to prohibit.",
+      "note": "Zero referrals and zero prosecutions ever. No SCEN or LEIF equivalent; the CNCE recommends creating one. In a country this small it is hard to find a genuinely impartial consultant."
+    },
+    {
+      "jurisdiction": "Switzerland",
+      "since": "~1942",
+      "modality": "Assisted suicide only (euthanasia is a crime under Art. 114)",
+      "terminal": "Not required",
+      "prognosis": "None",
+      "mentalIllnessAlone": "Yes, with a detailed psychiatric opinion required",
+      "minors": "Not addressed",
+      "advanceRequests": "No",
+      "waiting": "At least two consultations separated by two weeks (SAMS guideline, not law)",
+      "oversight": "No national body. Cantonal narcotics reporting plus unnatural-death investigation at every case. A monitoring motion was adopted 11 September 2025 but not yet implemented.",
+      "funding": "Outside the health system entirely. Non-profit associations funded by membership fees and per-case contributions.",
+      "utilization": "1,729 assisted suicides among RESIDENTS in 2023 (Federal Statistical Office). An organisation-based tally including non-residents gives 2,087 - different denominators, never to be merged. EXIT Deutsche Schweiz: 1,421 accompaniments in 2025, 195,836 members. Dignitas: 280 in 2024, 4,196 cumulative since 1998.",
+      "commercial": "NOT statutorily prohibited. Art. 115 criminalises assistance only where done from 'selfish motives'; profit qualifies. All major bodies are non-profit associations by charter. This is widely acknowledged as the weakest link in Swiss oversight.",
+      "note": "THE ONLY ESTABLISHED CROSS-BORDER REGIME. No residency or nationality requirement in law - it is a gap, not a policy. Dignitas is functionally an export service: of 4,196 cumulative cases, Germany 1,459, UK 608, France 606, USA 264, Switzerland 261 (~6%). Fees: EXIT CHF 45/yr and free after three years' membership; Dignitas ~CHF 7,500 basic to CHF 11,000 all-in; Pegasos ~CHF 10,000 with a CHF 5,000 deposit. Zurich voters rejected a ban on assisted suicide by 85% and a ban on non-resident access by 78% in a 2011 referendum. The Ständerat rejected federal framework regulation on 11 September 2025 (22-16-8)."
+    },
+    {
+      "jurisdiction": "Austria",
+      "since": 2022,
+      "modality": "Assisted suicide only",
+      "terminal": "Not required - incurable fatal illness OR severe permanent illness with unavoidable suffering",
+      "prognosis": "None (6 months only for the shortened waiting period)",
+      "mentalIllnessAlone": "No",
+      "minors": "No - 18+",
+      "advanceRequests": "No",
+      "waiting": "12 WEEKS from first medical briefing; 2 weeks in the terminal phase",
+      "oversight": "Sterbeverfügungsregister (Health Ministry); no review commission",
+      "funding": "All costs private. Documentation via a patient advocate is free; a notary charges fees (tariff not published).",
+      "utilization": "54 (2022), 98 (2023), 112 (2024); 264 cumulative. 719-772 declarations established, 588 preparations dispensed - roughly a third of declarations never result in a death.",
+      "commercial": "EXPRESSLY PROHIBITED. StVfG s.12 bans advertising AND any economic advantage beyond documented expenses. Fines to EUR 30,000, or EUR 60,000 on repetition. The clearest statutory bar in the world.",
+      "note": "THE FRICTION CASE. Same population as Switzerland (~9M), roughly a tenfold lower rate, driven almost entirely by procedure: 12-week wait, two physicians with one palliative-qualified, a notary or patient-advocate step, a national register gating pharmacy dispensing, and residents-only access."
+    },
+    {
+      "jurisdiction": "Germany",
+      "since": 2020,
+      "modality": "Assisted suicide only",
+      "terminal": "Not required - the Constitutional Court forbade substantive eligibility criteria",
+      "prognosis": "None",
+      "mentalIllnessAlone": "Not restricted",
+      "minors": "Not addressed",
+      "advanceRequests": "Not addressed",
+      "waiting": "None",
+      "oversight": "NONE",
+      "funding": "Private, via association membership and per-case fees",
+      "utilization": "1,288 in 2025 across the three organisations that publish (a floor, not a total). 62% female. Leading grounds: multimorbidity 32% and Lebensmuedigkeit (weariness of life) 26%.",
+      "commercial": "NOT prohibited - there is no rule at all. Note the common mistranslation: the struck-down s.217 banned 'geschaeftsmaessige' (recurrent, organised) assistance, NOT commercial assistance, which is why it caught physicians who feared the label for helping more than one patient.",
+      "note": "The broadest judicial statement of a right to assisted death in Europe and the least supervised practice. Both replacement bills failed on 6 July 2023. Verein Sterbehilfe reports that in 2024, 220 members who had already received the green light chose to go on living."
+    },
+    {
+      "jurisdiction": "France",
+      "since": 2026,
+      "modality": "Self-administration by default; a physician OR A NURSE may administer where the patient cannot",
+      "terminal": "Not as such - 'affection grave et incurable engageant le pronostic vital, en phase avancee ou terminale'",
+      "prognosis": "NO NUMERIC WINDOW",
+      "mentalIllnessAlone": "No - capacity to express free and informed will required throughout",
+      "minors": "No - 18+",
+      "advanceRequests": "No",
+      "waiting": "15-day assessment window; 48-hour confirmation delay; decision valid three months",
+      "oversight": "Retrospective - national commission de controle et d'evaluation, annual report to Government and Parliament",
+      "funding": "Public (assurance maladie); patient cost not verified",
+      "utilization": "Not in force. No cases yet.",
+      "commercial": "not verified",
+      "note": "Adopted 291-241 on 15 July 2026 after three Senate rejections and a failed commission mixte paritaire. Upheld by the Conseil constitutionnel on 14 August 2026 (Decision 2026-910 DC) with three interpretive reservations: private facilities may refuse where local need is otherwise met; the conscience clause extends to PHARMACISTS; and a legal protector's observations must be weighed for protected adults. TELEHEALTH IS PROHIBITED. Not exercisable until decrees issue and the Haute Autorite de Sante determines the substance - realistically January 2027. Nurse administration has no international precedent."
+    },
+    {
+      "jurisdiction": "Italy",
+      "since": 2019,
+      "modality": "Assisted suicide only (court-carved)",
+      "terminal": "Not as such - but the patient MUST be dependent on life-sustaining treatment",
+      "prognosis": "None",
+      "mentalIllnessAlone": "No",
+      "minors": "No",
+      "advanceRequests": "No",
+      "waiting": "No fixed period; 8-10 months in practice",
+      "oversight": "Local health authority plus territorial ethics committee, case by case",
+      "funding": "Through the national health service; what the SSN must actually supply remains unresolved",
+      "utilization": "15 medically assisted deaths in total as at April 2026, seven years after the ruling, in a country of 59 million.",
+      "commercial": "Impossible - anything outside the four conditions remains a crime under Art. 580 c.p.",
+      "note": "THE GATEKEEPER CASE. A declared constitutional right plus a public gatekeeper plus no implementing statute produces near-zero access. Sentenza 242/2019 set four conditions; 135/2024 declined to relax the life-sustaining-treatment requirement; 204/2025 struck parts of Tuscany's regional law for trespassing on state competence. Parliament has been in default since 2019."
+    },
+    {
+      "jurisdiction": "Spain",
+      "since": 2021,
+      "modality": "Euthanasia + assisted suicide",
+      "terminal": "Not required",
+      "prognosis": "None",
+      "mentalIllnessAlone": "not verified",
+      "minors": "not verified",
+      "advanceRequests": "not verified",
+      "waiting": "not verified",
+      "oversight": "PROSPECTIVE - regional Comisiones de Garantia y Evaluacion approve before provision",
+      "funding": "Public - in the Cartera Comun de Servicios of the national health system",
+      "utilization": "749 requests and 363 provisions across 2021-2022; in 2022, 236 of 288 provisions were clinician-administered and 11 self-administered. 184 applicants died during processing - a third of requesters.",
+      "commercial": "Does not arise - it is a public health service.",
+      "note": "Runs a named national information system, the SIE, which the Ministry itself describes as 'en desarrollo'. Only 528 of 576 declared 2022 requests were actually registered in it. Spain uniquely requires clinicians to register conscientious objection - an opt-out registry rather than opt-in."
+    },
+    {
+      "jurisdiction": "Portugal",
+      "since": 2023,
+      "modality": "Both (on paper)",
+      "terminal": "not verified",
+      "prognosis": "not verified",
+      "mentalIllnessAlone": "not verified",
+      "minors": "not verified",
+      "advanceRequests": "not verified",
+      "waiting": "not verified",
+      "oversight": "CVA (Comissao de Verificacao e Avaliacao), once operative",
+      "funding": "not verified",
+      "utilization": "NONE - the law has never entered into force.",
+      "commercial": "not verified",
+      "note": "Lei 22/2023 passed 25 May 2023 with a 90-day regulation deadline. Over 400 days elapsed; the Constitutional Court then declared provisions unconstitutional in April 2025. The procedure takes effect only 30 days after the regulation is published. The delay is regulatory and constitutional, NOT technological. The statutory record is the Registo Clinico Especial (RCE)."
+    },
+    {
+      "jurisdiction": "Canada",
+      "since": 2016,
+      "modality": "Euthanasia + assisted suicide (clinician-administered in the overwhelming majority)",
+      "terminal": "Not required - Track 1 (death reasonably foreseeable) and Track 2 (not foreseeable)",
+      "prognosis": "None",
+      "mentalIllnessAlone": "DEFERRED - status as of August 2026 not verified",
+      "minors": "Under debate; not permitted",
+      "advanceRequests": "Quebec operates a separate provincial regime; status not verified",
+      "waiting": "10-day reflection period removed for reasonably foreseeable deaths; Track 2 has a 90-day assessment period",
+      "oversight": "Retrospective; Ontario runs an enhanced committee for complex cases",
+      "funding": "Publicly insured; clinicians bill provincial plans as independent contractors. Ontario uses codes A320, C320, K321.",
+      "utilization": "16,499 MAID deaths in 2024 = 5.1% of all deaths, up 6.9%. Track 2: 732 deaths in 2024, up 17% year on year. Palliative care providers were involved in 74.4% of 2,241 Ontario cases studied.",
+      "commercial": "Public payer; no commercial provision. No express anti-profit clause located.",
+      "note": "THE CONCENTRATION CASE. In 2023, 4% of practitioners - 89 individuals nationally - delivered 64% of all cases, and most participating practitioners handle only one or two a year. Nurse practitioners may assess and administer in some provinces. Health Canada funded an accredited national curriculum (CAMAP, ~USD 3.3M+, built by Queen's University, accredited by the RCPSC/CFPC/CNA, 2,900+ trained)."
+    },
+    {
+      "jurisdiction": "Queensland (Australia)",
+      "since": 2021,
+      "modality": "Both - practitioner administration permitted where the coordinating practitioner advises self-administration is inappropriate",
+      "terminal": "Required",
+      "prognosis": "12 months UNIFORM - no neurodegenerative carve-out",
+      "mentalIllnessAlone": "No (s.13)",
+      "minors": "No - 18+",
+      "advanceRequests": "No",
+      "waiting": "9 days from first request; shortenable where death or loss of capacity is likely first",
+      "oversight": "Purely retrospective - VAD Review Board reviews every completed request",
+      "funding": "No VAD-specific fee schedule and no Medicare item. QVAD Access funded travel stipends in 12 patients' cases in 2024-25.",
+      "utilization": "1,072 VAD deaths in 2024-25, approximately 3% of all Queensland deaths; 73% practitioner-administered. 2,110 cumulative since 1 January 2023. 612 people (36.4%) in the process died WITHOUT administering.",
+      "commercial": "ss.82(1)(d), 83(d) bar financial benefit from the death, expressly saving 'reasonable fees for the provision of services'.",
+      "note": "THE WORKFORCE CASE. Queensland permits REGISTERED NURSES with at least five years' practice to administer (s.83(a)(iii)). 218 of its 470 authorised practitioners - 46% - are registered nurses. Its institutional-access regime is the strongest anywhere: an objecting hospital or hospice can be compelled to permit administration on site where the person is a permanent resident or transfer would be unreasonable. Objectors owe a referral or care-navigator duty (s.84(2))."
+    },
+    {
+      "jurisdiction": "New South Wales (Australia)",
+      "since": 2022,
+      "modality": "Both - the patient chooses, with NO statutory gateway condition",
+      "terminal": "Required",
+      "prognosis": "6 months; 12 months for neurodegenerative conditions",
+      "mentalIllnessAlone": "No (s.16(2)) - expressly names dementia",
+      "minors": "No - 18+",
+      "advanceRequests": "No",
+      "waiting": "5 days from first request",
+      "oversight": "HYBRID - prospective Board authorisation of the substance plus retrospective review",
+      "funding": "No VAD-specific fee schedule and no Medicare item.",
+      "utilization": "1,028 VAD deaths in 2024-25; 81.6% practitioner-administered. 1,426 cumulative since 28 November 2023. Share of all NSW deaths not published. Median first request to death: 20 days.",
+      "commercial": "ss.18(e)(ii), 55(e)(ii) save 'reasonable fees'.",
+      "note": "Nurse practitioners may administer; REGISTERED NURSES MAY NOT. 158 of 346 authorised practitioners (45.7%) supported zero patients in 2024-25, while 73 (21.1%) supported 21 or more each. The prospective gate is not a filter: 1,599 substance-authority applications, 1,599 approved, zero refused, median two days. NSW permits ANY health care worker to raise VAD subject to a lighter condition; Queensland restricts that to doctors and nurse practitioners. NSW imposes NO referral duty on conscientious objectors. Statutory review report due to be tabled by November 2026."
+    },
+    {
+      "jurisdiction": "Australia (other states)",
+      "since": "2017-2023",
+      "modality": "Varies by state",
+      "terminal": "Required",
+      "prognosis": "6-12 months depending on state and condition",
+      "mentalIllnessAlone": "No",
+      "minors": "No",
+      "advanceRequests": "No",
+      "waiting": "Varies",
+      "oversight": "State review boards",
+      "funding": "Western Australia publishes a fee schedule: first assessment AUD 478.50, consulting assessment AUD 287.10, final review AUD 191.40, administration decision and prescription AUD 287.10, practitioner administration AUD 765.60. Payment is triggered by form submission in VAD-IMS.",
+      "utilization": "not verified for Victoria, WA, SA, Tasmania, ACT and NT",
+      "commercial": "WA offences include inducement and advertising a Schedule 4 or 8 poison as a VAD substance.",
+      "note": "GAP - Victoria, Western Australia, South Australia, Tasmania, ACT and NT require jurisdiction-level verification. Victoria is the most restrictive on administration modality (requires physical incapacity to self-administer) and uniquely requires a Secretary-issued permit. A FEDERAL constraint binds all states: Commonwealth Criminal Code carriage-service offences mean VAD consultations by phone or video risk capture, foreclosing telehealth for decisive steps. A fix was blocked in the House of Representatives on 11 August 2026, a suspension motion defeated 74-12."
+    },
+    {
+      "jurisdiction": "New Zealand",
+      "since": 2021,
+      "modality": "Euthanasia + assisted suicide",
+      "terminal": "Required",
+      "prognosis": "6 months",
+      "mentalIllnessAlone": "No",
+      "minors": "No",
+      "advanceRequests": "No",
+      "waiting": "not verified",
+      "oversight": "PROSPECTIVE - registrar approval; SCENZ Group maintains the list of willing practitioners and prepares the Standard of Care",
+      "funding": "Public, via Health New Zealand",
+      "utilization": "not verified",
+      "commercial": "not verified",
+      "note": "Passed by referendum. Nurse practitioners can both assess eligibility and administer. UNIQUELY, New Zealand enforces its training mandate by CONDITIONING REIMBURSEMENT ON TRAINING COMPLETION - the cleanest enforcement mechanism identified anywhere."
+    },
+    {
+      "jurisdiction": "Uruguay",
+      "since": 2025,
+      "modality": "Euthanasia",
+      "terminal": "not verified",
+      "prognosis": "not verified",
+      "mentalIllnessAlone": "not verified",
+      "minors": "not verified",
+      "advanceRequests": "not verified",
+      "waiting": "not verified",
+      "oversight": "not verified",
+      "funding": "not verified",
+      "utilization": "not verified",
+      "commercial": "not verified",
+      "note": "Ley de Muerte Digna. Approved by the House 12-13 August 2025 (64 of 93) and by the Senate 20-11 on 15 October 2025. FIRST IN LATIN AMERICA BY LEGISLATION."
+    },
+    {
+      "jurisdiction": "Colombia",
+      "since": 1997,
+      "modality": "Euthanasia (court, 1997; regulated 2015); assisted suicide added 2022",
+      "terminal": "not verified",
+      "prognosis": "not verified",
+      "mentalIllnessAlone": "not verified",
+      "minors": "Permitted in defined circumstances - not verified",
+      "advanceRequests": "not verified",
+      "waiting": "not verified",
+      "oversight": "not verified",
+      "funding": "not verified",
+      "utilization": "not verified",
+      "commercial": "not verified",
+      "note": "GAP - requires verification. The oldest Latin American regime, established judicially."
+    },
+    {
+      "jurisdiction": "Ecuador",
+      "since": 2024,
+      "modality": "Euthanasia",
+      "terminal": "not verified",
+      "prognosis": "not verified",
+      "mentalIllnessAlone": "not verified",
+      "minors": "not verified",
+      "advanceRequests": "not verified",
+      "waiting": "not verified",
+      "oversight": "not verified",
+      "funding": "not verified",
+      "utilization": "not verified",
+      "commercial": "not verified",
+      "note": "GAP - Constitutional Court decision 67-23-IN/24. Implementation status requires verification."
+    },
+    {
+      "jurisdiction": "United Kingdom (England & Wales)",
+      "since": null,
+      "modality": "Self-administration ONLY if enacted - expressly prohibits clinician administration",
+      "terminal": "Required",
+      "prognosis": "6 months",
+      "mentalIllnessAlone": "No - not terminally ill by reason only of mental disorder or disability, nor solely by voluntarily stopping eating and drinking",
+      "minors": "No - 18+",
+      "advanceRequests": "No",
+      "waiting": "14-day reflection after the panel decision, reduced to 48 hours where death is imminent",
+      "oversight": "PROSPECTIVE - a Voluntary Assisted Dying Commissioner plus Assisted Dying Review Panels (a retired judge or senior lawyer, a consultant psychiatrist, and a registered social worker) issuing certificates of eligibility. This replaced the original High Court approval requirement.",
+      "funding": "NHS assumed; not verified",
+      "utilization": "Not law.",
+      "commercial": "The bill would PROHIBIT publication designed to promote a voluntary assisted dying service.",
+      "note": "NOT LAW. Passed the Commons twice (330-275 in Nov 2024; 314-291 in June 2025) but died in the Lords after 14 days of committee and 1,200+ amendments, falling at prorogation on 29 April 2026 - for want of time, not on a vote. Reintroduced by Lauren Edwards MP on 17 June 2026; SECOND READING 11 SEPTEMBER 2026. The Parliament Acts route exists but requires a textually identical bill, turns on an unresolved Speaker's determination about Lords amendments never formally communicated, and above all needs Government time a backbench sponsor cannot command. Never once used for a private member's bill. Earliest operation 2029, with a four-year commencement backstop in England and a SEPARATE Senedd Cymru timetable for Wales."
+    },
+    {
+      "jurisdiction": "Scotland",
+      "since": null,
+      "modality": "n/a",
+      "terminal": "n/a",
+      "prognosis": "n/a",
+      "mentalIllnessAlone": "n/a",
+      "minors": "n/a",
+      "advanceRequests": "n/a",
+      "waiting": "n/a",
+      "oversight": "n/a",
+      "funding": "n/a",
+      "utilization": "n/a",
+      "commercial": "n/a",
+      "note": "BILL FAILED. The Assisted Dying for Terminally Ill Adults (Scotland) Bill was defeated at Stage 3 on 17 March 2026: 57 for, 69 against, 1 abstention. Out for this parliamentary session."
+    },
+    {
+      "jurisdiction": "Jersey",
+      "since": 2026,
+      "modality": "Patient chooses - self-administration OR administration by a doctor or registered nurse",
+      "terminal": "Required (Route 1 only; the non-terminal Route 2 was rejected)",
+      "prognosis": "6 months; 12 months for neurodegenerative conditions",
+      "mentalIllnessAlone": "No",
+      "minors": "No - 18+",
+      "advanceRequests": "not verified",
+      "waiting": "14 days from first request, waivable only where prognosis is 14 days or less",
+      "oversight": "DUAL - the Jersey Care Commission regulates the SERVICE with annual and unannounced inspections and power to suspend, PLUS a Review Panel conducting mandatory post-death case review",
+      "funding": "FREE AT THE POINT OF USE, delivered by Health and Care Jersey",
+      "utilization": "Not yet operational. Service targeted September 2027.",
+      "commercial": "No private-provision slot - practitioners are directly engaged by the service on employment or service contracts.",
+      "note": "THE DELIVERY-MODEL CASE, and the most instructive jurisdiction for anyone designing a service. Royal Assent 9 July 2026 - FIRST IN THE BRITISH ISLES. Establishes a STANDALONE Jersey Assisted Dying Service whose front door is a trained NON-CLINICAL CARE NAVIGATOR who logs the request, tracks the patient's progression, coordinates practitioners and plans the assisted death. A just-in-time registration pathway lets a patient's own doctor opt in and complete training in time to act for that specific patient. 18-month implementation window began March 2026: training programmes, practitioner recruitment and registration, governance committees, operational guidance, service standards, secondary legislation on advocacy and safe access zones. Jersey has already imported an Australian practitioner to brief legislators and clinicians."
+    },
+    {
+      "jurisdiction": "Isle of Man",
+      "since": null,
+      "modality": "not verified",
+      "terminal": "Required",
+      "prognosis": "12 months",
+      "mentalIllnessAlone": "not verified",
+      "minors": "No - 18+",
+      "advanceRequests": "not verified",
+      "waiting": "not verified",
+      "oversight": "not verified",
+      "funding": "not verified",
+      "utilization": "Not operational.",
+      "commercial": "not verified",
+      "note": "PASSED BUT GATED. Tynwald passed the bill on 25 March 2025 with a FIVE-YEAR RESIDENCY requirement - the strongest anti-tourism provision anywhere. The UK Government refused to recommend Royal Assent in April 2026 on ECHR-compatibility grounds, forcing amendments; re-sent for assent on 17 June 2026, outcome unconfirmed. The first documented instance of a metropolitan government using Royal Assent to gate a subordinate jurisdiction's assisted dying law on human-rights grounds - legislative passage is not a live market."
+    }
   ],
-
   "complianceInfrastructure": [
-    { "jurisdiction": "Western Australia", "system": "VAD-IMS", "operator": "VAD Board owns the system and its data; technical support by Health Support Services and the Department of Health", "vendor": "Anonymous commercial vendor (see note)", "note": "Practitioner registration is gated on completion of approved training with LMS integration. Statutory forms are submitted online with auto-generated receipts. CRITICALLY: form submission in VAD-IMS is what TRIGGERS PRACTITIONER PAYMENT. Fax remains a legal fallback for four forms." },
-    { "jurisdiction": "Victoria", "system": "VAD Portal", "operator": "Department of Health; registration via Safer Care Victoria", "vendor": "Not disclosed", "note": "Carries the permit application workflow - Victoria uniquely requires a Secretary-issued permit before a prescription may be written. Users include the statewide pharmacy service run by Alfred Health." },
-    { "jurisdiction": "New South Wales", "system": "VAD Portal", "operator": "NSW Health", "vendor": "Not disclosed", "note": "Secure platform for managing requests and submitting documentation." },
-    { "jurisdiction": "Queensland", "system": "VAD Review Board Information Management System", "operator": "Queensland Health", "vendor": "Not disclosed", "note": "" },
-    { "jurisdiction": "Canada", "system": "Canadian MAID Data Collection Portal", "operator": "Health Canada in partnership with Statistics Canada", "vendor": "Built in-house; no contractor named", "note": "Secure web application under the Regulations for the Monitoring of Medical Assistance in Dying, amended regulations in force 1 January 2023. 2023 microdata became available through StatCan Research Data Centres on 1 December 2025." },
-    { "jurisdiction": "Spain", "system": "SIE (Sistema de Informacion de Eutanasia)", "operator": "Ministerio de Sanidad with the autonomous communities and INGESA", "vendor": "Not disclosed", "note": "The Ministry describes it as 'en desarrollo'. Only 528 of 576 declared 2022 requests were actually registered in it - an acknowledged ~8% capture gap." },
-    { "jurisdiction": "Netherlands", "system": "NONE", "operator": "Five regional review committees", "vendor": "n/a", "note": "Paper forms handed to a municipal coroner, who examines the body, verifies documents, notifies the prosecutor and forwards the file. Digital TRIAGE only at the committee stage. There is no physician-facing submission portal." },
-    { "jurisdiction": "United States - all 14 jurisdictions", "system": "NONE", "operator": "State health departments", "vendor": "n/a", "note": "PDF forms returned by email or fax. Oregon files to an inbox or a fax number within 10 days of dispensing and states that it does not collect cost data. Montana has no reporting regime whatsoever. This is the largest unserved market in the world for this category." }
+    {
+      "jurisdiction": "Western Australia",
+      "system": "VAD-IMS",
+      "operator": "VAD Board owns the system and its data; technical support by Health Support Services and the Department of Health",
+      "vendor": "Anonymous commercial vendor (see note)",
+      "note": "Practitioner registration is gated on completion of approved training with LMS integration. Statutory forms are submitted online with auto-generated receipts. CRITICALLY: form submission in VAD-IMS is what TRIGGERS PRACTITIONER PAYMENT. Fax remains a legal fallback for four forms."
+    },
+    {
+      "jurisdiction": "Victoria",
+      "system": "VAD Portal",
+      "operator": "Department of Health; registration via Safer Care Victoria",
+      "vendor": "Not disclosed",
+      "note": "Carries the permit application workflow - Victoria uniquely requires a Secretary-issued permit before a prescription may be written. Users include the statewide pharmacy service run by Alfred Health."
+    },
+    {
+      "jurisdiction": "New South Wales",
+      "system": "VAD Portal",
+      "operator": "NSW Health",
+      "vendor": "Not disclosed",
+      "note": "Secure platform for managing requests and submitting documentation."
+    },
+    {
+      "jurisdiction": "Queensland",
+      "system": "VAD Review Board Information Management System",
+      "operator": "Queensland Health",
+      "vendor": "Not disclosed",
+      "note": ""
+    },
+    {
+      "jurisdiction": "Canada",
+      "system": "Canadian MAID Data Collection Portal",
+      "operator": "Health Canada in partnership with Statistics Canada",
+      "vendor": "Built in-house; no contractor named",
+      "note": "Secure web application under the Regulations for the Monitoring of Medical Assistance in Dying, amended regulations in force 1 January 2023. 2023 microdata became available through StatCan Research Data Centres on 1 December 2025."
+    },
+    {
+      "jurisdiction": "Spain",
+      "system": "SIE (Sistema de Informacion de Eutanasia)",
+      "operator": "Ministerio de Sanidad with the autonomous communities and INGESA",
+      "vendor": "Not disclosed",
+      "note": "The Ministry describes it as 'en desarrollo'. Only 528 of 576 declared 2022 requests were actually registered in it - an acknowledged ~8% capture gap."
+    },
+    {
+      "jurisdiction": "Netherlands",
+      "system": "NONE",
+      "operator": "Five regional review committees",
+      "vendor": "n/a",
+      "note": "Paper forms handed to a municipal coroner, who examines the body, verifies documents, notifies the prosecutor and forwards the file. Digital TRIAGE only at the committee stage. There is no physician-facing submission portal."
+    },
+    {
+      "jurisdiction": "United States - all 14 jurisdictions",
+      "system": "NONE",
+      "operator": "State health departments",
+      "vendor": "n/a",
+      "note": "PDF forms returned by email or fax. Oregon files to an inbox or a fax number within 10 days of dispensing and states that it does not collect cost data. Montana has no reporting regime whatsoever. This is the largest unserved market in the world for this category."
+    }
   ],
-
   "keyStatistics": [
-    { "stat": "5.97%", "label": "Netherlands assisted deaths as a share of all deaths, 2025", "context": "The global ceiling case. Canada is 5.1%, Belgium 4.0%, Queensland ~3%, Oregon 1.0%." },
-    { "stat": "98.15%", "label": "Share of Dutch cases that were clinician-administered in 2025", "context": "Only 1.70% self-administered. Every US jurisdiction permits only the modality that roughly 2% of Dutch patients choose when offered a choice." },
-    { "stat": "26", "label": "Healthcare providers who prescribed in New Mexico in 2025, statewide", "context": "Under the most permissive prescriber statute in the United States, in a state of 2.1 million people. Roughly 6.5 prescriptions each." },
-    { "stat": "89", "label": "Canadian practitioners who delivered 64% of all MAID cases in 2023", "context": "4% of the participating workforce. Most practitioners handle one or two cases a year. The same shape appears in NSW, where 45.7% of authorised practitioners supported zero patients." },
-    { "stat": "46%", "label": "Share of Queensland's authorised VAD practitioners who are registered nurses", "context": "218 of 470. The only demonstrated fix anywhere for the supply constraint, and no US jurisdiction has attempted it." },
-    { "stat": "33%", "label": "Oregon prescription recipients who died without ingesting, 1997-2025", "context": "5,520 prescriptions, 3,691 deaths from ingestion. Queensland reports 36.4%; Austria roughly a third of declarations; Verein Sterbehilfe reports 220 members who had the green light and chose to go on living in 2024. Four jurisdictions, four designs, one finding." },
-    { "stat": "15", "label": "Total medically assisted deaths in Italy, seven years after the right was established", "context": "In a country of 59 million, with 8-10 month waits. A declared right plus a public gatekeeper plus no implementing statute produces near-zero access." },
-    { "stat": "51%", "label": "Americans who do not know whether medical aid in dying is legal in their own state", "context": "From a survey of 3,227 US adults, in which 44% said they would consider it if terminally ill." }
+    {
+      "stat": "5.97%",
+      "label": "Netherlands assisted deaths as a share of all deaths, 2025",
+      "context": "The global ceiling case. Canada is 5.1%, Belgium 4.0%, Queensland ~3%, Oregon 1.0%."
+    },
+    {
+      "stat": "98.15%",
+      "label": "Share of Dutch cases that were clinician-administered in 2025",
+      "context": "Only 1.70% self-administered. Every US jurisdiction permits only the modality that roughly 2% of Dutch patients choose when offered a choice."
+    },
+    {
+      "stat": "26",
+      "label": "Healthcare providers who prescribed in New Mexico in 2025, statewide",
+      "context": "Under the most permissive prescriber statute in the United States, in a state of 2.1 million people. Roughly 6.5 prescriptions each."
+    },
+    {
+      "stat": "2",
+      "label": "Physicians who prescribed in Washington, DC — in 2018, in 2022, and again in 2024",
+      "context": "Out of roughly 11,000 District-licensed physicians, unchanged across three reporting years. DC bars an attending physician whose practice is 'primarily or solely composed of patients requesting a covered medication', foreclosing the dedicated-practice model that carries volume elsewhere, and layers an administrative portal registration on top. Legalisation without a workable delivery path produces this."
+    },
+    {
+      "stat": "89",
+      "label": "Canadian practitioners who delivered 64% of all MAID cases in 2023",
+      "context": "4% of the participating workforce. Most practitioners handle one or two cases a year. The same shape appears in NSW, where 45.7% of authorised practitioners supported zero patients."
+    },
+    {
+      "stat": "46%",
+      "label": "Share of Queensland's authorised VAD practitioners who are registered nurses",
+      "context": "218 of 470. The only demonstrated fix anywhere for the supply constraint, and no US jurisdiction has attempted it."
+    },
+    {
+      "stat": "33%",
+      "label": "Oregon prescription recipients who died without ingesting, 1997-2025",
+      "context": "5,520 prescriptions, 3,691 deaths from ingestion. Queensland reports 36.4%; Austria roughly a third of declarations; Verein Sterbehilfe reports 220 members who had the green light and chose to go on living in 2024. Four jurisdictions, four designs, one finding."
+    },
+    {
+      "stat": "15",
+      "label": "Total medically assisted deaths in Italy, seven years after the right was established",
+      "context": "In a country of 59 million, with 8-10 month waits. A declared right plus a public gatekeeper plus no implementing statute produces near-zero access."
+    },
+    {
+      "stat": "51%",
+      "label": "Americans who do not know whether medical aid in dying is legal in their own state",
+      "context": "From a survey of 3,227 US adults, in which 44% said they would consider it if terminally ill."
+    }
   ]
 }
