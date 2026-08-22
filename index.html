@@ -1,0 +1,531 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Physician Aid in Dying — Policy Tracker</title>
+<meta name="description" content="A continuously updated reference on medical aid in dying law: all 51 US jurisdictions, the international landscape, and what each policy lever actually does to access.">
+<style>
+  :root{
+    --ground:#f7f8fa; --panel:#fff; --sunk:#eef1f5; --raise:#fff;
+    --ink:#151a21; --ink-2:#3c4652; --ink-3:#66717f; --ink-4:#8b96a3;
+    --rule:#dde2e9; --rule-2:#c7cfd9;
+    --accent:#b06a1f; --link:#1c6fd0; --alert:#a8443a; --ok:#1f7a4d;
+    --serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI","Helvetica Neue",Arial,sans-serif;
+    --mono:ui-monospace,SFMono-Regular,"SF Mono",Menlo,Consolas,monospace;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{--ground:#101318;--panel:#171b22;--sunk:#1d222a;--raise:#1f242d;
+      --ink:#e8ecf1;--ink-2:#bcc5d0;--ink-3:#8d97a4;--ink-4:#6b7583;
+      --rule:#272d37;--rule-2:#39414d;
+      --accent:#d99a44;--link:#5b9ce8;--alert:#e0776b;--ok:#4caf7d}
+  }
+  :root[data-theme="dark"]{--ground:#101318;--panel:#171b22;--sunk:#1d222a;--raise:#1f242d;
+    --ink:#e8ecf1;--ink-2:#bcc5d0;--ink-3:#8d97a4;--ink-4:#6b7583;
+    --rule:#272d37;--rule-2:#39414d;--accent:#d99a44;--link:#5b9ce8;--alert:#e0776b;--ok:#4caf7d}
+  :root[data-theme="light"]{--ground:#f7f8fa;--panel:#fff;--sunk:#eef1f5;--raise:#fff;
+    --ink:#151a21;--ink-2:#3c4652;--ink-3:#66717f;--ink-4:#8b96a3;
+    --rule:#dde2e9;--rule-2:#c7cfd9;--accent:#b06a1f;--link:#1c6fd0;--alert:#a8443a;--ok:#1f7a4d}
+
+  *{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%}
+  body{margin:0;background:var(--ground);color:var(--ink);font-family:var(--sans);
+    font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:1180px;margin:0 auto;padding:0 22px 100px}
+  a{color:var(--link)}
+
+  /* masthead */
+  .mast{padding:44px 0 22px;border-bottom:1px solid var(--rule)}
+  .eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.13em;
+    text-transform:uppercase;color:var(--ink-3);margin:0 0 14px}
+  h1{font-family:var(--serif);font-weight:600;font-size:clamp(30px,4.6vw,46px);
+    line-height:1.1;letter-spacing:-.015em;margin:0 0 14px;text-wrap:balance}
+  .stand{font-size:17px;color:var(--ink-2);margin:0;max-width:64ch}
+  .updated{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:20px;
+    font-family:var(--mono);font-size:11.5px;color:var(--ink-4);align-items:center}
+  .pill{display:inline-flex;align-items:center;gap:6px;background:var(--sunk);
+    border:1px solid var(--rule);padding:4px 10px;border-radius:100px;
+    color:var(--ink-2)}
+  .dot{width:7px;height:7px;border-radius:50%;background:var(--ok);flex:none}
+
+  /* stats */
+  .stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+    gap:1px;background:var(--rule);border:1px solid var(--rule);margin:34px 0 0}
+  .stat{background:var(--panel);padding:18px 16px}
+  .stat b{display:block;font-family:var(--mono);font-size:27px;font-weight:600;
+    letter-spacing:-.03em;font-variant-numeric:tabular-nums;line-height:1.05;
+    color:var(--accent)}
+  .stat .l{font-size:12.5px;color:var(--ink-2);margin-top:7px;line-height:1.35}
+  .stat .c{font-size:11.5px;color:var(--ink-4);margin-top:7px;line-height:1.4}
+
+  /* nav */
+  nav{position:sticky;top:0;z-index:20;background:var(--ground);
+    border-bottom:1px solid var(--rule);margin-top:38px;
+    display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+  nav::-webkit-scrollbar{display:none}
+  nav button{appearance:none;background:none;border:0;border-bottom:2px solid transparent;
+    padding:13px 14px;font:inherit;font-size:13.5px;color:var(--ink-3);
+    cursor:pointer;white-space:nowrap}
+  nav button:hover{color:var(--ink)}
+  nav button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);
+    font-weight:600}
+  nav button:focus-visible{outline:2px solid var(--link);outline-offset:-2px}
+
+  section[hidden]{display:none}
+  section{padding-top:34px}
+  h2{font-family:var(--serif);font-weight:600;font-size:25px;margin:0 0 6px;
+    letter-spacing:-.01em}
+  .sub{font-size:14.5px;color:var(--ink-3);margin:0 0 22px;max-width:70ch}
+
+  /* filters */
+  .filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 18px;align-items:center}
+  .filters input[type=search]{flex:1;min-width:200px;background:var(--panel);
+    border:1px solid var(--rule-2);color:var(--ink);padding:9px 12px;
+    border-radius:6px;font:inherit;font-size:14px}
+  .filters input:focus-visible,.chip:focus-visible{outline:2px solid var(--link);
+    outline-offset:2px}
+  .chip{appearance:none;background:var(--panel);border:1px solid var(--rule-2);
+    color:var(--ink-2);padding:8px 13px;border-radius:100px;font:inherit;
+    font-size:13px;cursor:pointer}
+  .chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);
+    color:#fff;font-weight:600}
+  :root[data-theme="dark"] .chip[aria-pressed="true"],
+  @media (prefers-color-scheme:dark){.chip[aria-pressed="true"]{color:#101318}}
+  .count{font-family:var(--mono);font-size:12px;color:var(--ink-4);margin-left:auto}
+
+  /* cards */
+  .cards{display:grid;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+  .card{background:var(--panel)}
+  .card>summary{padding:15px 18px;cursor:pointer;list-style:none;
+    display:grid;grid-template-columns:1fr auto;gap:12px;align-items:start}
+  .card>summary::-webkit-details-marker{display:none}
+  .card>summary:hover{background:var(--sunk)}
+  .card>summary:focus-visible{outline:2px solid var(--link);outline-offset:-2px}
+  .jname{font-weight:650;font-size:16px;display:flex;align-items:center;gap:9px;
+    flex-wrap:wrap}
+  .jname .abbr{font-family:var(--mono);font-size:11px;color:var(--ink-4);
+    border:1px solid var(--rule-2);padding:1px 6px;border-radius:4px}
+  .jmeta{font-size:13px;color:var(--ink-3);margin-top:5px}
+  .tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:9px}
+  .tag{font-family:var(--mono);font-size:10.5px;letter-spacing:.04em;
+    text-transform:uppercase;padding:3px 8px;border-radius:4px;
+    background:var(--sunk);color:var(--ink-2);border:1px solid var(--rule)}
+  .tag.warn{color:var(--alert);border-color:color-mix(in srgb,var(--alert) 35%,transparent)}
+  .tag.good{color:var(--ok);border-color:color-mix(in srgb,var(--ok) 35%,transparent)}
+  .tag.key{color:var(--accent);border-color:color-mix(in srgb,var(--accent) 45%,transparent);
+    font-weight:600}
+  .when{font-family:var(--mono);font-size:12px;color:var(--ink-3);text-align:right;
+    white-space:nowrap;font-variant-numeric:tabular-nums}
+  .body{padding:4px 18px 20px;border-top:1px solid var(--rule)}
+  dl{display:grid;grid-template-columns:180px 1fr;gap:0;margin:14px 0 0;font-size:14px}
+  dt{font-family:var(--mono);font-size:11px;letter-spacing:.06em;text-transform:uppercase;
+    color:var(--ink-4);padding:9px 0;border-top:1px solid var(--rule)}
+  dd{margin:0;padding:9px 0 9px 14px;border-top:1px solid var(--rule);color:var(--ink-2)}
+  dd.na{color:var(--ink-4);font-style:italic}
+  .srcs{margin-top:14px;font-size:12.5px;display:flex;flex-wrap:wrap;gap:6px 14px}
+
+  /* levers */
+  .lever{background:var(--panel);border:1px solid var(--rule);padding:22px 24px;
+    margin-bottom:1px}
+  .lever h3{margin:0 0 4px;font-size:17px;font-weight:650}
+  .lever .q{font-family:var(--serif);font-size:17px;font-style:italic;
+    color:var(--accent);margin:0 0 14px}
+  .lever p{margin:0 0 12px;color:var(--ink-2);font-size:14.5px;max-width:78ch}
+  .lever p:last-child{margin-bottom:0}
+  .lever .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--ink-4);display:block;margin-bottom:3px}
+  .lever .imp{border-left:2px solid var(--accent);padding-left:14px}
+
+  /* tiers */
+  .tiergrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:14px;margin-top:6px}
+  .tierbox{background:var(--panel);border:1px solid var(--rule);padding:16px 18px}
+  .tierbox h4{margin:0 0 8px;font-size:14px;font-weight:650}
+  .abbrs{display:flex;flex-wrap:wrap;gap:5px;margin-top:10px}
+  .abbrs span{font-family:var(--mono);font-size:11.5px;background:var(--sunk);
+    border:1px solid var(--rule);padding:2px 7px;border-radius:4px;color:var(--ink-2)}
+
+  table{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:4px}
+  th,td{text-align:left;padding:11px 12px;border-bottom:1px solid var(--rule);
+    vertical-align:top}
+  thead th{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;
+    text-transform:uppercase;color:var(--ink-3);border-bottom:1px solid var(--rule-2)}
+  tbody tr:hover{background:var(--sunk)}
+  .scroller{overflow-x:auto;border:1px solid var(--rule);background:var(--panel)}
+
+  .notice{background:var(--panel);border:1px solid var(--rule);
+    border-left:3px solid var(--alert);padding:18px 20px;margin:30px 0 0;
+    font-size:14px;color:var(--ink-2);max-width:80ch}
+  .notice b{color:var(--ink)}
+  footer{margin-top:56px;padding-top:22px;border-top:1px solid var(--rule);
+    font-size:12.5px;color:var(--ink-4);line-height:1.6}
+  .err{background:var(--panel);border:1px solid var(--alert);padding:22px;
+    font-size:14.5px;color:var(--ink-2)}
+  code{font-family:var(--mono);font-size:.9em;background:var(--sunk);
+    padding:1px 5px;border-radius:4px}
+  @media (max-width:640px){
+    dl{grid-template-columns:1fr}
+    dt{padding-bottom:0;border-top:1px solid var(--rule)}
+    dd{padding:4px 0 11px;border-top:0}
+  }
+  @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="mast">
+  <p class="eyebrow">Legislative reference &middot; Continuously updated</p>
+  <h1>Physician Aid in Dying: Policy Tracker</h1>
+  <p class="stand">A working reference on medical aid in dying law for legislators, staff,
+    clinicians and health departments. All 51 US jurisdictions, 22 international regimes,
+    and — the part that is usually missing — what each policy lever actually does to
+    access once the law is on the books.</p>
+  <div class="updated">
+    <span class="pill"><span class="dot"></span><span id="m-updated">loading…</span></span>
+    <span class="pill" id="m-version"></span>
+    <span class="pill" id="m-next"></span>
+    <span>Corrections and pull requests welcome.</span>
+  </div>
+</header>
+
+<div class="stats" id="stats"></div>
+
+<nav role="tablist" aria-label="Sections">
+  <button role="tab" aria-selected="true" data-tab="us">US jurisdictions</button>
+  <button role="tab" aria-selected="false" data-tab="pipeline">Legislative pipeline</button>
+  <button role="tab" aria-selected="false" data-tab="prohibited">Non-authorizing states</button>
+  <button role="tab" aria-selected="false" data-tab="intl">International</button>
+  <button role="tab" aria-selected="false" data-tab="levers">Policy levers</button>
+  <button role="tab" aria-selected="false" data-tab="infra">Reporting systems</button>
+</nav>
+
+<section id="tab-us">
+  <h2>The 14 authorizing US jurisdictions</h2>
+  <p class="sub">Roughly a third of Americans now live where medical aid in dying is
+    authorized. Every one of these requires a six-month terminal prognosis and
+    self-administration; the meaningful variation is in who may prescribe, how long
+    the clock runs, and whether a clinician who declines has to tell the patient anything.</p>
+  <div class="filters">
+    <input type="search" id="us-q" placeholder="Search jurisdiction, statute, or provision…" aria-label="Search US jurisdictions">
+    <button class="chip" data-f="app" aria-pressed="false">APPs may prescribe</button>
+    <button class="chip" data-f="nores" aria-pressed="false">No residency requirement</button>
+    <button class="chip" data-f="new" aria-pressed="false">New since 2025</button>
+    <span class="count" id="us-count"></span>
+  </div>
+  <div class="cards" id="us-cards"></div>
+</section>
+
+<section id="tab-pipeline" hidden>
+  <h2>2026 legislative pipeline</h2>
+  <p class="sub">Seventeen states introduced aid-in-dying bills or amendments in the 2026
+    session. Assume one to two new authorizing jurisdictions per year through 2030,
+    weighted toward the Northeast and Mid-Atlantic, with Virginia as the swing case
+    that would open the South.</p>
+  <div class="scroller"><table>
+    <thead><tr><th>State</th><th>Bills</th><th>Status</th></tr></thead>
+    <tbody id="pipe-rows"></tbody>
+  </table></div>
+</section>
+
+<section id="tab-prohibited" hidden>
+  <h2>The 37 non-authorizing states</h2>
+  <p class="sub" id="proh-note"></p>
+  <div class="tiergrid" id="proh-tiers"></div>
+</section>
+
+<section id="tab-intl" hidden>
+  <h2>The international landscape</h2>
+  <p class="sub">What legislators most often want and least often get: how comparable
+    countries actually designed this, and what happened afterwards. Utilization ranges
+    from Italy's 15 deaths in seven years to the Netherlands' 5.97% of all deaths — a
+    difference driven far more by administration modality, workforce and procedural
+    friction than by the breadth of the right.</p>
+  <div class="filters">
+    <input type="search" id="intl-q" placeholder="Search country or provision…" aria-label="Search international regimes">
+    <button class="chip" data-if="euth" aria-pressed="false">Clinician administration</button>
+    <button class="chip" data-if="nonterm" aria-pressed="false">Non-terminal eligible</button>
+    <button class="chip" data-if="pending" aria-pressed="false">Not yet in force</button>
+    <span class="count" id="intl-count"></span>
+  </div>
+  <div class="cards" id="intl-cards"></div>
+</section>
+
+<section id="tab-levers" hidden>
+  <h2>What each policy lever actually does</h2>
+  <p class="sub">Eight design choices account for most of the variation in access between
+    jurisdictions. For each: the question a legislature has to answer, what the evidence
+    from operating regimes shows, and what it implies. This is the part of the record
+    that rarely reaches a committee hearing.</p>
+  <div id="levers"></div>
+</section>
+
+<section id="tab-infra" hidden>
+  <h2>Reporting and compliance systems</h2>
+  <p class="sub">Six jurisdictions operate purpose-built software for assisted-dying
+    reporting. The United States, across all fourteen jurisdictions and twenty-eight
+    years, uses PDF forms returned by email or fax.</p>
+  <div class="scroller"><table>
+    <thead><tr><th>Jurisdiction</th><th>System</th><th>Operator</th><th>Notes</th></tr></thead>
+    <tbody id="infra-rows"></tbody>
+  </table></div>
+</section>
+
+<div class="notice" id="notice"></div>
+
+<footer>
+  <p>Maintained as an open reference. Data lives in
+    <code>data/policy.json</code> — a single file, so a correction is a one-line edit
+    and a pull request. Fields that could not be verified against a primary source read
+    <em>not verified</em> rather than being estimated.</p>
+  <p>Built from a longer research document covering the clinical evidence base,
+    utilization data, and delivery models. Sources are listed per jurisdiction.</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  "use strict";
+  var D=null;
+  var esc=function(s){return String(s==null?"":s)
+    .replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");};
+  var el=function(t,c,h){var e=document.createElement(t);
+    if(c)e.className=c; if(h!=null)e.innerHTML=h; return e;};
+
+  function na(v){ return (v==null||v==="")?"not verified":v; }
+  function isNA(v){ return v==null||v===""||/^not verified$/i.test(String(v)); }
+
+  function dl(pairs){
+    var d=el("dl");
+    pairs.forEach(function(p){
+      if(p[1]==null) return;
+      d.appendChild(el("dt",null,esc(p[0])));
+      var v=na(p[1]);
+      d.appendChild(el("dd",isNA(v)?"na":null,esc(v)));
+    });
+    return d;
+  }
+
+  /* ---------- US ---------- */
+  function usTags(j){
+    var t=[];
+    if(/APRN|Advanced Practice|PA\b|APPs/i.test(j.prescribers||"") &&
+       !/Physicians only/i.test(j.prescribers||"")) t.push(["APPs may prescribe","key"]);
+    if(/not required/i.test(j.residency||"")) t.push(["No residency requirement","good"]);
+    if(/MANDATORY/i.test(j.mentalHealth||"")) t.push(["Mental health eval for every patient","warn"]);
+    if(/^NO\./i.test(j.civilImmunity||"")) t.push(["No civil immunity","warn"]);
+    if(j.mechanism==="court") t.push(["Court ruling only — no framework","warn"]);
+    if(j.effective>"2026-01-01") t.push(["Newly effective","key"]);
+    return t;
+  }
+  function renderUS(){
+    var q=(document.getElementById("us-q").value||"").toLowerCase();
+    var on={}; [].forEach.call(document.querySelectorAll("[data-f]"),function(b){
+      if(b.getAttribute("aria-pressed")==="true") on[b.dataset.f]=1;});
+    var box=document.getElementById("us-cards"); box.innerHTML="";
+    var n=0;
+    D.usAuthorizing.forEach(function(j){
+      var hay=JSON.stringify(j).toLowerCase();
+      if(q && hay.indexOf(q)<0) return;
+      if(on.app && (/Physicians only/i.test(j.prescribers)||!/APRN|Advanced Practice|PA\b/i.test(j.prescribers))) return;
+      if(on.nores && !/not required/i.test(j.residency||"")) return;
+      if(on["new"] && !(j.effective>"2026-01-01")) return;
+      n++;
+      var d=el("details","card");
+      var s=el("summary");
+      var left=el("div");
+      left.appendChild(el("div","jname",esc(j.jurisdiction)+
+        ' <span class="abbr">'+esc(j.abbr)+'</span>'));
+      left.appendChild(el("div","jmeta",esc(j.statute)+" &middot; "+esc(j.citation)));
+      var tg=el("div","tags");
+      usTags(j).forEach(function(t){tg.appendChild(el("span","tag "+(t[1]||""),esc(t[0])));});
+      left.appendChild(tg);
+      s.appendChild(left);
+      s.appendChild(el("div","when","eff. "+esc(j.effective)));
+      d.appendChild(s);
+      var b=el("div","body");
+      b.appendChild(dl([
+        ["Who may prescribe",j.prescribers],
+        ["Prognosis",j.prognosis],
+        ["Waiting period",j.waitingPeriod],
+        ["Residency",j.residency],
+        ["Telehealth",j.telehealth],
+        ["Mental health eval",j.mentalHealth],
+        ["Civil immunity",j.civilImmunity],
+        ["Utilization",j.utilization],
+        ["Notes",j.notes]
+      ]));
+      if(j.sources&&j.sources.length){
+        var sr=el("div","srcs","<strong>Sources:</strong> ");
+        j.sources.forEach(function(u){
+          var a=el("a"); a.href=u; a.target="_blank"; a.rel="noopener";
+          try{a.textContent=new URL(u).hostname.replace(/^www\./,"");}catch(e){a.textContent=u;}
+          sr.appendChild(a);
+        });
+        b.appendChild(sr);
+      }
+      d.appendChild(b); box.appendChild(d);
+    });
+    document.getElementById("us-count").textContent=n+" of "+D.usAuthorizing.length;
+  }
+
+  /* ---------- international ---------- */
+  function intlTags(j){
+    var t=[];
+    if(/Euthanasia|clinician|nurse may administer|physician OR A NURSE|patient chooses/i.test(j.modality||"")) t.push(["Clinician administration","key"]);
+    if(/not required/i.test(j.terminal||"")) t.push(["Non-terminal eligible",""]);
+    if(/NOT LAW|BILL FAILED|never entered|Not in force|PASSED BUT GATED|Not yet operational/i.test((j.note||"")+(j.utilization||""))) t.push(["Not in force","warn"]);
+    if(/EXPRESSLY PROHIBITED/i.test(j.commercial||"")) t.push(["Commercial provision banned","warn"]);
+    if(/cross-border|export service|ONLY ESTABLISHED CROSS-BORDER/i.test(j.note||"")) t.push(["Serves non-residents","key"]);
+    return t;
+  }
+  function renderIntl(){
+    var q=(document.getElementById("intl-q").value||"").toLowerCase();
+    var on={}; [].forEach.call(document.querySelectorAll("[data-if]"),function(b){
+      if(b.getAttribute("aria-pressed")==="true") on[b.dataset["if"]]=1;});
+    var box=document.getElementById("intl-cards"); box.innerHTML="";
+    var n=0;
+    D.international.forEach(function(j){
+      var hay=JSON.stringify(j).toLowerCase();
+      if(q && hay.indexOf(q)<0) return;
+      var tags=intlTags(j).map(function(t){return t[0];});
+      if(on.euth && tags.indexOf("Clinician administration")<0) return;
+      if(on.nonterm && tags.indexOf("Non-terminal eligible")<0) return;
+      if(on.pending && tags.indexOf("Not in force")<0) return;
+      n++;
+      var d=el("details","card"), s=el("summary"), left=el("div");
+      left.appendChild(el("div","jname",esc(j.jurisdiction)));
+      left.appendChild(el("div","jmeta",esc(j.modality)));
+      var tg=el("div","tags");
+      intlTags(j).forEach(function(t){tg.appendChild(el("span","tag "+(t[1]||""),esc(t[0])));});
+      left.appendChild(tg);
+      s.appendChild(left);
+      s.appendChild(el("div","when",j.since?esc(j.since):"pending"));
+      d.appendChild(s);
+      var b=el("div","body");
+      b.appendChild(dl([
+        ["Terminal illness required",j.terminal],
+        ["Prognosis window",j.prognosis],
+        ["Mental illness alone",j.mentalIllnessAlone],
+        ["Minors",j.minors],
+        ["Advance requests",j.advanceRequests],
+        ["Waiting period",j.waiting],
+        ["Oversight",j.oversight],
+        ["Funding",j.funding],
+        ["Utilization",j.utilization],
+        ["Commercial provision",j.commercial],
+        ["Notes",j.note]
+      ]));
+      d.appendChild(b); box.appendChild(d);
+    });
+    document.getElementById("intl-count").textContent=n+" of "+D.international.length;
+  }
+
+  function render(){
+    var m=D.meta;
+    document.getElementById("m-updated").textContent="Updated "+m.lastUpdated;
+    document.getElementById("m-version").textContent="v"+m.version;
+    document.getElementById("m-next").textContent="Next review "+m.nextReviewDue;
+
+    var st=document.getElementById("stats");
+    D.keyStatistics.forEach(function(s){
+      var d=el("div","stat");
+      d.appendChild(el("b",null,esc(s.stat)));
+      d.appendChild(el("div","l",esc(s.label)));
+      d.appendChild(el("div","c",esc(s.context)));
+      st.appendChild(d);
+    });
+
+    renderUS(); renderIntl();
+
+    var pr=document.getElementById("pipe-rows");
+    D.usPipeline2026.forEach(function(p){
+      var tr=el("tr");
+      tr.appendChild(el("td",null,"<strong>"+esc(p.state)+"</strong> <span class=\"abbr\" style=\"font-family:var(--mono);font-size:11px;color:var(--ink-4)\">"+esc(p.abbr)+"</span>"));
+      tr.appendChild(el("td",null,esc(p.bills)));
+      tr.appendChild(el("td",null,esc(p.status)));
+      pr.appendChild(tr);
+    });
+
+    var pb=D.usProhibitionBasis;
+    document.getElementById("proh-note").textContent=pb.note;
+    var tiers=[["Prohibited by statute",pb.statutory],
+               ["Prohibited at common law",pb.commonLaw],
+               ["Unresolved or contested",pb.unresolved]];
+    var tg=document.getElementById("proh-tiers");
+    tiers.forEach(function(t){
+      var box=el("div","tierbox");
+      box.appendChild(el("h4",null,esc(t[0])+" &middot; "+t[1].length));
+      if(t[0].indexOf("Unresolved")===0)
+        box.appendChild(el("p",null,'<span style="font-size:13px;color:var(--ink-3)">'+esc(pb.unresolvedNote)+'</span>'));
+      var ab=el("div","abbrs");
+      t[1].forEach(function(a){ab.appendChild(el("span",null,esc(a)));});
+      box.appendChild(ab); tg.appendChild(box);
+    });
+
+    var lv=document.getElementById("levers");
+    D.designLevers.forEach(function(l){
+      var d=el("div","lever");
+      d.appendChild(el("h3",null,esc(l.lever)));
+      d.appendChild(el("p","q",esc(l.question)));
+      d.appendChild(el("p",null,'<span class="lab">What the evidence shows</span>'+esc(l.evidence)));
+      d.appendChild(el("p","imp",'<span class="lab">Implication</span>'+esc(l.implication)));
+      lv.appendChild(d);
+    });
+
+    var ir=document.getElementById("infra-rows");
+    D.complianceInfrastructure.forEach(function(c){
+      var tr=el("tr");
+      tr.appendChild(el("td",null,"<strong>"+esc(c.jurisdiction)+"</strong>"));
+      tr.appendChild(el("td",null, c.system==="NONE"
+        ? '<span style="color:var(--alert);font-weight:600">NONE</span>' : esc(c.system)));
+      tr.appendChild(el("td",null,esc(c.operator)));
+      tr.appendChild(el("td",null,esc(c.note)));
+      ir.appendChild(tr);
+    });
+
+    document.getElementById("notice").innerHTML=
+      "<b>How to read this.</b> "+esc(D.meta.disclaimer);
+  }
+
+  /* tabs */
+  [].forEach.call(document.querySelectorAll("nav button"),function(b){
+    b.addEventListener("click",function(){
+      [].forEach.call(document.querySelectorAll("nav button"),function(o){
+        o.setAttribute("aria-selected",String(o===b));});
+      [].forEach.call(document.querySelectorAll("section[id^='tab-']"),function(s){
+        s.hidden = s.id!=="tab-"+b.dataset.tab;});
+      window.scrollTo({top:document.querySelector("nav").offsetTop-1,behavior:"instant"});
+    });
+  });
+  function wireChips(sel,fn){
+    [].forEach.call(document.querySelectorAll(sel),function(b){
+      b.addEventListener("click",function(){
+        b.setAttribute("aria-pressed", b.getAttribute("aria-pressed")==="true"?"false":"true");
+        fn();
+      });
+    });
+  }
+
+  fetch("data/policy.json",{cache:"no-store"})
+    .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
+    .then(function(j){
+      D=j; render();
+      document.getElementById("us-q").addEventListener("input",renderUS);
+      document.getElementById("intl-q").addEventListener("input",renderIntl);
+      wireChips("[data-f]",renderUS);
+      wireChips("[data-if]",renderIntl);
+    })
+    .catch(function(e){
+      document.getElementById("stats").outerHTML=
+        '<div class="err"><strong>Could not load data/policy.json</strong> ('+esc(e.message)+
+        ').<br><br>This page reads its data at runtime, so it must be served over HTTP '+
+        'rather than opened directly from the filesystem. Locally, run '+
+        '<code>python3 -m http.server</code> in the repository root and open '+
+        '<code>http://localhost:8000</code>. On GitHub Pages it works as-is.</div>';
+    });
+})();
+</script>
+</body>
+</html>
