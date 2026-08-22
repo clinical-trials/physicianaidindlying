@@ -1,11 +1,15 @@
 {
   "meta": {
-    "version": "0.8.0",
+    "version": "0.9.0",
     "lastUpdated": "2026-08-22",
     "nextReviewDue": "2026-09-15",
     "maintainer": "clinical-trials",
     "disclaimer": "Reference only. Not legal advice. Every jurisdictional claim requires verification against primary statute by licensed counsel in that jurisdiction before it is relied on. Where a field could not be verified from a primary source it reads 'not verified' rather than being guessed.",
     "changelog": [
+      {
+        "date": "2026-08-22",
+        "note": "Added a hospice section presenting it as an end-of-life option in its own right, with PMIDs throughout. Includes a correction: early palliative care's SURVIVAL benefit does not survive meta-analysis (HR 0.90, ns), though the quality-of-life benefit is robust. Also records that 0 of 52 New Mexico hospices published an aid-in-dying policy despite a state mandate to do so."
+      },
       {
         "date": "2026-08-22",
         "note": "Added the hospice cost comparison using exact FY2026 CMS per-diem rates and MedPAC length-of-stay data. Carries an explicit guardrail: the finding is about payment asymmetry, not relative value, and must not be used to argue that aid in dying saves money."
@@ -1475,5 +1479,74 @@
       ]
     ],
     "theComparison": "A full-freight American assisted death with a conventional burial - roughly USD 12,000 to USD 22,000 - costs the family MORE THAN FLYING TO SWITZERLAND. Dignitas' all-in tier is CHF 11,000, approximately USD 13,640, and that price INCLUDES the accompaniment, the cremation and every official formality. The difference is that Switzerland publishes its prices and the United States does not."
+  },
+  "hospice": {
+    "note": "Hospice as an end-of-life option in its own right — not as a channel to anything else. Available in all 51 jurisdictions, covered by Medicare, and used by roughly 9 in 10 people who also pursue aid in dying. Every claim carries a PMID.",
+    "whatItIs": "A Medicare benefit for people with a prognosis of six months or less if the disease follows its expected course, who elect comfort-focused care over curative treatment for the terminal illness. Provides an interdisciplinary team — nurse, physician, social worker, chaplain, aide — plus medications, equipment and supplies related to the terminal diagnosis, and 13 months of bereavement support for the family. Delivered wherever the person lives.",
+    "whatTheEvidenceShows": [
+      [
+        "Families rate it far higher than any institution",
+        "70.7% of bereaved families rated hospice care 'excellent', against under 50% for hospital or nursing home. Treated with respect: 96.2% hospice, 79.6% hospital, 68.2% nursing home.",
+        "Teno JM et al., JAMA 2004. PMID: 14709580"
+      ],
+      [
+        "It does not shorten life, and may lengthen it",
+        "Mean survival 29 days longer among hospice patients across five cancers and CHF; significant for CHF, lung and pancreatic cancer; NO difference for breast and prostate. Replicated directionally in lung cancer and heart failure. Observational, not randomised — the defensible claim is the negative one.",
+        "Connor SR et al., J Pain Symptom Manage 2007. PMID: 17349493; Saito AM et al., J Palliat Med 2011. PMID: 21767153; Gelfman LP et al., JACC Heart Fail 2018. PMID: 30098966"
+      ],
+      [
+        "Early palliative care improves quality of life — the survival claim does NOT survive meta-analysis",
+        "The landmark trial found median survival 11.6 vs 8.9 months (P=0.02), better quality of life (P=0.03) and depression 16% vs 38% (P=0.01). But pooled across 43 RCTs and 12,731 patients, survival HR 0.90 — not significant; Cochrane HR 0.85, very low certainty. Quality-of-life benefit is robust; survival benefit is not. The quality-of-life effect itself more than halves when restricted to low-bias trials.",
+        "Temel JS et al., NEJM 2010. PMID: 20818875; Kavalieratos D et al., JAMA 2016. PMID: 27893131; Haun MW et al., Cochrane 2017. PMID: 28603881"
+      ],
+      [
+        "It dramatically reduces intensive treatment",
+        "Hospitalisation 42% vs 65%, ICU 15% vs 36%, invasive procedures 27% vs 51%. Emergency department visits in the last week: 7.6 vs 69.6 per 1,000 beneficiary-days — a rate ratio of 9.7.",
+        "Obermeyer Z et al., JAMA 2014. PMID: 25387186; Obermeyer Z et al., JAGS 2016. PMID: 26805592"
+      ],
+      [
+        "Where death happens predicts caregiver psychiatric outcomes",
+        "ICU death: caregiver PTSD 21.1% vs 4.4% for home hospice death. Hospital death: prolonged grief 21.6% vs 5.2%.",
+        "Wright AA et al., J Clin Oncol 2010. PMID: 20837950"
+      ],
+      [
+        "Savings are real but conditional — and dementia costs MORE",
+        "Total last-year costs $62,819 vs $71,517, a difference of $8,697. By diagnosis: cancer saves $6,706, CHF $1,309 — but DEMENTIA COSTS $1,880 MORE. The benefit is structured around a six-month cancer prognosis and fits dementia badly.",
+        "Obermeyer Z et al., JAMA 2014. PMID: 25387186; Taylor DH Jr et al., J Palliat Med 2018. PMID: 29412764"
+      ]
+    ],
+    "theTimingFailure": "THE FIELD'S CENTRAL PROBLEM, and the same one that defeats aid in dying. 28.4% of Medicare hospice users enrolled with THREE DAYS OR FEWER of life remaining; median duration in poor-prognosis cancer was 11 days. 11.4% of families said referral came too late, rising to 16.2% where the stay was under a month. At three days almost nothing hospice offers has time to work — no relationship with the team, no symptom titration, no anticipatory guidance, no bereavement groundwork. What reliably lengthens stays is upstream: outpatient palliative care (median 24 vs 15 days), home-based palliative programmes (34 vs 9 days), and simply having the conversation. (PMIDs 23385273, 25387186, 17583469, 24680626, 25375799, 18840840)",
+    "misconceptions": [
+      [
+        "'Hospice means giving up, and you'll die sooner.'",
+        "No study shows hospice shortens survival, and matched analyses show hospice patients living modestly longer in heart failure, lung and pancreatic cancer. Related communication failure: 69% of patients with metastatic lung cancer and 81% with colorectal cancer receiving palliative chemotherapy did not know it could not cure them. (PMIDs 17349493, 23094723)"
+      ],
+      [
+        "'Hospice is for the last few days.'",
+        "It is designed for six months and the benefit is proportional to time enrolled. Enrolling at day three is not using hospice; it is using a hospice death certificate. (PMIDs 23385273, 26655645, 29972587)"
+      ],
+      [
+        "'Once you enroll you cannot leave.'",
+        "You can, at any time, for any reason, and you can re-enroll. 18.2% of hospice discharges are live discharges — about one in five. But the honest counterpoint: live discharge is not always the patient's choice. It is more common at for-profit agencies (22.4% vs 14.6% nonprofit) and ranges from 12.8% in Connecticut to 40.5% in Mississippi, and 24.1% of live-discharged patients are hospitalised within 30 days. (PMIDs 25101752, 27171543)"
+      ]
+    ],
+    "whatItDoesNotDo": "It does not guarantee comfort — about one in four families reported inadequate treatment of pain or breathlessness even in the study that found hospice far superior to institutions. It does not provide 24-hour caregiving; routine home hospice is intermittent visits and the family does the daily work. It does not eliminate caregiver suffering — over 50% of bereaved hospice caregivers had clinically significant depressive symptoms at one year. AND IT DOES NOT COVER ROOM AND BOARD in a nursing home or assisted living facility, which is the most common financial surprise. 78% of hospices have at least one policy that may restrict enrollment, for instance for patients on chemotherapy or parenteral nutrition. (PMIDs 14709580, 23697816, 23213153)",
+    "costToPatient": "Essentially nothing for the hospice benefit itself under Medicare: no deductible, at most a nominal copay for outpatient symptom drugs and 5% of respite. Room and board is NOT covered. Treatment unrelated to the terminal diagnosis remains billable under regular Medicare.",
+    "theHospiceAidInDyingProblem": "ROUGHLY 9 IN 10 PEOPLE WHO USE AID IN DYING ARE ENROLLED IN HOSPICE — the two are used together, not as alternatives. But a patient generally cannot find out in advance what their hospice will do if they ask. Only 39 of 724 Medicare-certified hospices (5.4%) published a participation policy, and 46.2% of those did not even say whether their physicians could prescribe. WORSE, IN THE TWO JURISDICTIONS THAT MANDATE ONLINE PUBLICATION: 0 of 52 in New Mexico (0.0%) and 14 of 389 in California (3.6%). And while 74% of 413 hospice clinicians said they would be willing to be present throughout such a death, among 100 hospice staff only just over a third had ever been. Some agencies require nurses to leave the room. ASK THE AGENCY DIRECTLY AND IN WRITING BEFORE ENROLLING — the literature is clear you will not find it on their website. (PMIDs 40932687, 21868430, 39493318, 40956642, 37233138)",
+    "otherLegalOptionsEverywhere": [
+      [
+        "Palliative sedation",
+        "For refractory symptoms at the very end of life. THE EVIDENCE SAYS IT DOES NOT HASTEN DEATH: median survival 12 days in sedated patients vs 9 in controls (P=0.330), and 13 of 14 studies in a Cochrane review found no survival difference. Legal everywhere. Note the evidence is thin in one important way — no study has measured quality of life, the outcome the intervention exists to improve. (PMIDs 19542532, 25879099)"
+      ],
+      [
+        "Voluntarily stopping eating and drinking (VSED)",
+        "Legal everywhere and requires nobody's permission, though it should be done with clinical support. 85% of patients died within 15 days; hospice nurses rated median quality of death 8 on a 0-9 scale. Incidence 0.4-1.7% of all deaths, mean time to death about 10 days, participants typically 80 or older. CRITICALLY: about half had dementia or another condition making them INELIGIBLE for aid in dying — VSED is a direct substitute in exactly the population aid-in-dying statutes exclude. Evidence is thin: the strongest source remains a 2003 proxy survey of Oregon nurses. (PMIDs 12878744, 39636701)"
+      ],
+      [
+        "Refusing or stopping treatment",
+        "A well-established legal right everywhere, including ventilation, dialysis, feeding tubes and antibiotics, and to have existing treatment withdrawn."
+      ]
+    ],
+    "disparities": "Hospice use among Medicare decedents with dementia: 38.2% non-Hispanic Black, 42.9% Hispanic, 50.5% White (adjusted OR 0.65 for Black decedents). Advance care planning completion: 20.7% Black, 21.4% Hispanic, 57.1% White. Heart failure: adjusted OR for hospice use 0.59 (Black) and 0.49 (Hispanic) against White patients. AND THE MOST IMPORTANT FINDING: in the VA, where structure equalised access, there were NO significant racial differences in palliative consultation or hospice-unit death — yet families of minority Veterans were still less likely to report excellent care, the gap largest for Black Veterans at 48% vs 62%. Equalising enrollment does not equalise experience, and nobody has identified the mechanism. (PMIDs 35679046, 20212178, 19054185, 27579913)"
   }
 }

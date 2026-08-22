@@ -290,6 +290,7 @@
   <button role="tab" aria-selected="false" data-tab="pipeline">Legislative pipeline</button>
   <button role="tab" aria-selected="false" data-tab="prohibited">Non-authorizing states</button>
   <button role="tab" aria-selected="false" data-tab="intl">International</button>
+  <button role="tab" aria-selected="false" data-tab="hospice">Hospice</button>
   <button role="tab" aria-selected="false" data-tab="cost">What it costs</button>
   <button role="tab" aria-selected="false" data-tab="compare">Compare</button>
   <button role="tab" aria-selected="false" data-tab="levers">Policy levers</button>
@@ -370,6 +371,15 @@
     <span class="count" id="intl-count"></span>
   </div>
   <div class="cards" id="intl-cards"></div>
+</section>
+
+<section id="tab-hospice" hidden>
+  <h2>Hospice, and the other options available everywhere</h2>
+  <p class="sub">Hospice is available in all 51 jurisdictions, covered by Medicare, and used
+    by roughly nine in ten people who also pursue aid in dying. It is not a consolation
+    prize or a stepping stone — it is the option most people actually use, and the evidence
+    behind it is far stronger than the evidence behind anything else on this site.</p>
+  <div id="hosp-out"></div>
 </section>
 
 <section id="tab-cost" hidden>
@@ -885,8 +895,46 @@
     o.innerHTML=h;
   }
 
+
+  /* ---------- hospice ---------- */
+  function renderHospice(){
+    var H=D.hospice, o=document.getElementById("hosp-out");
+    if(!H){o.innerHTML='<div class="cmp-empty">No hospice data in this build.</div>';return;}
+    var h='<div class="tierbox2"><p>'+esc(H.whatItIs)+'</p></div>';
+
+    h+='<h3 class="csec">What the evidence shows</h3>';
+    H.whatTheEvidenceShows.forEach(function(x){
+      h+='<div class="tierbox2"><h3>'+esc(x[0])+'</h3><p>'+esc(x[1])+'</p>'+
+         '<p class="assum">'+esc(x[2])+'</p></div>';
+    });
+
+    h+='<div class="bigfind"><p>'+esc(H.theTimingFailure)+'</p></div>';
+
+    h+='<h3 class="csec">Three things people get wrong</h3>';
+    H.misconceptions.forEach(function(x){
+      h+='<div class="tierbox2"><h3>'+esc(x[0])+'</h3><p class="real">'+esc(x[1])+'</p></div>';
+    });
+
+    h+='<h3 class="csec">What hospice does not do</h3>'+
+       '<div class="notice" style="border-left-color:var(--alert)">'+esc(H.whatItDoesNotDo)+'</div>'+
+       '<div class="tierbox2"><p><span class="lab">What it costs you</span>'+esc(H.costToPatient)+'</p></div>';
+
+    h+='<h3 class="csec">If you are considering aid in dying too</h3>'+
+       '<div class="bigfind"><p>'+esc(H.theHospiceAidInDyingProblem)+'</p></div>';
+
+    h+='<h3 class="csec">Other options, legal in every state</h3>';
+    H.otherLegalOptionsEverywhere.forEach(function(x){
+      h+='<div class="tierbox2"><h3>'+esc(x[0])+'</h3><p>'+esc(x[1])+'</p></div>';
+    });
+
+    h+='<h3 class="csec">Who does not get it</h3>'+
+       '<div class="tierbox2"><p>'+esc(H.disparities)+'</p></div>'+
+       '<div class="notice">'+esc(H.note)+'</div>';
+    o.innerHTML=h;
+  }
+
   /* ---------- hash routing ---------- */
-  var TABS=["start","us","pipeline","prohibited","intl","cost","compare","levers","infra"];
+  var TABS=["start","us","pipeline","prohibited","intl","hospice","cost","compare","levers","infra"];
   function showTab(t,scroll){
     if(TABS.indexOf(t)<0) t="start";
     [].forEach.call(document.querySelectorAll("nav button"),function(o){
@@ -895,6 +943,7 @@
       s.hidden = s.id!=="tab-"+t;});
     if(t==="compare"){ renderPicker(); renderCompare(); }
     if(t==="cost"){ renderCost(); }
+    if(t==="hospice"){ renderHospice(); }
     if(scroll){
       var n=document.querySelector("nav");
       window.scrollTo({top:n.offsetTop-1,behavior:"instant"});
