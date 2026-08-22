@@ -430,6 +430,7 @@
       t.push(["One of the two must be a physician",""]);
     if(/NO WAIVER|no waiver/i.test(j.waitingPeriod||"")) t.push(["Waiting period cannot be waived","warn"]);
     if(/EXPRESSLY PERMITTED/i.test(j.telehealth||"")) t.push(["Telemedicine permitted","good"]);
+    if(/Medi-Cal plans cover|state-only funds/i.test(j.cost||"")) t.push(["State funds cover the medication","good"]);
     if(/ALL must be disinterested|ALL witnesses/i.test(j.notes||"")) t.push(["All witnesses must be disinterested",""]);
     if(j.mechanism==="court") t.push(["Court ruling only — no framework","warn"]);
     if(j.effective>"2026-01-01") t.push(["Newly effective","key"]);
@@ -469,6 +470,7 @@
         ["Telehealth",j.telehealth],
         ["Mental health eval",j.mentalHealth],
         ["Civil immunity",j.civilImmunity],
+        ["Who pays",j.cost],
         ["Utilization",j.utilization],
         ["Notes",j.notes]
       ]));
@@ -622,9 +624,9 @@
         "Even where state law is silent, federal rules restrict prescribing controlled "+
         "substances remotely. Expect at least some in-person visits.");
       h+=con("Cost","Medicare will not pay",
-        "A 1997 federal law bars Medicare, the VA, and federal Medicaid funds from covering "+
-        "any of this. Most private insurers do cover it, and a few state Medicaid programs pay "+
-        "with state-only money. The medication itself typically runs $600–$800 out of pocket.");
+        (/Medi-Cal plans cover/i.test(j.cost||"")
+          ? "A 1997 federal law bars Medicare, the VA and federal Medicaid funds from covering any of this. But every Medi-Cal plan covers the medication with state-only money \u2014 the most complete state coverage in the country. Most private insurers also cover it."
+          : "A 1997 federal law bars Medicare, the VA and federal Medicaid funds from covering any of this, and most people eligible are on Medicare. Most private insurers do cover it. The medication itself typically runs $600\u2013$800 out of pocket, and clinician fees are often flat-rate and cash-pay. Ask about cost early \u2014 no state collects or publishes this, so there is no published price to check.")); 
       h+='</div>';
 
       h+='<div class="steps"><h4>What the process looks like</h4><ol>'+

@@ -1,11 +1,15 @@
 {
   "meta": {
-    "version": "0.4.0",
+    "version": "0.5.0",
     "lastUpdated": "2026-08-22",
     "nextReviewDue": "2026-09-15",
     "maintainer": "clinical-trials",
     "disclaimer": "Reference only. Not legal advice. Every jurisdictional claim requires verification against primary statute by licensed counsel in that jurisdiction before it is relied on. Where a field could not be verified from a primary source it reads 'not verified' rather than being guessed.",
     "changelog": [
+      {
+        "date": "2026-08-22",
+        "note": "Added a payment dimension: a per-jurisdiction 'cost' field, a 'Who pays' policy lever, and a headline statistic. The finding is partly an absence — no US jurisdiction collects cost data, and Oregon states so expressly, so a functionally cash-pay system has no price transparency after 28 years."
+      },
       {
         "date": "2026-08-22",
         "note": "Clause-level verification of New Jersey, DC and Colorado from enrolled text. Corrections: Colorado's SB 24-068 authorized APRNs ONLY, not physician assistants, and requires no physician sign-off in any case — two APRNs may handle a case end to end; Colorado's residency requirement survives in s. 25-48-103(1) though it was struck from the definitions; Colorado's '48 hours' is a prognosis threshold, not a waiting period. DC's registration burden is administrative, not statutory, and DC uniquely bars an attending physician whose practice is primarily composed of aid-in-dying patients, foreclosing the dedicated-practice model — 2 prescribers in 2018, 2022 and 2024 alike. New Jersey's telehealth position changed 8 July 2026 via A4852 amending the telemedicine statute, not Title 26. All three grant civil immunity expressly, with materially different carve-outs."
@@ -68,6 +72,12 @@
       "question": "Terminal illness with a prognosis window, or broader suffering criteria?",
       "evidence": "Belgian non-terminal cases rose from 7% (n=24) in 2003 to 21% (n=718) in 2023. Canada's Track 2 reached 4% of MAID deaths (n=622) in 2023 within two years of the 2021 expansion. Every US jurisdiction requires a 6-month prognosis.",
       "implication": "The clearest quantified expansion trajectory in the world, and the empirical core of the eligibility-drift argument. Note also what the data does not show: the categories that dominate political debate are statistically tiny. Belgium has had 7 minors in 11 years; Luxembourg has 6,107 registered advance directives and 11 ever used."
+    },
+    {
+      "lever": "Who pays",
+      "question": "Is the service publicly funded, privately insured, or paid out of pocket by the patient?",
+      "evidence": "US federal law has barred Medicare, the VA and the federal Medicaid match from paying since 1997 — in a population that is overwhelmingly Medicare-primary. New Jersey's 2024 report records the payment method on every submitted form as 'credit card'. The medication runs $600-800 out of pocket; hospices that permit prescribers cannot bill separately; and the Academy of Aid-in-Dying Medicine describes independent physicians as charging 'a flat fee, often on a sliding scale' because 'few can bill insurance'. By contrast Belgium created a fee code only on 1 November 2025, 23 years after legalising; Luxembourg still has none; Australia has no Medicare item; and the Netherlands pays a negotiated GP fee with the patient paying nothing.",
+      "implication": "Funding determines who gets access and how large the market is. A cash-pay structure selects for wealth, which is a plausible mechanism behind the finding that recipients enjoy comparative social and economic privilege — and behind New Mexico's 83.5%-White recipient population in a state that is roughly half Hispanic. It also caps volume: Canada has no navigation industry because the health system provides it. NO US JURISDICTION COLLECTS COST DATA. Oregon says so explicitly. A service that is functionally private-pay across fourteen jurisdictions has no price transparency whatsoever, and no legislature has asked for any."
     }
   ],
   "usAuthorizing": [
@@ -91,7 +101,8 @@
       "notes": "Longest data series in existence, 28 annual reports. Reporting is by PDF form returned by email or fax within 10 days of dispensing. OHA states it does not collect cost data.",
       "sources": [
         "https://www.oregon.gov/oha/PH/PROVIDERPARTNERRESOURCES/EVALUATIONRESEARCH/DEATHWITHDIGNITYACT/Documents/year28.pdf"
-      ]
+      ],
+      "cost": "Medicare, the VA, TRICARE, FEHB, IHS and the federal Medicaid match are all barred by the Assisted Suicide Funding Restriction Act of 1997. Roughly 80% of private insurers cover it. Medication typically $600-800 out of pocket. Oregon Medicaid pays with state-only funds. OHA states expressly that it DOES NOT COLLECT COST DATA — after 28 years and 5,520 prescriptions, the state has published no figure for what any of this costs a patient."
     },
     {
       "jurisdiction": "Washington",
@@ -114,7 +125,8 @@
       "sources": [
         "https://app.leg.wa.gov/RCW/default.aspx?cite=70.245&full=true",
         "https://doh.wa.gov/data-and-statistical-reports/health-statistics/death-dignity-act"
-      ]
+      ],
+      "cost": "Medicare, the VA, TRICARE, FEHB, IHS and the federal Medicaid match are all barred by the Assisted Suicide Funding Restriction Act of 1997. Roughly 80% of private insurers cover it. Medication typically $600-800 out of pocket. No state cost data published, and the annual report series has now been discontinued entirely."
     },
     {
       "jurisdiction": "Montana",
@@ -134,7 +146,8 @@
       "civilImmunity": "Consent is a defence to homicide; no statutory immunity scheme",
       "utilization": "No reporting regime exists. No data is collected.",
       "notes": "A criminal-defence holding, not a regulatory scheme. No statute, no process, no forms, no reporting, no oversight. Legally permissive but operationally unusable. Repeal bills recur.",
-      "sources": []
+      "sources": [],
+      "cost": "No framework, no funding pathway, no data."
     },
     {
       "jurisdiction": "Vermont",
@@ -157,7 +170,8 @@
       "sources": [
         "https://legislature.vermont.gov/statutes/fullchapter/18/113",
         "https://www.healthvermont.gov"
-      ]
+      ],
+      "cost": "Medicare, the VA, TRICARE, FEHB, IHS and the federal Medicaid match are all barred by the Assisted Suicide Funding Restriction Act of 1997. Roughly 80% of private insurers cover it. Medication typically $600-800 out of pocket. No state cost data published. Non-residents bear travel and accommodation costs on top, and Vermont publishes no figure for those either."
     },
     {
       "jurisdiction": "California",
@@ -179,7 +193,8 @@
       "notes": "SB 380 (2021) also barred health care providers and entities from engaging in false, misleading or deceptive practices about their willingness to participate - the strongest duty-to-inform provision in the US. Medi-Cal covers the medication with state-only funds. In a 2019 study of 270 California hospitals, 87% had EOLOA policies but only 39% permitted physicians to prescribe.",
       "sources": [
         "https://www.cdph.ca.gov/Programs/CHSI/CDPH%20Document%20Library/CDPH_End_of_Life_Option_Act_Report_2024.pdf"
-      ]
+      ],
+      "cost": "Medicare, the VA, TRICARE, FEHB, IHS and the federal Medicaid match are all barred by the Assisted Suicide Funding Restriction Act of 1997. Roughly 80% of private insurers cover it. Medication typically $600-800 out of pocket. All Medi-Cal plans cover the medication using state-only funds — the most complete state coverage in the country."
     },
     {
       "jurisdiction": "Colorado",
@@ -202,7 +217,8 @@
       "sources": [
         "https://content.leg.colorado.gov/sites/default/files/2024a_068_signed.pdf",
         "https://cdphe.colorado.gov/center-for-health-and-environmental-data/registries-and-vital-statistics/medical-aid-in-dying"
-      ]
+      ],
+      "cost": "Medicare, the VA, TRICARE, FEHB, IHS and the federal Medicaid match are all barred by the Assisted Suicide Funding Restriction Act of 1997. Roughly 80% of private insurers cover it. Medication typically $600-800 out of pocket. CDPHE publishes no cost data. SB 24-068 added C.R.S. 10-16-167 restricting carriers, and life-insurance protection at 10-7-103(3)."
     },
     {
       "jurisdiction": "District of Columbia",
@@ -225,7 +241,8 @@
       "sources": [
         "https://code.dccouncil.gov/us/dc/council/code/titles/7/chapters/6B",
         "https://dchealth.dc.gov/service/death-dignity-act-2016"
-      ]
+      ],
+      "cost": "Medicare, the VA, TRICARE, FEHB, IHS and the federal Medicaid match are all barred by the Assisted Suicide Funding Restriction Act of 1997. Roughly 80% of private insurers cover it. Medication typically $600-800 out of pocket. No cost data published."
     },
     {
       "jurisdiction": "Hawaii",
@@ -247,7 +264,8 @@
       "notes": "With New York, one of only two US jurisdictions requiring a mental health evaluation of every patient rather than only where capacity is questioned.",
       "sources": [
         "https://health.hawaii.gov/opppd/health-care-provider-resources/"
-      ]
+      ],
+      "cost": "Medicare, the VA, TRICARE, FEHB, IHS and the federal Medicaid match are all barred by the Assisted Suicide Funding Restriction Act of 1997. Roughly 80% of private insurers cover it. Medication typically $600-800 out of pocket. No cost data published."
     },
     {
       "jurisdiction": "New Jersey",
@@ -270,7 +288,8 @@
       "sources": [
         "https://pub.njleg.state.nj.us/Bills/2018/PL19/59_.PDF",
         "https://www.ocsme.nj.gov/pdfs/annual_reports/NJMAiD-2024AnnualReport.pdf"
-      ]
+      ],
+      "cost": "Medicare, the VA, TRICARE, FEHB, IHS and the federal Medicaid match are all barred by the Assisted Suicide Funding Restriction Act of 1997. Roughly 80% of private insurers cover it. Medication typically $600-800 out of pocket. THE STRONGEST EVIDENCE IN THE COUNTRY THAT THIS IS A CASH-PAY SYSTEM: in the 2024 report, EVERY submitted form listed the payment method as 'credit card'. Not most - every one."
     },
     {
       "jurisdiction": "Maine",
@@ -293,7 +312,8 @@
       "sources": [
         "https://legislature.maine.gov/statutes/22/title22sec2140.html",
         "https://legislature.maine.gov/doc/10928"
-      ]
+      ],
+      "cost": "Medicare, the VA, TRICARE, FEHB, IHS and the federal Medicaid match are all barred by the Assisted Suicide Funding Restriction Act of 1997. Roughly 80% of private insurers cover it. Medication typically $600-800 out of pocket. No cost data published."
     },
     {
       "jurisdiction": "New Mexico",
@@ -317,7 +337,8 @@
         "https://www.nmlegis.gov/Sessions/21%20Regular/final/HB0047.pdf",
         "https://www.nmhealth.org/data/view/report/3206/",
         "https://www.nmhealth.org/publication/view/form/8506/"
-      ]
+      ],
+      "cost": "Medicare, the VA, TRICARE, FEHB, IHS and the federal Medicaid match are all barred by the Assisted Suicide Funding Restriction Act of 1997. Roughly 80% of private insurers cover it. Medication typically $600-800 out of pocket. No cost data published. Note the equity consequence: recipients were 83.5% White and 0.6% American Indian in a state roughly 50% Hispanic and 11% Native American."
     },
     {
       "jurisdiction": "Delaware",
@@ -339,7 +360,8 @@
       "notes": "Signed 20 May 2025. A federal judge denied a request to block the 1 January 2026 implementation. Forms due within 30 calendar days of prescribing.",
       "sources": [
         "https://dhss.delaware.gov/dph/end-of-life-options/"
-      ]
+      ],
+      "cost": "Medicare, the VA, TRICARE, FEHB, IHS and the federal Medicaid match are all barred by the Assisted Suicide Funding Restriction Act of 1997. Roughly 80% of private insurers cover it. Medication typically $600-800 out of pocket. No cost data published; the law took effect 1 January 2026."
     },
     {
       "jurisdiction": "New York",
@@ -363,7 +385,8 @@
         "https://www.health.ny.gov/health_care/medical_aid_in_dying/faqs.htm",
         "https://www.health.ny.gov/health_care/medical_aid_in_dying/docs/physician_guidance.pdf",
         "https://www.health.ny.gov/forms/doh-5847.pdf"
-      ]
+      ],
+      "cost": "Medicare, the VA, TRICARE, FEHB, IHS and the federal Medicaid match are all barred by the Assisted Suicide Funding Restriction Act of 1997. Roughly 80% of private insurers cover it. Medication typically $600-800 out of pocket. No cost data published; the law took effect 5 August 2026."
     },
     {
       "jurisdiction": "Illinois",
@@ -385,7 +408,8 @@
       "notes": "Signed 12 December 2025 with a deliberately long runway to give providers and IDPH lead time. First Midwest state. IDPH must create and post an Attending Physician Checklist Form and Follow-Up Form within 45 days after the effective date - roughly late October 2026. Written request requires two witnesses, at least one unrelated with no estate interest.",
       "sources": [
         "https://www.ilga.gov/ftp/legislation/104/SB/10400SB1950enr.htm"
-      ]
+      ],
+      "cost": "Medicare, the VA, TRICARE, FEHB, IHS and the federal Medicaid match are all barred by the Assisted Suicide Funding Restriction Act of 1997. Roughly 80% of private insurers cover it. Medication typically $600-800 out of pocket. Not yet operational."
     }
   ],
   "usPipeline2026": [
@@ -995,6 +1019,11 @@
       "stat": "2",
       "label": "Physicians who prescribed in Washington, DC — in 2018, in 2022, and again in 2024",
       "context": "Out of roughly 11,000 District-licensed physicians, unchanged across three reporting years. DC bars an attending physician whose practice is 'primarily or solely composed of patients requesting a covered medication', foreclosing the dedicated-practice model that carries volume elsewhere, and layers an administrative portal registration on top. Legalisation without a workable delivery path produces this."
+    },
+    {
+      "stat": "Every one",
+      "label": "New Jersey aid-in-dying forms in 2024 that listed the payment method as 'credit card'",
+      "context": "Federal law has barred Medicare, the VA and the federal Medicaid match from paying since 1997 — in a population that is overwhelmingly Medicare-primary. No US jurisdiction collects cost data; Oregon states outright that it does not. A functionally cash-pay system across fourteen jurisdictions, with no price transparency anywhere."
     },
     {
       "stat": "89",
