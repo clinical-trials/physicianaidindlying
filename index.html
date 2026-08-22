@@ -154,6 +154,73 @@
   tbody tr:hover{background:var(--sunk)}
   .scroller{overflow-x:auto;border:1px solid var(--rule);background:var(--panel)}
 
+  /* patient view */
+  .statepick{margin:0 0 24px}
+  .statepick .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--ink-4);display:block;margin-bottom:8px}
+  #st-sel{background:var(--panel);border:1px solid var(--rule-2);color:var(--ink);
+    padding:11px 14px;border-radius:8px;font:inherit;font-size:16px;min-width:280px;
+    max-width:100%}
+  #st-sel:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+  .verdict{border:1px solid var(--rule);background:var(--panel);padding:24px 26px;
+    margin-bottom:16px;border-left:4px solid var(--ink-4)}
+  .verdict.yes{border-left-color:var(--ok)}
+  .verdict.soon{border-left-color:var(--accent)}
+  .verdict.no{border-left-color:var(--alert)}
+  .verdict.murky{border-left-color:var(--alert)}
+  .verdict h3{margin:0 0 8px;font-size:21px;font-family:var(--serif);font-weight:600}
+  .verdict p{margin:0 0 12px;color:var(--ink-2);font-size:15px;max-width:74ch}
+  .verdict p:last-child{margin-bottom:0}
+  .vtag{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;text-transform:uppercase;
+    display:inline-block;margin-bottom:10px;color:var(--ink-4)}
+  .verdict.yes .vtag{color:var(--ok)} .verdict.soon .vtag{color:var(--accent)}
+  .verdict.no .vtag,.verdict.murky .vtag{color:var(--alert)}
+  .cons{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1px;
+    background:var(--rule);border:1px solid var(--rule);margin-bottom:16px}
+  .con{background:var(--panel);padding:17px 18px}
+  .con .k{font-family:var(--mono);font-size:10.5px;letter-spacing:.07em;
+    text-transform:uppercase;color:var(--ink-4);margin-bottom:7px}
+  .con .v{font-size:14.5px;color:var(--ink);font-weight:600;line-height:1.4}
+  .con .why{font-size:13px;color:var(--ink-3);margin-top:7px;line-height:1.45}
+  .steps{background:var(--panel);border:1px solid var(--rule);padding:22px 26px;
+    margin-bottom:16px}
+  .steps h4{margin:0 0 14px;font-size:15px;font-weight:650}
+  .steps ol{margin:0;padding-left:0;list-style:none;counter-reset:s}
+  .steps li{counter-increment:s;position:relative;padding:0 0 15px 38px;
+    color:var(--ink-2);font-size:14.5px;line-height:1.5}
+  .steps li:last-child{padding-bottom:0}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:0;
+    font-family:var(--mono);font-size:11px;color:var(--accent);
+    border:1px solid color-mix(in srgb,var(--accent) 45%,transparent);
+    width:22px;height:22px;border-radius:50%;display:grid;place-items:center}
+
+  /* compare */
+  #cmp-picker{gap:6px;align-items:flex-start}
+  .pickgroup{width:100%;margin-bottom:6px}
+  .pickgroup .lab{font-family:var(--mono);font-size:10.5px;letter-spacing:.09em;
+    text-transform:uppercase;color:var(--ink-4);display:block;margin:8px 0 7px}
+  .pickgroup .row{display:flex;flex-wrap:wrap;gap:6px}
+  .chip.sm{padding:6px 11px;font-size:12.5px}
+  .cmp-actions{display:flex;gap:8px;align-items:center;margin-top:14px;width:100%}
+  .cmp-actions button{appearance:none;background:var(--panel);border:1px solid var(--rule-2);
+    color:var(--ink-2);padding:7px 13px;border-radius:6px;font:inherit;font-size:13px;
+    cursor:pointer}
+  .cmp-actions button:hover{background:var(--sunk)}
+  #cmp-out table{font-size:13px}
+  #cmp-out th.rowlab{font-family:var(--mono);font-size:10.5px;letter-spacing:.06em;
+    text-transform:uppercase;color:var(--ink-4);width:150px;vertical-align:top;
+    background:var(--sunk);position:sticky;left:0;z-index:1;font-weight:400}
+  #cmp-out thead th{background:var(--panel);vertical-align:bottom;min-width:230px}
+  #cmp-out thead th.rowlab{background:var(--sunk)}
+  #cmp-out .jhead{font-family:var(--sans);font-size:15px;font-weight:650;
+    color:var(--ink);text-transform:none;letter-spacing:0;display:block}
+  #cmp-out .jsub{font-family:var(--mono);font-size:10.5px;color:var(--ink-4);
+    display:block;margin-top:4px;text-transform:uppercase;letter-spacing:.05em}
+  #cmp-out td{color:var(--ink-2);vertical-align:top}
+  #cmp-out td.na{color:var(--ink-4);font-style:italic}
+  #cmp-out tr:hover td{background:var(--sunk)}
+  .cmp-empty{padding:34px 22px;color:var(--ink-3);font-size:14.5px;background:var(--panel)}
+
   .notice{background:var(--panel);border:1px solid var(--rule);
     border-left:3px solid var(--alert);padding:18px 20px;margin:30px 0 0;
     font-size:14px;color:var(--ink-2);max-width:80ch}
@@ -193,15 +260,42 @@
 <div class="stats" id="stats"></div>
 
 <nav role="tablist" aria-label="Sections">
-  <button role="tab" aria-selected="true" data-tab="us">US jurisdictions</button>
+  <button role="tab" aria-selected="true" data-tab="start">Start here</button>
+  <button role="tab" aria-selected="false" data-tab="us">US jurisdictions</button>
   <button role="tab" aria-selected="false" data-tab="pipeline">Legislative pipeline</button>
   <button role="tab" aria-selected="false" data-tab="prohibited">Non-authorizing states</button>
   <button role="tab" aria-selected="false" data-tab="intl">International</button>
+  <button role="tab" aria-selected="false" data-tab="compare">Compare</button>
   <button role="tab" aria-selected="false" data-tab="levers">Policy levers</button>
   <button role="tab" aria-selected="false" data-tab="infra">Reporting systems</button>
 </nav>
 
-<section id="tab-us">
+<section id="tab-start">
+  <h2>What applies where you live</h2>
+  <p class="sub">Choose a state to see whether medical aid in dying is available there, what
+    the law would require of you, and the constraints most likely to affect a real decision.
+    If it is not available where you live, this will say so plainly and set out what is.</p>
+
+  <div class="statepick">
+    <label class="lab" for="st-sel">Your state or territory</label>
+    <select id="st-sel" aria-label="Select your state">
+      <option value="">Select a state…</option>
+    </select>
+  </div>
+
+  <div id="st-out"></div>
+
+  <div class="notice" style="border-left-color:var(--link)">
+    <b>This is information, not advice, and not a substitute for talking to your own
+    clinician.</b> Laws change, and how a law works in practice depends on your diagnosis,
+    your insurance, and whether the hospital or hospice caring for you participates — many
+    do not. If you are thinking about this, the single most useful thing you can do is
+    start the conversation early. Roughly half of everyone who begins this process
+    dies before it can be completed, almost always because they started too late.
+  </div>
+</section>
+
+<section id="tab-us" hidden>
   <h2>The 14 authorizing US jurisdictions</h2>
   <p class="sub">Roughly a third of Americans now live where medical aid in dying is
     authorized. Every one of these requires a six-month terminal prognosis and
@@ -250,6 +344,16 @@
     <span class="count" id="intl-count"></span>
   </div>
   <div class="cards" id="intl-cards"></div>
+</section>
+
+<section id="tab-compare" hidden>
+  <h2>Compare jurisdictions side by side</h2>
+  <p class="sub">Select two or more to see how they differ on the provisions that decide
+    access. Built for drafting: if you are writing a bill, this is the row-by-row record
+    of what other legislatures chose. The link updates as you select, so a comparison can
+    be shared or cited.</p>
+  <div class="filters" id="cmp-picker"></div>
+  <div class="scroller" id="cmp-out"></div>
 </section>
 
 <section id="tab-levers" hidden>
@@ -422,11 +526,274 @@
     document.getElementById("intl-count").textContent=n+" of "+D.international.length;
   }
 
+  /* ---------- patient view ---------- */
+  var STATES={AL:"Alabama",AK:"Alaska",AZ:"Arizona",AR:"Arkansas",CA:"California",
+    CO:"Colorado",CT:"Connecticut",DE:"Delaware",DC:"District of Columbia",FL:"Florida",
+    GA:"Georgia",HI:"Hawaii",ID:"Idaho",IL:"Illinois",IN:"Indiana",IA:"Iowa",KS:"Kansas",
+    KY:"Kentucky",LA:"Louisiana",ME:"Maine",MD:"Maryland",MA:"Massachusetts",MI:"Michigan",
+    MN:"Minnesota",MS:"Mississippi",MO:"Missouri",MT:"Montana",NE:"Nebraska",NV:"Nevada",
+    NH:"New Hampshire",NJ:"New Jersey",NM:"New Mexico",NY:"New York",NC:"North Carolina",
+    ND:"North Dakota",OH:"Ohio",OK:"Oklahoma",OR:"Oregon",PA:"Pennsylvania",
+    RI:"Rhode Island",SC:"South Carolina",SD:"South Dakota",TN:"Tennessee",TX:"Texas",
+    UT:"Utah",VT:"Vermont",VA:"Virginia",WA:"Washington",WV:"West Virginia",
+    WI:"Wisconsin",WY:"Wyoming"};
+
+  function fmtDate(iso){
+    if(!iso) return "";
+    var p=iso.split("-"),M=["January","February","March","April","May","June","July",
+      "August","September","October","November","December"];
+    return M[+p[1]-1]+" "+(+p[2])+", "+p[0];
+  }
+  function con(k,v,why){
+    return '<div class="con"><div class="k">'+esc(k)+'</div><div class="v">'+esc(v)+
+      '</div>'+(why?'<div class="why">'+esc(why)+'</div>':'')+'</div>';
+  }
+
+  function renderState(){
+    var ab=document.getElementById("st-sel").value;
+    var out=document.getElementById("st-out");
+    if(!ab){ out.innerHTML=""; return; }
+    var j=null;
+    D.usAuthorizing.forEach(function(x){ if(x.abbr===ab) j=x; });
+    var name=STATES[ab]||ab;
+    var h="";
+
+    if(j && j.mechanism==="court"){
+      h+='<div class="verdict murky"><div class="vtag">Legally permitted, practically unavailable</div>'+
+        '<h3>'+esc(name)+'</h3>'+
+        '<p>A '+esc(j.authorized)+' court decision means a physician who helps a terminally ill '+
+        'patient here has a defence against prosecution. But '+esc(name)+' never passed a law to '+
+        'go with it. There is no defined process, no forms, no reporting, and no protection '+
+        'spelled out for anyone else involved.</p>'+
+        '<p><strong>In practice this means very few clinicians will participate</strong>, because '+
+        'nobody can tell them exactly what compliance looks like. Treat this as unsettled and '+
+        'talk to a lawyer as well as a doctor.</p></div>';
+    } else if(j){
+      var future = j.effective > "2026-08-22";
+      h+='<div class="verdict '+(future?"soon":"yes")+'">'+
+        '<div class="vtag">'+(future?"Passed — not yet in effect":"Available")+'</div>'+
+        '<h3>'+esc(name)+'</h3>'+
+        '<p>'+esc(j.statute)+'.'+(future
+          ? ' Signed into law, but it does not take effect until <strong>'+fmtDate(j.effective)+
+            '</strong>. No one can begin the process before then.'
+          : ' In effect since '+fmtDate(j.effective)+'.')+'</p>'+
+        '<p>You would need a terminal diagnosis with a prognosis of <strong>'+esc(j.prognosis)+
+        ' or less</strong>, the capacity to make your own medical decisions, and the ability to '+
+        'take the medication yourself.</p></div>';
+
+      h+='<div class="cons">';
+      h+=con("You must take it yourself","Required",
+        "No US state allows a clinician to administer it. If you may lose the ability to swallow "+
+        "or to act deliberately — as can happen with ALS, advanced neurological disease, or "+
+        "severe nausea — timing matters enormously. This is the constraint people most often "+
+        "discover too late.");
+      h+=con("Residency", /not required/i.test(j.residency||"") ? "Not required" : "Required",
+        /not required/i.test(j.residency||"")
+          ? "You do not have to live here. Oregon and Vermont are the only two US states open to non-residents."
+          : "You must be a resident. "+(/present/i.test(j.residency||"")
+              ? "You must also be physically in the state for evaluations and for taking the medication."
+              : "Check what documentation is accepted."));
+      h+=con("How long it takes", j.waitingPeriod && !isNA(j.waitingPeriod) ? j.waitingPeriod : "not verified",
+        "This is the statutory minimum, not the realistic timeline. Finding two willing "+
+        "clinicians usually takes longer than the waiting period does.");
+      h+=con("Who can prescribe", j.prescribers,
+        "Participation is voluntary and many clinicians and hospitals decline. Being eligible "+
+        "is not the same as finding someone.");
+      h+=con("Mental health evaluation",
+        /MANDATORY/i.test(j.mentalHealth||"") ? "Required for everyone" : "Only if capacity is questioned",
+        /MANDATORY/i.test(j.mentalHealth||"")
+          ? "Every patient must be evaluated and found to have capacity before a prescription can be written. This adds a step and a specialist appointment."
+          : "You will not automatically see a psychiatrist or psychologist — only if either clinician has doubts about your capacity to decide.");
+      h+=con("Remote appointments",
+        /prohibited|extraordinary hardship/i.test(j.telehealth||"") ? "Limited or not allowed"
+          : (isNA(j.telehealth) ? "Not addressed in the law" : j.telehealth),
+        "Even where state law is silent, federal rules restrict prescribing controlled "+
+        "substances remotely. Expect at least some in-person visits.");
+      h+=con("Cost","Medicare will not pay",
+        "A 1997 federal law bars Medicare, the VA, and federal Medicaid funds from covering "+
+        "any of this. Most private insurers do cover it, and a few state Medicaid programs pay "+
+        "with state-only money. The medication itself typically runs $600–$800 out of pocket.");
+      h+='</div>';
+
+      h+='<div class="steps"><h4>What the process looks like</h4><ol>'+
+        '<li>You raise it with a clinician. In most states they are not allowed to bring it up first, so the first move is usually yours.</li>'+
+        '<li>An attending clinician confirms your diagnosis, prognosis, capacity, and that you are choosing this voluntarily.</li>'+
+        '<li>A second, independent clinician confirms the same.</li>'+
+        '<li>You make the requests the law requires — spoken and written, with witnesses — separated by the waiting period.</li>'+
+        '<li>A prescription is written and filled at a pharmacy willing to dispense it. Not all are.</li>'+
+        '<li>You decide whether and when to take it. Between a quarter and a half of people who get this far never do, and that is a normal outcome — many say having the option was the point.</li>'+
+        '</ol></div>';
+    } else {
+      var pipe=null;
+      D.usPipeline2026.forEach(function(p){ if(p.abbr===ab) pipe=p; });
+      var unres=(D.usProhibitionBasis.unresolved||[]).indexOf(ab)>=0;
+      h+='<div class="verdict no"><div class="vtag">'+
+        (pipe?"Not available — legislation pending":"Not available")+'</div>'+
+        '<h3>'+esc(name)+'</h3>'+
+        '<p>Medical aid in dying is <strong>not legally available in '+esc(name)+'</strong>. '+
+        'Helping someone end their life is a crime here'+
+        (unres?", though "+esc(name)+"'s law is unusually unsettled on the point. That ambiguity is not something to rely on — no pharmacy, insurer or health system will act into it."
+              :".")+'</p>'+
+        (pipe?'<p><strong>A bill is moving.</strong> '+esc(pipe.bills)+'. '+esc(pipe.status)+'</p>':'')+
+        '</div>';
+
+      h+='<div class="steps"><h4>What is available to you</h4><ol>'+
+        '<li><strong>Hospice and palliative care.</strong> Available in every state and covered by Medicare. Modern palliative medicine can relieve most physical suffering, including with palliative sedation when symptoms cannot otherwise be controlled. If you have not had a palliative care consultation, ask for one — it is not the same as giving up on treatment.</li>'+
+        '<li><strong>Refusing or stopping treatment.</strong> You have a well-established legal right to decline any treatment, including ventilation, dialysis, feeding tubes and antibiotics, and to have existing treatment withdrawn.</li>'+
+        '<li><strong>Voluntarily stopping eating and drinking (VSED).</strong> Legal everywhere and does not require anyone\'s permission, though it should be done with clinical support to manage symptoms. Ask your clinician or hospice team about it directly.</li>'+
+        '<li><strong>Advance directives.</strong> Put your wishes in writing while you can — a health care proxy, a POLST or MOLST form, and a DNR if that is what you want. This is the single most useful thing you can do today, in any state.</li>'+
+        '<li><strong>Oregon and Vermont do not require residency.</strong> Some people travel. It is lawful, but it means establishing care with clinicians in another state, travelling while seriously ill, and paying out of pocket. Understand what it actually involves before counting on it.</li>'+
+        '</ol></div>';
+    }
+    out.innerHTML=h;
+  }
+
+  /* ---------- compare (US + international) ---------- */
+  var CMP=[];
+  function cmpKey(j,kind){ return kind+":"+(j.abbr||j.jurisdiction); }
+  function normalize(j,kind){
+    if(kind==="us") return {
+      name:j.jurisdiction, sub:"United States", since:fmtDate(j.effective),
+      modality:"Self-administration only",
+      who:j.prescribers, terminal:"Required", prognosis:j.prognosis,
+      waiting:j.waitingPeriod, residency:j.residency, telehealth:j.telehealth,
+      mental:j.mentalHealth, oversight:"Retrospective reporting to the state health department",
+      funding:"No federal funds (Medicare, VA, federal Medicaid match barred since 1997); most private insurers cover",
+      util:j.utilization, commercial:"Not addressed", note:j.notes };
+    return { name:j.jurisdiction, sub:"International", since:j.since?String(j.since):"pending",
+      modality:j.modality, who:"See notes", terminal:j.terminal, prognosis:j.prognosis,
+      waiting:j.waiting, residency:"—", telehealth:"—", mental:j.mentalIllnessAlone,
+      oversight:j.oversight, funding:j.funding, util:j.utilization,
+      commercial:j.commercial, note:j.note };
+  }
+  function renderPicker(){
+    var p=document.getElementById("cmp-picker");
+    if(p.dataset.built) { syncPickerState(); return; }
+    var h='<div class="pickgroup"><span class="lab">US jurisdictions</span><div class="row">';
+    D.usAuthorizing.forEach(function(j){
+      h+='<button class="chip sm" data-cmp="us:'+esc(j.abbr)+'" aria-pressed="false">'+esc(j.jurisdiction)+'</button>';
+    });
+    h+='</div></div><div class="pickgroup"><span class="lab">International</span><div class="row">';
+    D.international.forEach(function(j){
+      h+='<button class="chip sm" data-cmp="intl:'+esc(j.jurisdiction)+'" aria-pressed="false">'+esc(j.jurisdiction)+'</button>';
+    });
+    h+='</div></div><div class="cmp-actions"><button id="cmp-clear">Clear all</button>'+
+       '<span class="count" id="cmp-count"></span></div>';
+    p.innerHTML=h; p.dataset.built="1";
+    [].forEach.call(p.querySelectorAll("[data-cmp]"),function(b){
+      b.addEventListener("click",function(){
+        var k=b.dataset.cmp, i=CMP.indexOf(k);
+        if(i>=0) CMP.splice(i,1); else CMP.push(k);
+        syncPickerState(); renderCompare(); writeHash();
+      });
+    });
+    document.getElementById("cmp-clear").addEventListener("click",function(){
+      CMP=[]; syncPickerState(); renderCompare(); writeHash();
+    });
+    syncPickerState();
+  }
+  function syncPickerState(){
+    var p=document.getElementById("cmp-picker");
+    [].forEach.call(p.querySelectorAll("[data-cmp]"),function(b){
+      b.setAttribute("aria-pressed", String(CMP.indexOf(b.dataset.cmp)>=0));
+    });
+    var c=document.getElementById("cmp-count");
+    if(c) c.textContent=CMP.length?CMP.length+" selected":"";
+  }
+  var CMP_ROWS=[["Type","sub"],["In effect since","since"],["Who may administer","modality"],
+    ["Who may prescribe or assess","who"],["Terminal illness required","terminal"],
+    ["Prognosis window","prognosis"],["Waiting period","waiting"],["Residency","residency"],
+    ["Telehealth","telehealth"],["Mental health evaluation","mental"],
+    ["Oversight","oversight"],["Funding","funding"],["Utilization","util"],
+    ["Commercial provision","commercial"],["Notes","note"]];
+  function renderCompare(){
+    var out=document.getElementById("cmp-out");
+    if(CMP.length<1){
+      out.innerHTML='<div class="cmp-empty">Select two or more jurisdictions above. '+
+        'You can mix US states and other countries — comparing Oregon against the '+
+        'Netherlands or Queensland is often more instructive than comparing two US states, '+
+        'because the design choices differ far more.</div>';
+      return;
+    }
+    var cols=[];
+    CMP.forEach(function(k){
+      var kind=k.split(":")[0], id=k.slice(kind.length+1), found=null;
+      if(kind==="us") D.usAuthorizing.forEach(function(x){ if(x.abbr===id) found=x; });
+      else D.international.forEach(function(x){ if(x.jurisdiction===id) found=x; });
+      if(found) cols.push(normalize(found,kind));
+    });
+    var h='<table><thead><tr><th class="rowlab"></th>';
+    cols.forEach(function(c){
+      h+='<th><span class="jhead">'+esc(c.name)+'</span><span class="jsub">'+esc(c.sub)+'</span></th>';
+    });
+    h+='</tr></thead><tbody>';
+    CMP_ROWS.forEach(function(r){
+      if(r[1]==="sub") return;
+      h+='<tr><th class="rowlab">'+esc(r[0])+'</th>';
+      cols.forEach(function(c){
+        var v=c[r[1]];
+        h+='<td'+(isNA(v)?' class="na"':'')+'>'+esc(na(v))+'</td>';
+      });
+      h+='</tr>';
+    });
+    h+='</tbody></table>';
+    out.innerHTML=h;
+  }
+
+  /* ---------- hash routing ---------- */
+  var TABS=["start","us","pipeline","prohibited","intl","compare","levers","infra"];
+  function showTab(t,scroll){
+    if(TABS.indexOf(t)<0) t="start";
+    [].forEach.call(document.querySelectorAll("nav button"),function(o){
+      o.setAttribute("aria-selected",String(o.dataset.tab===t));});
+    [].forEach.call(document.querySelectorAll("section[id^='tab-']"),function(s){
+      s.hidden = s.id!=="tab-"+t;});
+    if(t==="compare"){ renderPicker(); renderCompare(); }
+    if(scroll){
+      var n=document.querySelector("nav");
+      window.scrollTo({top:n.offsetTop-1,behavior:"instant"});
+    }
+  }
+  function writeHash(){
+    var t="start";
+    [].forEach.call(document.querySelectorAll("nav button"),function(o){
+      if(o.getAttribute("aria-selected")==="true") t=o.dataset.tab;});
+    var h="#"+t;
+    if(t==="compare" && CMP.length) h+="/"+CMP.map(encodeURIComponent).join(",");
+    if(t==="start"){
+      var v=document.getElementById("st-sel").value;
+      if(v) h+="/"+v;
+    }
+    if(("#"+(location.hash||"").replace(/^#/,""))!==h)
+      history.replaceState(null,"",h);
+  }
+  function readHash(){
+    var raw=(location.hash||"").replace(/^#/,"");
+    if(!raw) { showTab("start",false); return; }
+    var parts=raw.split("/"), t=parts[0], arg=parts[1]?decodeURIComponent(parts[1]):"";
+    if(t==="compare" && arg) CMP=arg.split(",").map(decodeURIComponent);
+    if(t==="start" && arg && STATES[arg.toUpperCase()]){
+      document.getElementById("st-sel").value=arg.toUpperCase();
+      renderState();
+    }
+    showTab(t,false);
+  }
+
   function render(){
     var m=D.meta;
     document.getElementById("m-updated").textContent="Updated "+m.lastUpdated;
     document.getElementById("m-version").textContent="v"+m.version;
     document.getElementById("m-next").textContent="Next review "+m.nextReviewDue;
+
+    var sel=document.getElementById("st-sel");
+    Object.keys(STATES).sort(function(a,b){
+      return STATES[a].localeCompare(STATES[b]);}).forEach(function(ab){
+      var o=document.createElement("option");
+      o.value=ab; o.textContent=STATES[ab];
+      var auth=D.usAuthorizing.some(function(x){return x.abbr===ab;});
+      if(auth) o.textContent+=" — available";
+      sel.appendChild(o);
+    });
 
     var st=document.getElementById("stats");
     D.keyStatistics.forEach(function(s){
@@ -491,14 +858,9 @@
 
   /* tabs */
   [].forEach.call(document.querySelectorAll("nav button"),function(b){
-    b.addEventListener("click",function(){
-      [].forEach.call(document.querySelectorAll("nav button"),function(o){
-        o.setAttribute("aria-selected",String(o===b));});
-      [].forEach.call(document.querySelectorAll("section[id^='tab-']"),function(s){
-        s.hidden = s.id!=="tab-"+b.dataset.tab;});
-      window.scrollTo({top:document.querySelector("nav").offsetTop-1,behavior:"instant"});
-    });
+    b.addEventListener("click",function(){ showTab(b.dataset.tab,true); writeHash(); });
   });
+  window.addEventListener("hashchange",readHash);
   function wireChips(sel,fn){
     [].forEach.call(document.querySelectorAll(sel),function(b){
       b.addEventListener("click",function(){
@@ -508,15 +870,23 @@
     });
   }
 
+  function boot(j){
+    D=j; render();
+    document.getElementById("us-q").addEventListener("input",renderUS);
+    document.getElementById("intl-q").addEventListener("input",renderIntl);
+    document.getElementById("st-sel").addEventListener("change",function(){
+      renderState(); writeHash(); });
+    wireChips("[data-f]",renderUS);
+    wireChips("[data-if]",renderIntl);
+    readHash();
+  }
+
+  // Standalone builds inline the data; the repo version fetches it.
+  if(window.__POLICY_DATA__){ boot(window.__POLICY_DATA__); return; }
+
   fetch("data/policy.json",{cache:"no-store"})
     .then(function(r){ if(!r.ok) throw new Error("HTTP "+r.status); return r.json(); })
-    .then(function(j){
-      D=j; render();
-      document.getElementById("us-q").addEventListener("input",renderUS);
-      document.getElementById("intl-q").addEventListener("input",renderIntl);
-      wireChips("[data-f]",renderUS);
-      wireChips("[data-if]",renderIntl);
-    })
+    .then(boot)
     .catch(function(e){
       document.getElementById("stats").outerHTML=
         '<div class="err"><strong>Could not load data/policy.json</strong> ('+esc(e.message)+
